@@ -1,4 +1,5 @@
 import { Figtree } from "next/font/google";
+import { Navbar } from "~/components";
 import "./globals.css";
 
 export const metadata = {
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={figtree.className}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
