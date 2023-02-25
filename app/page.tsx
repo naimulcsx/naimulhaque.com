@@ -1,3 +1,9 @@
+import { About } from "~/components";
+
 export default function Home() {
-  return <main>Naimul Haque</main>;
+  return (
+    <div>
+      <About />
+    </div>
+  );
 }

@@ -28,7 +28,7 @@ export function Navbar() {
     <motion.header
       style={{ height }}
       transition={{ delay: 1 }}
-      className="fixed inset-x-0 h-20 border-b bg-white"
+      className="fixed inset-x-0 h-20 bg-white"
     >
       <div className="mx-auto flex h-full max-w-4xl items-center justify-between px-6">
         <div className="text-primary-color dark:text-primary-color-dark flex items-center justify-between text-xl font-semibold">
