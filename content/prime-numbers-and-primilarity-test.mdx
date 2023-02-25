@@ -1,0 +1,54 @@
+---
+title: "Prime numbers and basic primilarity test"
+publishedAt: "2019-08-14"
+summary: "Prime numbers are an important concept in number theory. In this article, we will discuss what prime numbers are, We will also see basic primality tests that can be used to determine whether a given number is prime or not."
+---
+
+A prime number is a integer greater than $1$ and has no positive divisors other than $1$ and itself. $1$ is neither prime nor composite. The set of positive integers can be divided into three classes, primes, composites and a unit ($1$). For example, $5$ is prime because the only ways of writing it as a product, $1 \times 5$ or $5 \times 1$, involve $5$ itself.
+
+## Primilarity test
+
+Now that we understand prime numbers, how can we determine if a number is prime or not? There are two types of primilarity test, deterministic and probabilistic.
+
+A Deterministic algorithm can determine whether a number is prime or not with absolute certainty. But the probabilistic algorithms tell us where a number is probable prime or composite. Probabilistic primilarity tests can&apos;t determine a prime with absolute certainty, but it works most of the time. A composite number which passes through a probabilistic test is called a psuedo prime.
+
+In this article, we&apos;ll see the basic trial division approach and how we can improve that. There are also some probabilistic primilarity test, like Fermat primilarity test, Millar Rabin primality test etc. I&apos;ll post an article about these probabilistic algorithms in a week or two.
+
+## Trial division
+
+One bruteforce way to determine the primilarity of a number n is to go through each number $a_i$ in the range $a = [2, n - 1]$ and check whether n is divisible by $a_i$. If any number divides n in the range $[2, n - 1]$, then we can coclude that the number n is not a prime number. But if we don&apos;t find a single divisor of $n$ in the range $[2, n - 1]$, that means n is a prime.
+
+```cpp
+bool is_prime = true;
+for (int i = 2; i < n; ++i) {
+    if (n % i == 0) {
+        is_prime = false;
+        break;
+    }
+}
+if ( is_prime ) cout << n << " is a prime number." << endl;
+else cout << n << " is a composite number." << endl;
+```
+
+However, the time complexity for this naive algorithm is $O(n)$, hence it&apos;s very much slow when we are working with large primes and product of large primes. However we can improve that significantly. In the previous method, we run a check in the range $[2, n - 1]$, which was unnecessary. It is sufficient to check in the range $[2, \sqrt{n}]$ to determine if n is prime or not? But Why? This is because every composite number has a divisor less than or equal to the square root of itself.
+
+Suppose that n is a composite. Then we can write n=a \times b for integers a and b which are both greater than $1$. If both $a>\sqrt{n}$ and $b>\sqrt{n}$ then we would have $ab> \sqrt{n} \times \sqrt{n}$ thus $ab > n$, which is a contradiction. Hence either $a \leq \sqrt{n}$ or $b \leq \sqrt{n}$, so if you check as far as $\sqrt{n}$ and don&apos;t find a divisor of $n$ greater than $1$, then $n$ must be a prime. Thus, we can conclude that a composite number has a divisor less than or equal to the square root of itself.
+
+What about the divisors greater that $\sqrt{n}$? There may be many divisors greater than $\sqrt{n}$ but a composite number has at most one prime divisor greater than it&apos;s square root. Assume there is such a divisor and denote it by $p$. Then $n = m \times p$ with $p > \sqrt{n}$. Therefore $m < \sqrt{n}$ as $m = n / p$. Any other prime divisor of $n$ must be a divisor of $m$, which must be less than $\sqrt{n}$ as $m$ is less than $\sqrt{n}$.
+
+```cpp
+bool is_prime = true;
+for (int i = 2; i * i <= n; ++i) {
+    if (n % i == 0) {
+        is_prime = false;
+        break;
+    }
+}
+if (is_prime) cout << n << " is a prime number" << endl;
+else cout << n << " is a composite number" << endl;
+```
+
+## Related problems
+
+- SPOJ – Prime or Not
+- URI 1221 – Fast Prime Number

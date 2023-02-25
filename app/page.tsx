@@ -1,9 +1,11 @@
-import { About } from "~/components";
+import { About, PageTransition } from "~/components";
+import { RecentPosts } from "~/components/RecentPosts";
 
 export default function Home() {
   return (
-    <div>
+    <PageTransition>
       <About />
-    </div>
+      <RecentPosts />
+    </PageTransition>
   );
 }
