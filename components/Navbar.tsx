@@ -8,6 +8,7 @@ import clsx from "clsx";
 
 const links = [
   ["Home", "/"],
+  ["Blog", "/blog"],
   ["About", "/about"],
 ];
 
