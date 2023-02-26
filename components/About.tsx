@@ -4,28 +4,28 @@ export function About() {
   return (
     <section className="pb-12">
       <div className="space-y-8">
-        <div className="grid grid-cols-4 items-center gap-12">
-          <div className="">
+        <div className="flex flex-col text-center md:text-left md:flex-row md:items-center gap-8 md:gap-12">
+          <div className="basis-40 shrink-0">
             <Image
               src="/images/naimul-haque.jpg"
-              className="rounded-full"
+              className="rounded-full mx-auto w-40 h-40"
               alt="Naimul Haque"
               width={256}
               height={256}
             />
           </div>
-          <div className="col-span-3">
-            <h1 className="font-heading text-4xl font-medium tracking-tight">
+          <div className="">
+            <h1 className="font-heading text-3xl md:text-4xl font-medium tracking-tight">
               <span className="text-white">Naimul Haque</span>
             </h1>
-            <p className="mt-2 text-2xl text-zinc-300 font-light">
+            <p className="mt-2 text-lg md:text-2xl text-zinc-300 font-light">
               Software Engineer &amp; Cloud Enthusiast
             </p>
-            <div className="mt-6 flex gap-4 text-sm">
+            <div className="mt-6 flex justify-center md:justify-start gap-4 text-sm">
               <a
                 target="_blank"
                 href="https://github.com/naimulcsx"
-                className="flex items-center space-x-1 rounded-md bg-white/5 px-2.5 py-1.5 font-medium text-white/60"
+                className="flex items-center border border-white/10 space-x-1 rounded-md bg-white/5 px-2.5 py-1.5 font-medium text-white/60"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export function About() {
               <a
                 target="_blank"
                 href="https://twitter.com/naimulcsx"
-                className="flex items-center space-x-1 rounded-md bg-white/5 px-2.5 py-1.5 font-medium text-white/60"
+                className="flex items-center border border-white/10 space-x-1 rounded-md bg-white/5 px-2.5 py-1.5 font-medium text-white/60"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export function About() {
             </div>
           </div>
         </div>
-        <div className="prose-lg prose-invert prose-p:text-zinc-300 prose-p:font-light">
+        <div className="prose md:prose-lg prose-invert prose-p:text-zinc-300 prose-p:font-light">
           <p>
             Hi I&apos; m Naimul <span>👋</span>, I am full-stack{" "}
             <span className="border-b border-emerald-500 text-emerald-500">

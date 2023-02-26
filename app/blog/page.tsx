@@ -26,11 +26,11 @@ export default async function BlogPage() {
               className="flex flex-col space-y-1 mb-4"
               href={`/blog/${post.slug}`}
             >
-              <div className="w-full flex items-center">
-                <p className="text-zinc-400 basis-[160px]">
+              <div className="w-full flex flex-col md:flex-row md:items-center">
+                <p className="text-zinc-400 text-sm md:text-base md:basis-[160px]">
                   {post.publishedAt}
                 </p>
-                <h2 className="text-xl text-zinc-300 font-light">
+                <h2 className="text-base md:text-xl text-zinc-300 font-light">
                   {post.title}
                 </h2>
               </div>

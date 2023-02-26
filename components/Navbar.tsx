@@ -40,9 +40,9 @@ export function Navbar() {
           : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-full max-w-4xl items-center justify-between px-16">
+      <div className="mx-auto flex h-full max-w-4xl items-center justify-between px-8 md:px-16">
         <div className="flex items-center justify-between text-xl font-medium">
-          <Link className="font-heading text-xl" href="/">
+          <Link className="font-heading text-base md:text-xl" href="/">
             <div>
               <span>&gt;</span>{" "}
               <span className="text-emerald-500">~/naimul</span>{" "}
@@ -57,7 +57,7 @@ export function Navbar() {
                 <Link
                   href={href}
                   className={clsx(
-                    "link-underline relative rounded px-4 py-3 text-light hover:text-emerald-400 transition duration-300",
+                    "link-underline text-sm md:text-base relative rounded px-3 md:px-4 py-3 text-light hover:text-emerald-400 transition duration-300",
                     pathname === href ? "text-emerald-400" : ""
                   )}
                 >

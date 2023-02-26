@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="border-t border-white/[0.15] py-8 mt-12">
       <div className="flex justify-between">
-        <ul className="flex text-zinc-300 space-x-6">
+        <ul className="hidden md:flex text-zinc-300 space-x-6">
           {links.map(([text, href], idx) => {
             return (
               <li key={idx}>

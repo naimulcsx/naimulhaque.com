@@ -7,8 +7,10 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <PageTransition>
-      <h1 className="font-semibold text-4xl text-white mb-6">About</h1>
-      <div className="prose prose-lg prose-invert prose-p:font-light space-y-6 prose-pre:bg-transparent prose-pre:border prose-pre:border-white/[0.15] prose-headings:font-semibold">
+      <h1 className="font-semibold text-3xl md:text-4xl text-white mb-6">
+        About
+      </h1>
+      <div className="prose md:prose-lg prose-invert prose-p:font-light space-y-6 prose-pre:bg-transparent prose-pre:border prose-pre:border-white/[0.15] prose-headings:font-semibold">
         <p>
           Hello, I&apos;m Naimul. Welcome to my personal site, which I maintain
           since 2017 mainly to keep notes of my study in Programming and other
