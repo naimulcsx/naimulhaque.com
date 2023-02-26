@@ -3,3 +3,63 @@ title: "Some interesting types of numbers and their properties"
 publishedAt: "2019-06-14"
 summary: "Numbers are really beautiful. When you dive deep into the properties of numbers, you'll find amazing patterns. Today we'll take a look at triangular numbers, oblong numbers, also deficient, abundant and perfect numbers."
 ---
+
+Numbers are really beautiful. When you dive deep into the properties of numbers, you&apos;ll find amazing patterns. These findings are absoulutely satisfying. It doesn&apos;t really matter whether you need it or not. Today we&apos;ll take a look at triangular numbers, oblong numbers, also deficient, abundant and perfect numbers.
+
+Triangular numbers are those that can be written as the sum of a consecutive series of (whole) numbers beginning with 1. Thus 6 is triangular because it is the sum of the first three numbers: $6 = 1 + 2 + 3$. The first few triangular numbers are $1$, $3$, $6$, $10$, $15$, $21$, $28$, $36$, $45$ and $55$. We denote the nth triangular number by $T_n$.
+
+$$T_n = 1 + 2 + 3 + \dots + (n-1) + n$$
+
+- We can calculate the nth triangular number by using the following formula.
+
+  $$\begin{aligned} & \quad T_n = 1 + 2 + + \dots + n \\ & \Rightarrow \frac {n(n+1)} {2} \end{aligned}$$
+
+- The sum of the reciprocals of all the triangular numbers is 2. Formally,
+
+  $$\frac{1}{1} + \frac{1}{3}+ \frac{1}{6} +\dots = 2$$
+
+- If we want to sum from a to b, we can easily find it using previous formula. For example, Suppose we need to caculate 6 + 7 + 8 + 9 + 10 + 11. We can observe that,
+
+  $$\begin{aligned} & \quad 6 + 7 + … + 11 \\ & \Rightarrow (1 + 2 + . . . + 11) - (1 + 2 + … + 5) \\ & \Rightarrow T_{11} - T_{5} \end{aligned}$$
+
+- Now, we can generalize the same idea. So, if we need consecutive sum from $a$ to $b$. It can be expressed by $T_b - T_{a-1}$. Notice that, $T_n - T_{n-1} = n$.
+
+  $$\begin{aligned} & \quad (1 + 2 +… + b) - (1 + 2 + … + (a - 1)) \\ & \Rightarrow T_b - T_{a-1} \end{aligned}$$
+
+- Another charecteristic you&apos;ll notice from the triangular numbers is that the sum of any two consecutive triangular numbers is a square. For example, $T_4 + T_3 = 10 + 6 = 16 = 4^2$ and $T_5 + T_4 = 15 + 10 =25 = 5^2$. This is expressed by the formula,
+
+  $$T_{n - 1} + T_n = n^2$$
+
+- We can easily find two triangular numbers whose sum is a square. For example, if we are ask to find out the triangular numbers whose sum is $900$. We notice that $900 = 30^2$. Hence, $T*{30} + T*{29} = 900$, where $T*{30} = 465$ and $T*{29} = 435$.
+
+## Oblong numbers
+
+A positive integer of the from $n(n + 1)$ is called oblong number. It is a number which is the product of two consecutive integer. They are also called pronic numbers, heteromecic numbers, or rectangular numbers. First few oblong numbers are $2$, $6$, $12$, $20$, … You&apos;ll notice that the n&apos;th oblong number is the sum of first $n$ even numbers.
+
+$$\begin{aligned} & \quad 2 + 4 + 6 + 8 + \dots + 2n \\ & \Rightarrow 2 (1 + 2 + \dots + n) \\ & \Rightarrow 2 \times \frac{n(n + 1)}{2} \\ & \Rightarrow n(n + 1) \end{aligned}$$
+
+What about the sum of first $n$ odd numbers ?
+
+$$\begin{aligned} & \quad 1 + 3 + (2n – 1) \\ & \Rightarrow (2 – 1) + (4 – 1) + … (2n – 1) \\ & \Rightarrow n(n + 1) – n = n^2 \end{aligned}$$
+
+So, The sum of first $n$ odd numbers is $n^2$. For example, the sum of first $5$ odd numbers is $5^2 = 25$.
+
+## Sum of first n powers of k
+
+The Pythagoreans computed the sum of the first n powers of 2. Let, $S=1+2+4+\cdots+2^{n-1}$, then $2 S=2+4+\cdots+2^{n-1}+2^{n}$. Substracting the first equation from the first we get,
+
+$$\begin{aligned} & \quad S=1+2+2^{2}+2^{3}+\cdots+2^{n-1} \\ & \Rightarrow 2^{n}-1 \end{aligned}$$
+
+Let’s generalize this formula. Now we want to calculate the first n powers of k. Let, $S = a^0 + a^1 + … + a^{n-1}$, then $aS = a^1 + a^2 + … + a^n$. Substracting the first equation from the second we get, $aS – S = a^n – 1$.
+
+$$\begin{aligned} & \quad S = 1 + a + a^2 + … + a^{n – 1} \\ & \Rightarrow \frac {a^n – 1} {a – 1} \end{aligned}$$
+
+## Deficient, Abundant and Perfect numbers
+
+The Pythagoreans classified all numbers as deficient, abundant, or perfect. If the sum of the proper factors of $n$ is less than $n$, we call $n$ deficient.If the sum exceeds $n$, it is called abundant. If the sum equals $n$, we call it perfect. For example, $8$ is deficient since $1 + 2 + 4 < 8$, $18$ is abundant since $1 + 2 + 3 + 6 + 9 > 18$, and $28$ is perfect since $1 + 2 + 4 + 7 + 14 = 28$. The smallest perfect number is $6$. The first few perfect numbers are $6, 28, 496, 8128, \dots$.
+
+It is not known today whether there are infinitely many perfect numbers. Moreover, all known perfect numbers are even. No one knows if there are any odd perfect numbers! The Pythagoreans found an amazing method for finding perfect numbers. They observed that sums of the form $1 + 2+ 2^2 +2^3 + … +2^{n - 1}$ are prime for certain values of $n$ and are composite for others. For example,
+
+$$\begin{aligned} & 1 + 2 = 3 \\ & 1 + 2 + 4 = 7 \\ & 1 + 2 + 4 + 8 + 16= 31 \\ & 1+2+4+8+16+32+64=127 \\ \end{aligned}$$
+
+In each of the equations, multiply the greatest number on the left by the number on the right yielding $2 × 3 = 6$, $4 × 7 = 28$, $16 × 31 = 496$, and $64 × 127 = 8128$. These products, $6$, $28$, $496$, and $8128$ are perfect. Whenever the sum of the first $n$ powers of $2$ is prime, this procedure yields a perfect number. So the perfect number is of the form $2^{n-1}(2^n - 1)$.The prime sum, $2^n - 1$, is then called a Mersenne prime. It was shown in the eighteenth century by the great Swiss mathematician Leonhard Euler (1707–1783) that all even perfect numbers are of the form $2^{n-1}(2^n - 1)$. A conjecture is that no odd number (odd number > $1$) is perfect.

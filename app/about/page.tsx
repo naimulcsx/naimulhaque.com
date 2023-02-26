@@ -1,6 +1,8 @@
+import { PageTransition } from "~/components";
+
 export default function AboutPage() {
   return (
-    <div>
+    <PageTransition>
       <h1 className="font-semibold text-4xl text-white mb-6">About</h1>
       <div className="prose prose-lg prose-invert prose-p:font-light space-y-6 prose-pre:bg-transparent prose-pre:border prose-pre:border-white/[0.15] prose-headings:font-semibold">
         <p>
@@ -28,6 +30,6 @@ export default function AboutPage() {
           <li>Algorithms and Data Structures</li>
         </ul>
       </div>
-    </div>
+    </PageTransition>
   );
 }
