@@ -26,7 +26,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           </div>
           <div className="h-[0.2em] bg-white/10 mx-2 w-full" />
         </div>
-        <article className="prose prose-lg prose-invert prose-invert-zinc prose-p:text-zinc-400 prose-p:font-light space-y-6 prose-pre:bg-transparent prose-pre:border prose-pre:border-white/[0.075] prose-headings:font-semibold">
+        <article className="prose prose-lg prose-invert prose-p:font-light space-y-6 prose-pre:bg-transparent prose-pre:border prose-pre:border-white/[0.15] prose-headings:font-semibold">
           <MdxContent code={post.body.code} />
         </article>
       </section>

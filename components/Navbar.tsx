@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion, useMotionValue, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 const links = [
   ["Home", "/"],
@@ -10,6 +12,7 @@ const links = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const { scrollY } = useScroll();
   let height = useMotionValue(80);
   let [active, setActive] = useState(false);
@@ -52,9 +55,15 @@ export function Navbar() {
               <li key={idx}>
                 <Link
                   href={href}
-                  className="link-underline rounded px-6 py-3 hover:bg-white/5 transition duration-300"
+                  className={clsx(
+                    "link-underline relative rounded px-4 py-3 text-light hover:text-emerald-400 transition duration-300",
+                    pathname === href ? "text-emerald-400" : ""
+                  )}
                 >
                   {text}
+                  {pathname === href && (
+                    <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
+                  )}
                 </Link>
               </li>
             );

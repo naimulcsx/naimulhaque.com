@@ -16,13 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#010d09] min-h-screen">
+      <body className="bg-black min-h-screen">
         <Navbar />
         <main className="min-h-screen max-w-4xl px-16 mx-auto relative">
           <div>{children}</div>
           <div className="absolute inset-0 -z-10 mx-0 max-w-none overflow-hidden">
             <div className="absolute left-[-25%] top-0 h-[32rem] w-[150%] transform">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#36b49f] to-[#DBFF75] [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-[#10b981]/40 dark:to-[#DBFF75]/30 opacity-100">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#36b49f] to-[#DBFF75] [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-[#10b981]/50 dark:to-[#DBFF75]/40 opacity-90">
                 <svg
                   aria-hidden="true"
                   className="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 stroke-black/50 mix-blend-overlay dark:fill-white/2.5 dark:stroke-white/5"
@@ -42,33 +42,33 @@ export default function RootLayout({
                   <rect
                     width="100%"
                     height="100%"
-                    stroke-width="0"
+                    strokeWidth="0"
                     fill="url(#:rm:)"
                   ></rect>
                   <svg x="-12" y="4" className="overflow-visible">
                     <rect
-                      stroke-width="0"
+                      strokeWidth="0"
                       width="73"
                       height="57"
                       x="288"
                       y="168"
                     ></rect>
                     <rect
-                      stroke-width="0"
+                      strokeWidth="0"
                       width="73"
                       height="57"
                       x="144"
                       y="56"
                     ></rect>
                     <rect
-                      stroke-width="0"
+                      strokeWidth="0"
                       width="73"
                       height="57"
                       x="504"
                       y="168"
                     ></rect>
                     <rect
-                      stroke-width="0"
+                      strokeWidth="0"
                       width="73"
                       height="57"
                       x="720"
