@@ -18,7 +18,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
 
   return (
     <PageTransition>
-      <section className="pb-12">
+      <section>
         <h1 className="font-semibold text-4xl text-white">{post.title}</h1>
         <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-8 font-mono text-sm">
           <div className="bg-white/5 rounded-md text-zinc-400 px-2 py-1 tracking-tighter">
