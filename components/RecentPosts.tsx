@@ -27,6 +27,14 @@ export function RecentPosts() {
             </div>
           </Link>
         ))}
+      <div className="mt-8">
+        <Link
+          className="text-emerald-500 border-b border-emerald-500 pb-1"
+          href="/blog"
+        >
+          All articles
+        </Link>
+      </div>
     </section>
   );
 }

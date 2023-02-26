@@ -1,5 +1,9 @@
 import { PageTransition } from "~/components";
 
+export const metadata = {
+  title: "About - Naimul Haque",
+};
+
 export default function AboutPage() {
   return (
     <PageTransition>

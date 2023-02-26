@@ -3,9 +3,15 @@ import { allBlogs } from "contentlayer/generated";
 import { MdxContent } from "~/components/MdxContent";
 import { PageTransition } from "~/components";
 
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = allBlogs.find((post) => post.slug === params.slug);
+  return { title: `${post?.title} - Naimul Haque` };
+}
+
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
     slug: post.slug,
+    title: "hello world",
   }));
 }
 
