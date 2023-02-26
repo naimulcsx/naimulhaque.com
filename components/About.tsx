@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section className="pt-32 pb-12">
+    <section className="pb-12">
       <div className="space-y-8">
         <div className="grid grid-cols-4 items-center gap-12">
           <div className="">

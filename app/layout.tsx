@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black min-h-screen">
         <Navbar />
-        <main className="min-h-screen max-w-4xl px-16 mx-auto relative">
+        <main className="min-h-screen max-w-4xl px-16 mx-auto relative pt-32">
           <div>{children}</div>
           <div className="absolute inset-0 -z-10 mx-0 max-w-none overflow-hidden">
             <div className="absolute left-[-25%] top-0 h-[32rem] w-[150%] transform">
