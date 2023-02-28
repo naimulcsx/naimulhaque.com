@@ -97,11 +97,11 @@ export function About() {
             </li>
             <li>
               Linux CLI, Git, Github, Github Actions, Husky, Prettier, ESLint,
-              Commitizen, CommitLint
+              Commitizen, CommitLint, Docker, Docker Compose, Docker Swarm
             </li>
             <li>
-              AWS EC2, ECS, Fargate, S3, RDS, SQS, ECR, CodeCommit, CodeBuild,
-              CodePipeline
+              DigitalOcean, AWS EC2, ECS, Fargate, S3, RDS, SQS, ECR,
+              CodeCommit, CodeBuild, CodePipeline
             </li>
           </ul>
         </div>
