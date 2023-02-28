@@ -12,6 +12,7 @@ export function About() {
               alt="Naimul Haque"
               width={256}
               height={256}
+              quality={100}
             />
           </div>
           <div className="">
