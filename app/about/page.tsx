@@ -28,13 +28,6 @@ export default function AboutPage() {
           architecture and how to leverage cloud technologies to build scalable
           software solutions.
         </p>
-        <h3>Expertise</h3>
-        <ul>
-          <li>Frontend Development (React, Next.js)</li>
-          <li>RESTful API Development (NestJS / Express)</li>
-          <li>Relational Database Design (PostgreSQL / MySQL)</li>
-          <li>Algorithms and Data Structures</li>
-        </ul>
       </div>
     </PageTransition>
   );

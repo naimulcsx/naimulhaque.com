@@ -84,6 +84,26 @@ export function About() {
             technologies and writing articles. This is my place for my Thoughts
             and Reflections. Have a good read!
           </p>
+          <h4>Key Technologies and Methodologies</h4>
+          <ul className="font-light">
+            <li>
+              JavaScript (ES6/ES2015), TypeScript, React (Hook, Context API,
+              Component Design Patterns), Redux, React Query, Jest, Mocha,
+              Cypress, Vite, Vitest
+            </li>
+            <li>
+              Next.js, Remix, Node.js (Express / NestJS), BullMQ, REST, GraphQL,
+              TRPC, TypeORM, Prisma, PostgreSQL, Redis, Elasticsearch
+            </li>
+            <li>
+              Linux CLI, Git, Github, Github Actions, Husky, Prettier, ESLint,
+              Commitizen, CommitLint
+            </li>
+            <li>
+              AWS EC2, ECS, Fargate, S3, RDS, SQS, ECR, CodeCommit, CodeBuild,
+              CodePipeline
+            </li>
+          </ul>
         </div>
       </div>
     </section>
