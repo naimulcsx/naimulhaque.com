@@ -13,30 +13,37 @@ export default async function handler(req: NextRequest) {
     (
       <div
         style={{
+          display: "flex",
           height: "100%",
           width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
           backgroundImage: "url(https://naimulhaque.com/og-bg.png)",
         }}
       >
         <div
           style={{
-            marginLeft: 190,
-            marginRight: 190,
+            height: "80%",
+            width: "100%",
             display: "flex",
-            fontSize: 130,
-            fontFamily: "Kaisei Tokumin",
-            letterSpacing: "-0.05em",
-            fontStyle: "normal",
-            color: "white",
-            lineHeight: "120px",
-            whiteSpace: "pre-wrap",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
           }}
         >
-          {postTitle}
+          <div
+            style={{
+              marginLeft: 190,
+              marginRight: 190,
+              display: "flex",
+              fontSize: 130,
+              letterSpacing: "-0.05em",
+              fontStyle: "normal",
+              color: "white",
+              lineHeight: "120px",
+              whiteSpace: "pre-wrap",
+            }}
+          >
+            {postTitle}
+          </div>
         </div>
       </div>
     ),
