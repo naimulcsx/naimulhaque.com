@@ -24,7 +24,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
   return (
     <PageTransition>
       <section>
-        <h1 className="font-semibold text-3xl md:text-4xl text-white">
+        <h1 className="font-bold text-3xl md:text-4xl bg-gradient-to-r from-indigo-400 from-10% via-pink-400 via-30% to-orange-500 to-90% bg-clip-text text-transparent">
           {post.title}
         </h1>
         <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-8 font-mono text-sm">

@@ -17,7 +17,7 @@ export function About() {
           </div>
           <div className="">
             <h1 className="font-heading text-3xl md:text-5xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-indigo-400 via-pink-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-indigo-400 from-10% via-pink-400 via-30% to-orange-500 to-90% bg-clip-text text-transparent">
                 Naimul Haque
               </span>
             </h1>
