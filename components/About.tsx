@@ -28,7 +28,7 @@ export function About() {
               <a
                 target="_blank"
                 href="https://github.com/naimulcsx"
-                className="flex items-center border border-white/10 space-x-1 rounded-md bg-white/5 px-2.5 py-1.5 font-medium text-white/60"
+                className="flex items-center border border-white/10 space-x-1 rounded-md bg-[#24292e] px-2.5 py-1.5 font-medium text-white/75"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ export function About() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="1.5"
-                  className="h-5 w-5 stroke-white/60"
+                  className="h-5 w-5 stroke-white/75"
                   viewBox="0 0 24 24"
                 >
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -49,23 +49,27 @@ export function About() {
 
               <a
                 target="_blank"
-                href="https://twitter.com/naimulcsx"
-                className="flex items-center border border-white/10 space-x-1 rounded-md bg-white/5 px-2.5 py-1.5 font-medium text-white/60"
+                href="https://www.linkedin.com/in/naimulcsx/"
+                className="flex items-center border border-white/10 space-x-1 rounded-md bg-[#0077b5]/75 px-2.5 py-1.5 font-medium text-white/75"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 stroke-white/75"
                   width="44"
                   height="44"
-                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
                   stroke="#2c3e50"
+                  fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  className="h-5 w-5 stroke-white/60"
-                  viewBox="0 0 24 24"
                 >
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"></path>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <line x1="8" y1="11" x2="8" y2="16" />
+                  <line x1="8" y1="8" x2="8" y2="8.01" />
+                  <line x1="12" y1="16" x2="12" y2="11" />
+                  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
                 </svg>
                 <span>naimulcsx</span>
               </a>
