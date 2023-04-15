@@ -28,6 +28,26 @@ export default function AboutPage() {
           architecture and how to leverage cloud technologies to build scalable
           software solutions.
         </p>
+        <h4>Key Technologies and Methodologies</h4>
+        <ul className="font-light">
+          <li>
+            JavaScript (ES6/ES2015), TypeScript, React (Hook, Context API,
+            Component Design Patterns), Redux, React Query, Jest, Mocha,
+            Cypress, Vite, Vitest
+          </li>
+          <li>
+            Next.js, Remix, Node.js (Express / NestJS), BullMQ, REST, GraphQL,
+            TRPC, TypeORM, Prisma, PostgreSQL, Redis, Elasticsearch
+          </li>
+          <li>
+            Linux CLI, Git, Github, Github Actions, Husky, Prettier, ESLint,
+            Commitizen, CommitLint, Docker, Docker Compose, Docker Swarm
+          </li>
+          <li>
+            DigitalOcean, AWS EC2, ECS, Fargate, S3, RDS, SQS, ECR, CodeCommit,
+            CodeBuild, CodePipeline
+          </li>
+        </ul>
       </div>
     </PageTransition>
   );

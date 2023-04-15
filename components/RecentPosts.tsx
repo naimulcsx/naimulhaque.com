@@ -8,6 +8,7 @@ export function RecentPosts() {
         Recent Articles
       </h1>
       {allBlogs
+        .filter((post) => !post.draft)
         .sort((a, b) => {
           if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
             return -1;

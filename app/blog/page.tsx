@@ -14,6 +14,7 @@ export default async function BlogPage() {
       <section>
         <h1 className="font-bold text-3xl mb-5 text-white mb-8">Blog</h1>
         {allBlogs
+          .filter((post) => !post.draft)
           .sort((a, b) => {
             if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
               return -1;

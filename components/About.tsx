@@ -16,8 +16,10 @@ export function About() {
             />
           </div>
           <div className="">
-            <h1 className="font-heading text-3xl md:text-4xl font-medium tracking-tight">
-              <span className="text-white">Naimul Haque</span>
+            <h1 className="font-heading text-3xl md:text-5xl font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-indigo-400 via-pink-500 to-orange-500 bg-clip-text text-transparent">
+                Naimul Haque
+              </span>
             </h1>
             <p className="mt-2 text-lg md:text-2xl text-zinc-300 font-light">
               Software Engineer &amp; Cloud Enthusiast
@@ -84,26 +86,6 @@ export function About() {
             technologies and writing articles. This is my place for my Thoughts
             and Reflections. Have a good read!
           </p>
-          <h4>Key Technologies and Methodologies</h4>
-          <ul className="font-light">
-            <li>
-              JavaScript (ES6/ES2015), TypeScript, React (Hook, Context API,
-              Component Design Patterns), Redux, React Query, Jest, Mocha,
-              Cypress, Vite, Vitest
-            </li>
-            <li>
-              Next.js, Remix, Node.js (Express / NestJS), BullMQ, REST, GraphQL,
-              TRPC, TypeORM, Prisma, PostgreSQL, Redis, Elasticsearch
-            </li>
-            <li>
-              Linux CLI, Git, Github, Github Actions, Husky, Prettier, ESLint,
-              Commitizen, CommitLint, Docker, Docker Compose, Docker Swarm
-            </li>
-            <li>
-              DigitalOcean, AWS EC2, ECS, Fargate, S3, RDS, SQS, ECR,
-              CodeCommit, CodeBuild, CodePipeline
-            </li>
-          </ul>
         </div>
       </div>
     </section>
