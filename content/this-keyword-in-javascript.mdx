@@ -1,0 +1,132 @@
+---
+title: "Demystifying the `this` keyword in JavaScript"
+publishedAt: "2023-04-15"
+summary: "Master the dynamic behavior of the "this" keyword in JavaScript. Gain a solid understanding of its behavior in different contexts, including global context, function context, object methods, constructors, and event handlers."
+---
+
+In JavaScript, the this keyword refers to the current context or the current object that is executing the code. It represents the object that is currently being referred to or operated upon within the code. The value of this is determined at runtime and can vary depending on how a function is invoked or where it is used.
+
+The behavior of the this keyword in JavaScript can be sometimes confusing, especially for developers who are new to the language or have limited experience with its nuances. The reason why this can be confusing is that it behaves differently in different contexts, such as global context, function context, constructor context, event handler context etc.
+
+## **Context 1: In the global context**
+
+The value of this in the global context is the global object itself. In a web browser environment, `this` is the `window` object, and in a Node.js environment, `this` is the `global` object.
+
+```jsx
+console.log(this === global); // true
+```
+
+## **Context 2: When a function is called as a method of an object**
+
+When a function is called as a method of an object, this is bound to the object that the method is called on.
+
+```jsx
+const person = {
+  name: "Naimul",
+  greet: function () {
+    // this refers to the `person` object
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+person.greet(); // Hello, my name is Naimul
+```
+
+## **Context 3: Inside a regular function**
+
+When a function is called without a context, this is bound to the global object in non-strict mode, or undefined in strict mode. It will produce an error in strict mode if we want to access some property of undefined.
+
+```jsx
+function sayHello() {
+  // `this` refers to the `global` object
+  console.log(`Hello, my name is ${this.name}`);
+}
+
+sayHello(); // Hello, my name is undefined
+```
+
+## **Context 4: When a function is called with `call`, `apply`, or `bind`**
+
+When a function is called with call, apply, or bind, this is bound to the first argument passed to the method. For example:
+
+```jsx
+const person = {
+  name: "Naimul",
+};
+function sayHello() {
+  console.log(`Hello, my name is ${this.name}`);
+}
+sayHello(); // Hello, my name is undefined
+sayHello.call(person); // Hello, my name is Naimul
+```
+
+In this example, the sayHello function is called with the call method, which sets this to the person object, so the output is "Hello, my name is John".
+
+## Context 5: **When a function is called as a constructor**
+
+When a function is called as a constructor with the `new` keyword, `this` is bound to the newly created object. For example:
+
+```jsx
+// `this` refers to the newly created object which is returned by the new Person() call
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const me = new Person("Naimul", 26);
+console.log(me); // Person { name: 'Naimul', age: 26 }
+```
+
+## Context 6: Inner function or callback function defined inside a method
+
+```jsx
+const myFriend = {
+  fullName: "Tanveer Kader",
+  greet: function () {
+    const self = this;
+
+    // inside the callback `this` refers to the `Timeout` object
+    setTimeout(function () {
+      console.log("inside callback", this === self);
+    }, 0);
+
+    // inside the getGreetingMessage `this` refers to the `global` object
+    function showGreetingMessage() {
+      console.log(`Hello, my name is ${this.fullName}`);
+      console.log("inside nested function", this === self);
+    }
+
+    showGreetingMessage();
+  },
+};
+
+myFriend.greet();
+```
+
+The value of `this` in the `getGreetingMessage()` function is the global object, because it is being invoked as a standalone function and not as a method of any object. It does not inherit the `this` value of the outer schop. To fix this issue, we can take several approach
+
+- Storing the `this` variable in a `self` variable
+- Calling the function with `call`, `bind` or `apply`
+- Using arrow functions
+
+To fix this, we’ll convert our regular functions into arrow functions.
+
+```jsx
+const anotherPerson = {
+  fullName: "John Doe",
+  greet: function () {
+    const self = this;
+
+    setTimeout(() => {
+      console.log("inside callback", this === self);
+    }, 0);
+
+    const showGreetingMessage = () => {
+      console.log(`Hello, my name is ${this.fullName}`);
+      console.log("inside nested function", this === self);
+    };
+
+    showGreetingMessage();
+  },
+};
+anotherPerson.greet();
+```

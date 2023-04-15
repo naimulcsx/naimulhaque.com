@@ -1,4 +1,4 @@
-import { Figtree, Inter } from "next/font/google";
+import { Figtree } from "next/font/google";
 import { Footer, Navbar } from "~/components";
 import "./globals.css";
 
