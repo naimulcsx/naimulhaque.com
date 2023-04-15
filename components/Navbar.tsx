@@ -69,7 +69,7 @@ export function Navbar() {
                 <Link
                   href={href}
                   className={clsx(
-                    "link-underline text-[15px] relative rounded px-3 md:px-4 py-3 text-light hover:text-emerald-400 transition duration-300",
+                    "link-underline text-sm md:text-base tracking-tighter relative rounded px-3 md:px-4 py-3 text-light hover:text-emerald-400 transition duration-300",
                     pathname === href ? "text-emerald-400" : ""
                   )}
                 >

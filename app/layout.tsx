@@ -1,4 +1,4 @@
-import { Figtree } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { Footer, Navbar } from "~/components";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
@@ -12,7 +12,10 @@ export const metadata = {
   },
 };
 
-const figtree = Figtree({ subsets: ["latin"] });
+const font = Space_Grotesk({
+  weight: ["300", "400", "600"],
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -20,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={figtree.className}>
+    <html lang="en" className={font.className}>
       <body className="bg-[#161513] min-h-screen">
         <div className="relative max-w-4xl px-6 sm:px-8 md:px-16 mx-auto">
           <Navbar />
