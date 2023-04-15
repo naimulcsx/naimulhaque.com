@@ -4,21 +4,23 @@ publishedAt: "2023-04-15"
 summary: "Master the dynamic behavior of the `this` keyword in JavaScript. Gain a solid understanding of its behavior in different contexts, including global context, function context, object methods, constructors, and event handlers."
 ---
 
-In JavaScript, the this keyword refers to the current context or the current object that is executing the code. It represents the object that is currently being referred to or operated upon within the code. The value of this is determined at runtime and can vary depending on how a function is invoked or where it is used.
+In JavaScript, the `this` keyword refers to the current context or the current object that is executing the code. It represents the object that is currently being referred to or operated upon within the code. The value of `this` is determined at runtime and can vary depending on how a function is invoked or where it is used.
 
-The behavior of the this keyword in JavaScript can be sometimes confusing, especially for developers who are new to the language or have limited experience with its nuances. The reason why this can be confusing is that it behaves differently in different contexts, such as global context, function context, constructor context, event handler context etc.
+The behavior of the `this` keyword in JavaScript can be sometimes confusing, especially for developers who are new to the language or have limited experience with its nuances. The reason why it can be confusing is that it behaves differently in different contexts, such as global context, function context, constructor context, event handler context etc.
 
-## **Context 1: In the global context**
+In today's article, I will show you the value of the `this` keyword in different contexts. Let's dive in and unravel the mysteries of the this keyword!
 
-The value of this in the global context is the global object itself. In a web browser environment, `this` is the `window` object, and in a Node.js environment, `this` is the `global` object.
+## **Context 1: In global context**
+
+The value of `this` in the global context is the `global` object itself. In a web browser environment, `this` is the `window` object, and in a Node.js environment, `this` is the `global` object.
 
 ```jsx
 console.log(this === global); // true
 ```
 
-## **Context 2: When a function is called as a method of an object**
+## **Context 2: Object Method Binding**
 
-When a function is called as a method of an object, this is bound to the object that the method is called on.
+When a method is called in an object, `this` is bound to the object that the method is called on.
 
 ```jsx
 const person = {
@@ -32,22 +34,23 @@ const person = {
 person.greet(); // Hello, my name is Naimul
 ```
 
-## **Context 3: Inside a regular function**
+## **Context 3: In a function**
 
-When a function is called without a context, this is bound to the global object in non-strict mode, or undefined in strict mode. It will produce an error in strict mode if we want to access some property of undefined.
+When a function is called without a context, `this` is bound to the `global` object in non-strict mode, or `undefined` in strict mode. It will produce an error in strict mode because in that case we are trying to access some property of `undefined`.
 
 ```jsx
 function sayHello() {
-  // `this` refers to the `global` object
+  // in strict mode, `this` will be `undefined`
+  // in non-strict mode, `this` refers to the `global` object
   console.log(`Hello, my name is ${this.name}`);
 }
 
 sayHello(); // Hello, my name is undefined
 ```
 
-## **Context 4: When a function is called with `call`, `apply`, or `bind`**
+## **Context 4: Explicit function binding with `call`, `apply`, or `bind`**
 
-When a function is called with call, apply, or bind, this is bound to the first argument passed to the method. For example:
+When a function is called with `call`, `apply`, or `bind`, `this` is bound to the first argument passed to the method. For example:
 
 ```jsx
 const person = {
@@ -60,9 +63,9 @@ sayHello(); // Hello, my name is undefined
 sayHello.call(person); // Hello, my name is Naimul
 ```
 
-In this example, the sayHello function is called with the call method, which sets this to the person object, so the output is "Hello, my name is John".
+In this example, the `sayHello` function is called with the `call` method, which sets this to the person object, so the output is "Hello, my name is John".
 
-## Context 5: **When a function is called as a constructor**
+## Context 5: **Constructor functions**
 
 When a function is called as a constructor with the `new` keyword, `this` is bound to the newly created object. For example:
 
@@ -76,7 +79,7 @@ const me = new Person("Naimul", 26);
 console.log(me); // Person { name: 'Naimul', age: 26 }
 ```
 
-## Context 6: Inner function or callback function defined inside a method
+## Context 6: Nested function / event handler defined inside a method
 
 ```jsx
 const myFriend = {
@@ -102,13 +105,13 @@ const myFriend = {
 myFriend.greet();
 ```
 
-The value of `this` in the `getGreetingMessage()` function is the global object, because it is being invoked as a standalone function and not as a method of any object. It does not inherit the `this` value of the outer schop. To fix this issue, we can take several approach
+The value of `this` in the `getGreetingMessage()` function is the `global` object, because it is being invoked as a standalone function and not as a method of any object. It does not inherit the `this` value of the outer schop. To fix this issue, we can take several approach
 
 - Storing the `this` variable in a `self` variable
 - Calling the function with `call`, `bind` or `apply`
 - Using arrow functions
 
-To fix this, we’ll convert our regular functions into arrow functions.
+To fix this, we&apos;ll convert our regular functions into arrow functions.
 
 ```jsx
 const anotherPerson = {
@@ -130,3 +133,9 @@ const anotherPerson = {
 };
 anotherPerson.greet();
 ```
+
+By changing these regular functions to arrow functions, the `this` value is no longer redefined within the function, and instead, it inherits the `this` value from the surrounding myFriend object. This allows the arrow functions to access the correct `this` value, which is the myFriend object, and fix the issue with `this` not pointing to the right object.
+
+The topic of arrow functions is broad and can require its own in-depth exploration. In a future article, we can dive deeper into advanced concepts related to arrow functions, such as lexical scoping, handling of arguments, and best practices for their usage in different scenarios.
+
+In conclusion, understanding the behavior of the `this` keyword in different contexts is crucial for writing effective JavaScript code. Arrow functions can be a powerful tool in maintaining the desired this value from an outer scope. However, it's important to be mindful of their limitations and use them appropriately.
