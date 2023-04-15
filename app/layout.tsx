@@ -1,11 +1,15 @@
 import { Figtree } from "next/font/google";
 import { Footer, Navbar } from "~/components";
 import "./globals.css";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata = {
   title: "Naimul Haque",
   description:
     "Love Programming? Hello, I am Naimul Haque. I write blogs about programming, algorithms, mathematics, web development and other related stuffs.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 const figtree = Figtree({ subsets: ["latin"] });
@@ -24,6 +28,7 @@ export default function RootLayout({
             <div>{children}</div>
           </main>
           <Footer />
+          <NextTopLoader color="#22c55e" />
         </div>
       </body>
     </html>
