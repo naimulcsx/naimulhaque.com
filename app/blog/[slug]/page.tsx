@@ -8,7 +8,10 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   return {
     title: `${post?.title} - Naimul Haque`,
     openGraph: {
+      type: "article",
       title: `${post?.title} - Naimul Haque`,
+      description: post?.summary,
+      publishedTime: new Date(post!.publishedAt),
       images: [
         {
           url: `https://www.naimulhaque.com/api/og?title=${post?.title}`,
