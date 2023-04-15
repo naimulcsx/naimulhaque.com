@@ -9,7 +9,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     title: `${post?.title} - Naimul Haque`,
     openGraph: {
       title: `${post?.title} - Naimul Haque`,
-      images: [`http://localhost:3000/api/og?title=${post?.title}`],
+      images: [
+        {
+          url: `http://localhost:3000/api/og?title=${post?.title}`,
+          width: 1920,
+          height: 1080,
+        },
+      ],
     },
   };
 }
