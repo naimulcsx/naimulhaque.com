@@ -11,12 +11,14 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       title: `${post?.title} - Naimul Haque`,
       images: [
         {
-          url: `http://localhost:3000/api/og?title=${post?.title}`,
+          url: `https://www.naimulhaque.com/api/og?title=${post?.title}`,
           width: 1920,
           height: 1080,
         },
       ],
     },
+    locale: "en-US",
+    type: "website",
   };
 }
 
