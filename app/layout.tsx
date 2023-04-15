@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={figtree.className}>
       <body className="bg-[#161513] min-h-screen">
-        <div className="relative max-w-4xl px-8 md:px-16 mx-auto">
+        <div className="relative max-w-4xl px-6 sm:px-8 md:px-16 mx-auto">
           <Navbar />
           <main className="pt-24 md:pt-32">
             <div>{children}</div>

@@ -40,7 +40,7 @@ export function Navbar() {
           : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-full max-w-4xl items-center justify-between px-8 md:px-16">
+      <div className="mx-auto flex h-full max-w-4xl items-center justify-between px-6 sm:px-8 md:px-16">
         <div className="flex items-center justify-between text-xl font-medium">
           <Link className="font-heading text-base md:text-xl" href="/">
             <div>

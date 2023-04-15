@@ -5,7 +5,13 @@ import { PageTransition } from "~/components";
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
-  return { title: `${post?.title} - Naimul Haque` };
+  return {
+    title: `${post?.title} - Naimul Haque`,
+    openGraph: {
+      title: `${post?.title} - Naimul Haque`,
+      images: [`http://localhost:3000/api/og?title=${post?.title}`],
+    },
+  };
 }
 
 export async function generateStaticParams() {
