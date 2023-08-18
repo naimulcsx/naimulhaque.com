@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import GithubSlugger from "github-slugger";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -36,7 +37,26 @@ export const Blog = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (post) => post._raw.flattenedPath,
+      resolve: (doc) => doc._raw.flattenedPath,
+    },
+    headings: {
+      type: "json",
+      resolve: async (doc) => {
+        const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+        const slugger = new GithubSlugger();
+        const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+          ({ groups }) => {
+            const flag = groups?.flag;
+            const content = groups?.content;
+            return {
+              level: flag.length,
+              text: content,
+              slug: content ? slugger.slug(content) : undefined,
+            };
+          }
+        );
+        return headings;
+      },
     },
   },
 }));
@@ -52,8 +72,8 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark-dimmed",
-          // keepBackground: true,
+          theme: "material-theme-darker",
+          keepBackground: true,
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted

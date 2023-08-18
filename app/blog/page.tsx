@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import moment from "moment";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { allBlogs } from "~/.contentlayer/generated";
-import { PageTransition } from "~/components";
+import { Container } from "~/components/common";
 
 export const metadata: Metadata = {
   title: "Blog - Naimul Haque",
@@ -10,9 +11,9 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
   return (
-    <PageTransition>
-      <section>
-        <h1 className="font-bold text-3xl mb-5 text-white mb-8">Blog</h1>
+    <section className="mb-16 mt-32 lg:mb-20 lg:mt-40">
+      <Container>
+        <h1 className="mb-5 mb-8 text-3xl font-bold text-white">Blog</h1>
         {allBlogs
           .filter((post) => !post.draft)
           .sort((a, b) => {
@@ -24,20 +25,20 @@ export default async function BlogPage() {
           .map((post) => (
             <Link
               key={post.slug}
-              className="flex flex-col space-y-1 mb-4"
+              className="mb-4 flex flex-col space-y-1"
               href={`/blog/${post.slug}`}
             >
-              <div className="w-full flex flex-col md:flex-row md:items-center">
-                <p className="text-zinc-400 text-sm md:text-base md:basis-[160px]">
-                  {post.publishedAt}
+              <div className="flex w-full flex-col md:flex-row md:items-center">
+                <p className="text-sm text-zinc-400 md:basis-[256px] md:text-base">
+                  {moment(post.publishedAt).format("MMMM Do, YYYY")}{" "}
                 </p>
-                <h2 className="text-base md:text-xl text-zinc-300 font-light">
+                <h2 className="text-base font-light text-zinc-300 md:text-xl">
                   {post.title}
                 </h2>
               </div>
             </Link>
           ))}
-      </section>
-    </PageTransition>
+      </Container>
+    </section>
   );
 }

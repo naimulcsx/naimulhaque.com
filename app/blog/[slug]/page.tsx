@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { allBlogs } from "contentlayer/generated";
-import { MdxContent } from "~/components/MdxContent";
-import { PageTransition } from "~/components";
+import { MdxContent, TableOfContents } from "~/components/modules/blog";
+import { Container } from "~/components/common";
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
@@ -33,27 +33,26 @@ export async function generateStaticParams() {
 
 export default async function Blog({ params }: { params: { slug: string } }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
-
   if (!post) {
     notFound();
   }
-
   return (
-    <PageTransition>
-      <section className="mt-6">
-        <h1 className="font-bold text-3xl md:text-4xl bg-gradient-to-r from-indigo-400 from-10% via-pink-400 via-30% to-orange-500 to-90% bg-clip-text text-transparent">
-          {post.title}
-        </h1>
-        <div className="grid grid-cols-[auto_1fr_auto] items-center my-8 font-mono text-sm">
-          <div className="bg-white/5 rounded-md text-zinc-400 px-2 py-1 tracking-tighter">
-            {post.publishedAt}
+    <>
+      <section>
+        <Container>
+          <div className="mt-32 grid grid-cols-7 gap-12 lg:mt-40 lg:mb-20">
+            <article className="prose col-span-7 max-w-none space-y-6 dark:prose-invert lg:prose-lg lg:col-span-5">
+              <h1>{post.title}</h1>
+              <MdxContent code={post.body.code} />
+            </article>
+            <div className="hidden lg:col-span-2 lg:block">
+              <aside className="sticky top-28">
+                <TableOfContents headings={post.headings} />
+              </aside>
+            </div>
           </div>
-          <div className="h-[0.2em] bg-white/10 mx-2 w-full" />
-        </div>
-        <article className="prose md:prose-lg prose-invert prose-p:font-light space-y-6 prose-pre:bg-transparent prose-pre:border prose-pre:border-white/[0.15] prose-headings:font-semibold prose-strong:font-semibold">
-          <MdxContent code={post.body.code} />
-        </article>
+        </Container>
       </section>
-    </PageTransition>
+    </>
   );
 }
