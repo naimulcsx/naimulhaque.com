@@ -63,10 +63,26 @@ export function TableOfContents({ headings }: TableOfContentProps) {
           <div key={`#${heading.slug}`}>
             <a
               href={`#${heading.slug}`}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector("#" + heading.slug);
+                if (element) {
+                  const y =
+                    element.getBoundingClientRect().top +
+                    window.pageYOffset +
+                    -100;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                  window.history.pushState(
+                    null,
+                    "",
+                    window.location.pathname + "#" + heading.slug
+                  );
+                }
+              }}
               style={{
                 paddingLeft: heading.level <= 2 ? 16 : (heading.level - 1) * 16,
               }}
-              className={`block border-l-2 py-1.5 text-base ${
+              className={`block border-l-2 py-1.5 text-sm ${
                 active === idx
                   ? "border-primary font-medium text-white"
                   : "border-gray-800 text-gray-400"
