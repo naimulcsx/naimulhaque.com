@@ -1,3 +1,4 @@
+import moment from "moment";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allBlogs } from "~/.contentlayer/generated";
@@ -29,8 +30,8 @@ export default async function BlogPage() {
               href={`/blog/${post.slug}`}
             >
               <div className="flex w-full flex-col md:flex-row md:items-center">
-                <p className="text-sm text-zinc-400 md:basis-[160px] md:text-base">
-                  {post.publishedAt}
+                <p className="text-sm text-zinc-400 md:basis-[256px] md:text-base">
+                  {moment(post.publishedAt).format("MMMM Do, YYYY")}{" "}
                 </p>
                 <h2 className="text-base font-light text-zinc-300 md:text-xl">
                   {post.title}

@@ -28,7 +28,7 @@ export function RecentPosts() {
             .slice(0, 5)
             .map((post) => (
               <div key={post._id} className="flex w-full flex-col md:flex-row">
-                <div className="shrink-0 text-gray-400 dark:text-gray-400 md:basis-[256px]">
+                <div className="mb-2 shrink-0 text-base text-gray-400 dark:text-gray-400 md:basis-[256px]">
                   {moment(post.publishedAt).format("MMMM Do, YYYY")}
                 </div>
                 <div className="space-y-4">
