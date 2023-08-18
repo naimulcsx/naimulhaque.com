@@ -1,5 +1,4 @@
-import { PageTransition } from "~/components";
-import { Container } from "~/components/Container";
+import { Container } from "~/components/common";
 
 export const metadata = {
   title: "About - Naimul Haque",

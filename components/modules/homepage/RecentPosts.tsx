@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { allBlogs } from "~/.contentlayer/generated";
-import { Container } from "./Container";
+import { Container } from "../../common/Container";
 import moment from "moment";
 
 export function RecentPosts() {

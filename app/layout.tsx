@@ -1,7 +1,6 @@
-import { Inter, Plus_Jakarta_Sans, Rubik } from "next/font/google";
-import { Footer, Navbar } from "~/components";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { Footer, Navbar } from "~/components/common";
 import NextTopLoader from "nextjs-toploader";
-import { headers } from "next/headers";
 import "./globals.css";
 
 export const metadata = {

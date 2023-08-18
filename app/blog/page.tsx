@@ -1,9 +1,8 @@
 import moment from "moment";
-import type { Metadata } from "next";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { allBlogs } from "~/.contentlayer/generated";
-import { PageTransition } from "~/components";
-import { Container } from "~/components/Container";
+import { Container } from "~/components/common";
 
 export const metadata: Metadata = {
   title: "Blog - Naimul Haque",

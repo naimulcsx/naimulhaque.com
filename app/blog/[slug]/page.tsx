@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import { allBlogs } from "contentlayer/generated";
-import { MdxContent } from "~/components/MdxContent";
-import { TableOfContents } from "~/components/TableOfContents";
-import { Container } from "~/components/Container";
+import { MdxContent, TableOfContents } from "~/components/modules/blog";
+import { Container } from "~/components/common";
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
