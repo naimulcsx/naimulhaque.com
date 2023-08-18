@@ -1,7 +1,8 @@
-import { Space_Grotesk } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Rubik } from "next/font/google";
 import { Footer, Navbar } from "~/components";
-import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+import { headers } from "next/headers";
+import "./globals.css";
 
 export const metadata = {
   title: "Naimul Haque",
@@ -12,8 +13,8 @@ export const metadata = {
   },
 };
 
-const font = Space_Grotesk({
-  weight: ["300", "400", "600"],
+const font = Plus_Jakarta_Sans({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -24,15 +25,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={font.className}>
-      <body className="bg-[#161513] min-h-screen">
-        <div className="relative max-w-4xl px-6 sm:px-8 md:px-16 mx-auto">
-          <Navbar />
-          <main className="pt-24 md:pt-32">
-            <div>{children}</div>
-          </main>
-          <Footer />
-          <NextTopLoader color="#22c55e" />
-        </div>
+      <body className="dark bg-[#111] text-gray-400 antialiased lg:text-lg">
+        <Navbar />
+        <main className="">
+          <div>{children}</div>
+        </main>
+        <Footer />
+        <NextTopLoader color="#06a6d1" />
       </body>
     </html>
   );

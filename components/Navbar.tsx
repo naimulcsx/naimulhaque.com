@@ -6,27 +6,28 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
+import { Container } from "./Container";
 
 const links = [
   ["Home", "/"],
-  ["Blog", "/blog"],
   ["About", "/about"],
+  ["Blog", "/blog"],
 ];
 
 export function Navbar() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
-  let height = useMotionValue(72);
+  let height = useMotionValue(96);
   let [active, setActive] = useState(false);
 
   useEffect(() => {
     return scrollY.on("change", (current) => {
-      setActive(current > 100);
+      setActive(current > 50);
       let diff = current - scrollY.getPrevious();
       if (diff > 0) {
-        height.set(Math.max(64, height.get() - diff));
+        height.set(Math.max(80, height.get() - diff));
       } else {
-        height.set(Math.min(72, height.get() - diff));
+        height.set(Math.min(90, height.get() - diff));
       }
     });
   }, []); // eslint-disable-line
@@ -35,54 +36,77 @@ export function Navbar() {
     <motion.header
       style={{ height }}
       transition={{ delay: 0 }}
-      className={`fixed inset-x-0 h-20 text-white z-20 transition-all border-b duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-20 h-20 border-b transition-all duration-300 ${
         active
-          ? "bg-[#1C1C22]/50 backdrop-blur-md border-white/5"
+          ? "border-white/10 bg-[#111]/50 shadow-lg shadow-blue-900/[0.05] backdrop-blur-md"
           : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-full max-w-4xl items-center justify-between px-6 sm:px-8 md:px-16">
-        <div className="flex items-center justify-between text-xl font-medium">
-          <Link
-            className="flex items-center font-heading text-base md:text-lg"
-            href="/"
-          >
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={40}
-              height={40}
-              className="w-8 h-8 rounded-lg"
-            />
-            <div className="ml-2">
-              <span className="relative bottom-px text-emerald-500">
-                ~/naimul
-              </span>
-              <span className="ml-1 animate-ping">_</span>
-            </div>
-          </Link>
+      <Container>
+        <div className="flex h-full items-center justify-between">
+          <div className="flex items-center justify-between text-xl font-medium">
+            <Link
+              className="font-heading flex items-center text-base md:text-lg"
+              href="/"
+            >
+              <Image
+                src="/images/naimul-haque.jpg"
+                className="mx-auto h-12 w-12 rounded-full"
+                alt="Naimul Haque"
+                width={256}
+                height={256}
+                quality={100}
+              />
+              <div className="ml-4 lg:block">
+                <span className="text-xl font-bold text-white">
+                  Naimul Haque
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div className="lg:hidden">
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="#fff"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 12h18M3 6h18M3 18h18"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <ul className="hidden lg:flex">
+            {links.map(([text, href], idx) => {
+              const active =
+                (pathname?.includes(href) && href !== "/") || pathname === href;
+              return (
+                <li key={idx}>
+                  <Link
+                    href={href}
+                    className={clsx(
+                      "link-underline relative rounded px-3 py-2 text-base font-medium tracking-tighter md:px-4",
+                      active ? "text-white" : ""
+                    )}
+                  >
+                    {text}
+                    {active && (
+                      <span className="absolute inset-x-3 -bottom-px h-[2px] bg-primary"></span>
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-        <ul className="flex">
-          {links.map(([text, href], idx) => {
-            return (
-              <li key={idx}>
-                <Link
-                  href={href}
-                  className={clsx(
-                    "link-underline text-sm md:text-base tracking-tighter relative rounded px-3 md:px-4 py-3 text-light hover:text-emerald-400 transition duration-300",
-                    pathname === href ? "text-emerald-400" : ""
-                  )}
-                >
-                  {text}
-                  {pathname === href && (
-                    <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
-                  )}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      </Container>
     </motion.header>
   );
 }
