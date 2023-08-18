@@ -1,12 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useMotionValue, useScroll } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useScroll,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
 import { Container } from "./Container";
+import { MobileMenu } from "./MobileMenu";
 
 const links = [
   ["Home", "/"],
@@ -19,6 +25,7 @@ export function Navbar() {
   const { scrollY } = useScroll();
   let height = useMotionValue(96);
   let [active, setActive] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     return scrollY.on("change", (current) => {
@@ -65,7 +72,7 @@ export function Navbar() {
             </Link>
           </div>
           <div className="lg:hidden">
-            <button>
+            <button onClick={() => setMenuOpen(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -82,6 +89,9 @@ export function Navbar() {
                 ></path>
               </svg>
             </button>
+            <AnimatePresence>
+              {menuOpen && <MobileMenu setMenuOpen={setMenuOpen} />}
+            </AnimatePresence>
           </div>
           <ul className="hidden lg:flex">
             {links.map(([text, href], idx) => {
