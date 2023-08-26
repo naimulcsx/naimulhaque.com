@@ -7,29 +7,40 @@ summary: "An exploration of the values of JavaScript's 'this' keyword in differe
 The `this` keyword in JavaScript is a unique identifier in JavaScript whose value is determined at runtime and can vary depending where you are using it. As a result, the behavior of the `this` keyword seems confusing to many people, especially to those who are new to the language or have limited experience with its nuances.
 
 <Callout>
-  Are you are coming from a different programming languages e.g. C++, Java, C#,
-  PHP etc, whree the `this` keyword represents the current instance of the
-  class? I've a bad news for you. JavaScript's `this` keyword very differently.
+  If you are coming from a different language e.g. C++, Java, C# etc, where the
+  `this` keyword represents the current instance of a class, I've a bad news for
+  you. JavaScript's `this` keyword is not the same. So it's better not to
+  compare with the languages you already know.
 </Callout>
 
 This article aims to explore the value of the `this` keyword in different contexts. Let's dive in and unveil the mysteries of the `this` keyword!
 
-## Global context
+## `this` in Global scope
 
-When we use the `this` keyword in the global scope (i.e. outside any function), it's value refers to the _global object_. Now what is the global object in JavaScript?
+When we use the `this` keyword in the global scope (i.e. outside any function), it's value refers to the _global object_.
 
 ### Global object
 
 The global object is the top-level object in the scope chain and acts as a container for all global variables (defined with the `var` keyword), functions, and objects.
 
-In the browser environment, the global object is the `window` object. It provides access to various properties and methods related to the browser environment. Global functions like `console.log`, `parseInt()`, `setTimeout()` or global objects like `Date` are actually properties of the `window` object.
+#### Web Browsers
+
+In the browser environment, the global object is the `window` object. It provides access to various properties and methods related to the browser environment.
 
 ```js
-console.log(this === window); // true
+console.log(this); // the window object
+console.log(window); // same as previous statement
+```
+
+Global functions like `console.log`, `parseInt`, `setTimeout` or global objects like `Date` are properties of the `window` object.
+
+```js
 console.log(console === window.console); // true
 console.log(setTimeout === window.setTimeout); // true
 console.log(document === window.document); // true
 ```
+
+#### Node.js
 
 In Node.js environment, the global object is `global` object. It sounds strange as sentence, but the name of the object is `global`. It's similar to how the `window` object is used in browsers but designed for server-side JavaScript execution.
 
@@ -38,7 +49,7 @@ console.log(this === global); // true
 console.log(this === global.setTimeout); // true
 ```
 
-## Function context
+## `this` inside Functions
 
 When a function is called, the value of the `this` keyword refers to the global object in non-strict mode, or `undefined` in strict mode.
 
@@ -113,13 +124,9 @@ sayHelloWithPerson();
   "Hello".
 </Callout>
 
-## Object method binding
+## `this` inside methods
 
-When a method is called on an object in JavaScript, the `this` keyword inside that method refers to the object itself. This behavior is known as _method binding_ and it's a fundamental aspect of how object-oriented programming works in JavaScript.
-
-### Example
-
-Let's look at the following example
+When a method is called on an object in JavaScript, the `this` keyword inside that method refers to the object itself. This behavior is known as _method binding_ and it's a fundamental aspect of how object-oriented programming works in JavaScript. Let's look at the following example
 
 ```js
 const person = {
@@ -201,7 +208,7 @@ The topic of arrow functions is broad and can require its own in-depth explorati
 
 When a function is called as a constructor with the `new` keyword, `this` is bound to the newly created object. For example:
 
-```jsx
+```js
 // `this` refers to the newly created object which is returned by the new Person() call
 function Person(name, age) {
   this.name = name;
@@ -209,6 +216,34 @@ function Person(name, age) {
 }
 const me = new Person("Naimul", 26);
 console.log(me); // Person { name: 'Naimul', age: 26 }
+```
+
+## `this` inside callback functions
+
+Callback functions are functions that you pass to another function as an argument, so that they can be executed after some async operation (most of the time, but not always). Let's try to assume what will be the output of the following function
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  setTimeout(function () {
+    console.log(this); // Window {...}
+  }, 1000);
+}
+const me = new Person("Naimul", 26);
+```
+
+To fix this you can either explicitly bind the function to the proper `this` value or you can use arrow functions.
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  setTimeout(() => {
+    console.log(this); // Person { name: 'Naimul', age: 26 }
+  }, 1000);
+}
+const me = new Person("Naimul", 26);
 ```
 
 In conclusion, I hope this article has shed some light on the `this` keyword and now you understand it clearly in various contexts.
