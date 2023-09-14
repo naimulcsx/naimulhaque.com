@@ -1,5 +1,6 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Callout } from "../../mdx-components/Callout";
+import { Pre } from "~/components/mdx-components/Pre";
 
 export interface MdxContentProps {
   code: string;
@@ -7,6 +8,7 @@ export interface MdxContentProps {
 
 const mdxComponents = {
   Callout,
+  Pre,
 };
 
 export function MdxContent({ code }: MdxContentProps) {

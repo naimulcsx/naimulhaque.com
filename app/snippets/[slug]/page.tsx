@@ -41,8 +41,13 @@ export default async function Blog({ params }: { params: { slug: string } }) {
       <section>
         <Container>
           <div className="mt-32 lg:mt-40 lg:mb-20">
+            <div className="space-y-4">
+              <h1 className="pb-0 text-5xl font-bold text-stone-200">
+                {snippet.title}
+              </h1>
+              <p>{snippet.summary}</p>
+            </div>
             <article className="prose col-span-7 max-w-none space-y-6 dark:prose-invert lg:prose-lg lg:col-span-5">
-              <h1>{snippet.title}</h1>
               <MdxContent code={snippet.body.code} />
             </article>
           </div>

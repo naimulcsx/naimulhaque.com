@@ -18,6 +18,10 @@ export const Snippet = defineDocumentType(() => ({
       description: "The title of the snippet",
       required: true,
     },
+    language: {
+      type: "string",
+      required: true,
+    },
     publishedAt: {
       type: "string",
       required: true,

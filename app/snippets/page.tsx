@@ -13,7 +13,9 @@ export default async function BlogPage() {
   return (
     <section className="mb-16 mt-32 lg:mb-20 lg:mt-40">
       <Container>
-        <h1 className="mb-5 mb-8 text-3xl font-bold text-neutral-200">Blog</h1>
+        <h1 className="mb-5 mb-8 text-3xl font-bold text-neutral-200">
+          Snippets
+        </h1>
         {allSnippets
           .filter((snippet) => !snippet.draft)
           .sort((a, b) => {
