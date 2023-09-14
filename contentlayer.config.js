@@ -10,7 +10,7 @@ import { basename } from "path";
 
 export const Snippet = defineDocumentType(() => ({
   name: "Snippet",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `snippets/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -46,7 +46,7 @@ export const Snippet = defineDocumentType(() => ({
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `posts/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {

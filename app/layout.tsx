@@ -30,7 +30,7 @@ export default function RootLayout({
           <div>{children}</div>
         </main>
         <Footer />
-        <NextTopLoader color="#FACC15" />
+        <NextTopLoader color="#FACC15" showSpinner={false} />
       </body>
     </html>
   );

@@ -18,7 +18,7 @@ export default function UsesPage() {
           everyday life.
         </p>
 
-        <div className="mt-8 grid grid-cols-2 gap-20">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-20">
           <div className="prose">
             <h2 className="text-3xl">
               Office Setup{" "}
