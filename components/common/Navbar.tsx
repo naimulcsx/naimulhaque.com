@@ -9,15 +9,15 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import Image from "next/image";
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
+import clsx from "clsx";
 
 const links = [
   ["Home", "/"],
   ["Uses", "/uses"],
-  ["Snippet", "/snippets"],
+  ["Snippets", "/snippets"],
   ["Blog", "/blog"],
 ];
 
