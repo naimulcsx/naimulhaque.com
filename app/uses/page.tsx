@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import { Container } from "~/components/common";
+
+export const metadata: Metadata = {
+  title: "Uses - Naimul Haque",
+};
 
 export default function UsesPage() {
   return (

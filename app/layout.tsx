@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "Love Programming? Hello, I am Naimul Haque. I write blogs about programming, algorithms, mathematics, web development and other related stuffs.",
   icons: {
-    icon: "/logo.png",
+    icon: "/favicon-32x32.png",
   },
 };
 
