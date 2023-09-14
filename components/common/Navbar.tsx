@@ -16,7 +16,8 @@ import { MobileMenu } from "./MobileMenu";
 
 const links = [
   ["Home", "/"],
-  ["About", "/about"],
+  ["Uses", "/uses"],
+  ["Snippet", "/snippets"],
   ["Blog", "/blog"],
 ];
 
@@ -43,10 +44,8 @@ export function Navbar() {
     <motion.header
       style={{ height }}
       transition={{ delay: 0 }}
-      className={`fixed top-0 left-0 right-0 z-20 h-20 border-b transition-all duration-300 ${
-        active
-          ? "border-white/10 bg-[#111]/50 shadow-lg shadow-blue-900/[0.05] backdrop-blur-md"
-          : "border-transparent"
+      className={`fixed top-0 left-0 right-0 z-20 h-20 border-b bg-dark/50 transition-all duration-300 ${
+        active ? "border-white/10 backdrop-blur-md" : "border-transparent"
       }`}
     >
       <Container>
@@ -65,7 +64,7 @@ export function Navbar() {
                 quality={100}
               />
               <div className="ml-4 lg:block">
-                <span className="text-xl font-bold text-white">
+                <span className="text-xl font-bold text-neutral-200">
                   Naimul Haque
                 </span>
               </div>
@@ -103,7 +102,7 @@ export function Navbar() {
                     href={href}
                     className={clsx(
                       "link-underline relative rounded px-3 py-2 text-base font-medium tracking-tighter md:px-4",
-                      active ? "text-white" : ""
+                      active ? "text-neutral-200" : ""
                     )}
                   >
                     {text}

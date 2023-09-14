@@ -1,8 +1,8 @@
 "use client";
 
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import Link from "next/link";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 const links = [
   ["Home", "/"],
@@ -27,7 +27,7 @@ const list: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.25,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -48,11 +48,11 @@ export function MobileMenu({
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ type: "spring", bounce: 0, duration: 0.7 }}
+      transition={{ type: "spring", bounce: 0, duration: 0.5 }}
       className="absolute top-0 right-0 left-0 z-40 min-h-screen bg-[#111]/80 p-8 backdrop-blur-md"
     >
       <div className="flex justify-end">
-        <button onClick={() => setMenuOpen(false)} className="text-white">
+        <button onClick={() => setMenuOpen(false)} className="text-neutral-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

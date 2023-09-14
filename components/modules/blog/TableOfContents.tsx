@@ -84,8 +84,8 @@ export function TableOfContents({ headings }: TableOfContentProps) {
               }}
               className={`block border-l-2 py-1.5 text-sm ${
                 active === idx
-                  ? "border-primary font-medium text-white"
-                  : "border-gray-800 text-gray-400"
+                  ? "border-primary font-medium text-neutral-200"
+                  : "border-neutral-800 text-neutral-500"
               }`}
             >
               {heading.text}

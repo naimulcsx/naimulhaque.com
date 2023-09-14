@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <section className="mb-16 mt-32 lg:mb-20 lg:mt-40">
       <Container>
-        <h1 className="mb-6 text-3xl font-semibold text-white md:text-4xl">
+        <h1 className="mb-6 text-3xl font-semibold text-neutral-200 md:text-4xl">
           About
         </h1>
         <div className="prose prose-invert space-y-6 md:prose-lg prose-headings:font-semibold prose-p:font-light prose-pre:border prose-pre:border-white/[0.15] prose-pre:bg-transparent">

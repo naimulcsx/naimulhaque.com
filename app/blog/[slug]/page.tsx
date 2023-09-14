@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import { allBlogs } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { MdxContent, TableOfContents } from "~/components/modules/blog";
 import { Container } from "~/components/common";
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
   return {
     title: `${post?.title} - Naimul Haque`,
     openGraph: {
@@ -26,13 +26,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  return allBlogs.map((post) => ({
+  return allPosts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export default async function Blog({ params }: { params: { slug: string } }) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
   if (!post) {
     notFound();
   }

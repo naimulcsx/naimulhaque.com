@@ -27,12 +27,14 @@ export function KeyTechnologies() {
   return (
     <section className="my-16 lg:my-20">
       <Container>
-        <h1 className="mb-8 text-2xl font-bold text-white md:text-3xl">
+        <h1 className="mb-8 text-2xl font-bold text-neutral-200 md:text-3xl">
           Key Technologies
         </h1>
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-md bg-zinc-900 p-6 lg:p-7">
-            <h4 className="text-2xl font-medium text-white">Full Stack</h4>
+          <div className="rounded-md bg-card/50 p-6 lg:p-7">
+            <h4 className="text-2xl font-medium text-neutral-200">
+              Full Stack
+            </h4>
             <p className="mt-2 text-base">
               TypeScript, React, Next.js, Node.js (Express / NestJS), BullMQ,
               REST, GraphQL, PostgreSQL, MongoDB, Redis, Elasticsearch
@@ -52,8 +54,8 @@ export function KeyTechnologies() {
               <ElasticsearchOriginal size={24} />
             </div>
           </div>
-          <div className="rounded-md bg-zinc-900 p-6 lg:p-7">
-            <h4 className="text-2xl font-medium text-white">
+          <div className="rounded-md bg-card/50 p-6 lg:p-7">
+            <h4 className="text-2xl font-medium text-neutral-200">
               Cloud and DevOps
             </h4>
             <p className="mt-2 text-base">

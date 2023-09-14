@@ -6,9 +6,42 @@ import rehypePrettyCode from "rehype-pretty-code";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import GithubSlugger from "github-slugger";
+import { basename } from "path";
 
-export const Blog = defineDocumentType(() => ({
-  name: "Blog",
+export const Snippet = defineDocumentType(() => ({
+  name: "Snippet",
+  filePathPattern: `**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      description: "The title of the snippet",
+      required: true,
+    },
+    publishedAt: {
+      type: "string",
+      required: true,
+    },
+    summary: {
+      type: "string",
+      required: true,
+    },
+    draft: {
+      type: "boolean",
+      description: "The status of the blog",
+      default: false,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (doc) => basename(doc._raw.flattenedPath, ".mdx"),
+    },
+  },
+}));
+
+export const Post = defineDocumentType(() => ({
+  name: "Post",
   filePathPattern: `**/*.mdx`,
   contentType: "mdx",
   fields: {
@@ -37,7 +70,7 @@ export const Blog = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.flattenedPath,
+      resolve: (doc) => basename(doc._raw.flattenedPath, ".mdx"),
     },
     headings: {
       type: "json",
@@ -63,7 +96,7 @@ export const Blog = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Blog],
+  documentTypes: [Post, Snippet],
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
@@ -72,8 +105,8 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "material-theme-darker",
-          keepBackground: true,
+          theme: "rose-pine-moon",
+          keepBackground: false,
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted

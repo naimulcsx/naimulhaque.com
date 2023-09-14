@@ -24,13 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={font.className}>
-      <body className="dark bg-[#111] text-gray-400 antialiased lg:text-lg">
+      <body className="dark bg-dark text-neutral-400 antialiased lg:text-lg">
         <Navbar />
         <main className="">
           <div>{children}</div>
         </main>
         <Footer />
-        <NextTopLoader color="#06a6d1" />
+        <NextTopLoader color="#FACC15" />
       </body>
     </html>
   );
