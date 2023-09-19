@@ -1,4 +1,3 @@
-import { Container } from "~/components/common/Container";
 import {
   AmazonwebservicesPlainWordmark,
   BashPlain,
@@ -22,6 +21,8 @@ import {
   TypescriptOriginal,
   UbuntuOriginal,
 } from "devicons-react";
+
+import { Container } from "~/components/common/Container";
 
 export function KeyTechnologies() {
   return (

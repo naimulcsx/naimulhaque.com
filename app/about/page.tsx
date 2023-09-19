@@ -1,4 +1,4 @@
-import { Container } from "~/components/common";
+import { Container } from "~/components/common/Container";
 
 export const metadata = {
   title: "About - Naimul Haque",

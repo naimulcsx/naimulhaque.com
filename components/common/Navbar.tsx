@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import clsx from "clsx";
 import {
   AnimatePresence,
   motion,
@@ -8,11 +8,13 @@ import {
   useScroll,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
-import clsx from "clsx";
 
 const links = [
   ["Home", "/"],

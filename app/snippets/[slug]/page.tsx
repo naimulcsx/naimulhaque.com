@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
-import { allPosts, allSnippets } from "contentlayer/generated";
-import { MdxContent, TableOfContents } from "~/components/modules/blog";
-import { Container } from "~/components/common";
+
+import { allSnippets } from "contentlayer/generated";
+
+import { Container } from "~/components/common/Container";
+import { MdxContent } from "~/components/modules/blog/MdxContent";
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const snippet = allSnippets.find((snippet) => snippet.slug === params.slug);
+  console.log(2);
+
   return {
     title: `${snippet?.title} - Naimul Haque`,
     openGraph: {
@@ -33,6 +37,7 @@ export async function generateStaticParams() {
 
 export default async function Blog({ params }: { params: { slug: string } }) {
   const snippet = allSnippets.find((post) => post.slug === params.slug);
+  console.log(1);
   if (!snippet) {
     notFound();
   }

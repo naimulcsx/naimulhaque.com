@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Container } from "./Container";
 
 export function Footer() {

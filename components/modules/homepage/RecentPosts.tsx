@@ -1,7 +1,10 @@
-import Link from "next/link";
-import { allPosts } from "~/.contentlayer/generated";
-import { Container } from "../../common/Container";
 import moment from "moment";
+
+import Link from "next/link";
+
+import { allPosts } from "contentlayer/generated";
+
+import { Container } from "~/components/common/Container";
 
 export function RecentPosts() {
   return (

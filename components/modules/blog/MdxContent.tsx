@@ -1,6 +1,6 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Callout } from "../../mdx-components/Callout";
 import { Pre } from "~/components/mdx-components/Pre";
+import { Callout } from "~/components/mdx-components/Callout";
 
 export interface MdxContentProps {
   code: string;

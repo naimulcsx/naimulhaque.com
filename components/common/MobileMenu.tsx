@@ -1,8 +1,9 @@
 "use client";
 
 import { Variants, motion } from "framer-motion";
-import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
+
+import Link from "next/link";
 
 const links = [
   ["Home", "/"],

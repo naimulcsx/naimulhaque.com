@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { Container } from "~/components/common";
+
+import { Container } from "~/components/common/Container";
 
 export const metadata: Metadata = {
   title: "Uses - Naimul Haque",

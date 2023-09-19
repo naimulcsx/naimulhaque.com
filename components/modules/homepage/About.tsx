@@ -1,4 +1,5 @@
-import { Highlight, Container } from "~/components/common";
+import { Highlight } from "~/components/common/Highlight";
+import { Container } from "~/components/common/Container";
 
 export function About() {
   return (
