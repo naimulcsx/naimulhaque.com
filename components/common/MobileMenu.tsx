@@ -92,7 +92,7 @@ export function MobileMenu({
           >
             <Link
               href={href}
-              className="text-2xl font-semibold leading-6 text-gray-200"
+              className="text-2xl font-semibold leading-6 text-neutral-200"
             >
               {name}
             </Link>

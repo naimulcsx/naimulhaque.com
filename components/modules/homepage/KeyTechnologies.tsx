@@ -60,8 +60,8 @@ export function KeyTechnologies() {
               Cloud and DevOps
             </h4>
             <p className="mt-2 text-base">
-              Linux CLI, Git, Github, Github Actions, Husky, Prettier, ESLint,
-              Commitizen, CommitLint, Docker, Prometheus, Node Exporter, Grafana
+              Git, Linux CLI, Docker, DigitalOcean, Caprover, CertBot, AWS EC2,
+              VPC, ECS, S3, RDS, Prometheus, Grafana, Loki
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               <UbuntuOriginal size={24} />

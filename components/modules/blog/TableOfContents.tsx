@@ -55,7 +55,7 @@ export function TableOfContents({ headings }: TableOfContentProps) {
 
   return (
     <div className="">
-      <h6 className="mb-4 text-xl font-bold text-gray-300">
+      <h6 className="mb-4 text-xl font-bold text-neutral-300">
         Table of contents
       </h6>
       {headings.map((heading, idx) => {

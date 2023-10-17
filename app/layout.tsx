@@ -33,7 +33,7 @@ export default function RootLayout({
           <div>{children}</div>
         </main>
         <Footer />
-        <NextTopLoader color="#FACC15" showSpinner={false} />
+        <NextTopLoader color="#06b3e2" showSpinner={false} />
       </body>
     </html>
   );

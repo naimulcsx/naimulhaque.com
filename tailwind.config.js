@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#0C0A09",
-        primary: "#FACC15",
-        card: "#292524",
+        dark: "#111",
+        primary: "#06b3e2",
+        card: "#2c2c32",
       },
       animation: {
         wave: "wave 2.5s linear infinite",
@@ -43,22 +43,19 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            color: "#a3a3a3",
-            em: { color: "#d4d4d4" },
-            p: { color: "#a3a3a3" },
-            h1: { color: "#f5f5f5" },
-            h2: { color: "#e5e5e5" },
-            h3: { color: "#e5e5e5" },
-            h4: { color: "#e5e5e5" },
-            h5: { color: "#e5e5e5" },
-            h6: { color: "#e5e5e5" },
+            color: "#9ca3af",
+            em: { color: "#d1d5db" },
+            p: { color: "#9ca3af" },
+            h1: { color: "#fff" },
+            h2: { color: "#fff" },
+            h3: { color: "#fff" },
+            h4: { color: "#fff" },
+            h5: { color: "#fff" },
+            h6: { color: "#fff" },
             code: {
               color: "#d1d5db",
               "&::before": { display: "none" },
               "&::after": { display: "none" },
-            },
-            pre: {
-              background: "#29252480",
             },
           },
         },

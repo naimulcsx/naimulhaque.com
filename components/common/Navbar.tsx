@@ -58,7 +58,7 @@ export function Navbar() {
               href="/"
             >
               <Image
-                src="/images/naimul-haque.jpg"
+                src="/images/naimul-haque.png"
                 className="mx-auto h-12 w-12 rounded-full"
                 alt="Naimul Haque"
                 width={256}
