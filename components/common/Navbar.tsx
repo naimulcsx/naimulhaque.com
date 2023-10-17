@@ -66,7 +66,7 @@ export function Navbar() {
                 quality={100}
               />
               <div className="ml-4 lg:block">
-                <span className="text-xl font-bold text-neutral-200">
+                <span className="text-xl font-bold text-slate-200">
                   Naimul Haque
                 </span>
               </div>
@@ -104,7 +104,7 @@ export function Navbar() {
                     href={href}
                     className={clsx(
                       "link-underline relative rounded px-3 py-2 text-base font-medium tracking-tighter md:px-4",
-                      active ? "text-neutral-200" : ""
+                      active ? "text-slate-200" : ""
                     )}
                   >
                     {text}

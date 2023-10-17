@@ -53,7 +53,7 @@ export function MobileMenu({
       className="absolute top-0 right-0 left-0 z-40 min-h-screen bg-[#111]/80 p-8 backdrop-blur-md"
     >
       <div className="flex justify-end">
-        <button onClick={() => setMenuOpen(false)} className="text-neutral-200">
+        <button onClick={() => setMenuOpen(false)} className="text-slate-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -92,7 +92,7 @@ export function MobileMenu({
           >
             <Link
               href={href}
-              className="text-2xl font-semibold leading-6 text-neutral-200"
+              className="text-2xl font-semibold leading-6 text-slate-200"
             >
               {name}
             </Link>

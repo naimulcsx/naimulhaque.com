@@ -11,7 +11,7 @@ export function RecentPosts() {
     <section className="my-16 lg:my-20">
       <Container>
         <div className="mb-8 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-neutral-200 md:text-3xl">
+          <h1 className="text-2xl font-bold text-slate-200 md:text-3xl">
             Latest
           </h1>
           <Link
@@ -33,11 +33,11 @@ export function RecentPosts() {
             .slice(0, 5)
             .map((post) => (
               <div key={post._id} className="flex w-full flex-col md:flex-row">
-                <div className="mb-2 shrink-0 text-base text-neutral-400 md:basis-[256px]">
+                <div className="mb-2 shrink-0 text-base text-slate-400 md:basis-[256px]">
                   {moment(post.publishedAt).format("MMMM Do, YYYY")}
                 </div>
                 <div className="space-y-4">
-                  <span className="text-2xl font-bold text-neutral-100">
+                  <span className="text-2xl font-bold text-slate-100">
                     {post.title}
                   </span>
                   <p>{post.summary}</p>
@@ -45,7 +45,7 @@ export function RecentPosts() {
                     className="relative block w-fit no-underline duration-300 before:absolute before:bottom-[-2px] before:left-0 before:block before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition-transform before:content-[''] hover:before:scale-x-100 dark:before:bg-white"
                     href={`/blog/${post.slug}`}
                   >
-                    <span className="font-medium text-black dark:text-neutral-200">
+                    <span className="font-medium text-black dark:text-slate-200">
                       Read more
                     </span>
                   </Link>

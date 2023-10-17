@@ -10,7 +10,7 @@ export default function UsesPage() {
   return (
     <section className="mb-16 mt-32 lg:mb-20 lg:mt-40">
       <Container>
-        <h1 className="mb-4 text-5xl font-bold text-neutral-200">
+        <h1 className="mb-4 text-5xl font-bold text-slate-200">
           Uses{" "}
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-primary"></span>
         </h1>
@@ -44,13 +44,13 @@ export default function UsesPage() {
             <h3>Accessories</h3>
             <ul>
               <li>
-                <span className="text-stone-300 underline underline-offset-4">
+                <span className="text-slate-300 underline underline-offset-4">
                   Keyboard:
                 </span>{" "}
                 Akko 3084B Plus Black & Gold
               </li>
               <li>
-                <span className="text-stone-300 underline underline-offset-4">
+                <span className="text-slate-300 underline underline-offset-4">
                   Mouse:
                 </span>{" "}
                 Logitech Pebble M350

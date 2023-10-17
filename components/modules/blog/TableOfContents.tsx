@@ -55,7 +55,7 @@ export function TableOfContents({ headings }: TableOfContentProps) {
 
   return (
     <div className="">
-      <h6 className="mb-4 text-xl font-bold text-neutral-300">
+      <h6 className="mb-4 text-xl font-bold text-slate-300">
         Table of contents
       </h6>
       {headings.map((heading, idx) => {
@@ -84,8 +84,8 @@ export function TableOfContents({ headings }: TableOfContentProps) {
               }}
               className={`block border-l-2 py-1.5 text-sm ${
                 active === idx
-                  ? "border-primary font-medium text-neutral-200"
-                  : "border-neutral-800 text-neutral-500"
+                  ? "border-primary font-medium text-slate-200"
+                  : "border-neutral-800 text-slate-500"
               }`}
             >
               {heading.text}

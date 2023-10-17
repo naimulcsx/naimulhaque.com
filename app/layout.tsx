@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={font.className}>
-      <body className="dark bg-dark text-neutral-400 antialiased lg:text-lg">
+      <body className="dark bg-dark text-slate-400 antialiased lg:text-lg">
         <Navbar />
         <main className="">
           <div>{children}</div>
