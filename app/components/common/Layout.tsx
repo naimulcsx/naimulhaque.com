@@ -126,6 +126,7 @@ export function Header() {
                   to={link.to}
                   key={link.to}
                   underline="never"
+                  prefetch="viewport"
                   py={4}
                   onClick={close}
                   style={{

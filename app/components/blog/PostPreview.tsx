@@ -21,7 +21,7 @@ export function PostPreview({ post }: { post: Post }) {
           underline="never"
           component={NavLink}
           to={`/blog/${post.slug}`}
-          prefetch="intent"
+          prefetch="viewport"
           unstable_viewTransition
         >
           {({ isTransitioning }) => {
