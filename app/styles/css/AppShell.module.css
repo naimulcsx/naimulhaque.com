@@ -1,0 +1,16 @@
+.header {
+  &[data-variant="nh-ui"] {
+    background-color: hsl(var(--background) / 0.5);
+    border: 0;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-color: hsl(var(--border));
+  }
+}
+
+.navbar {
+  &[data-variant="nh-ui"] {
+    background-color: hsl(var(--background));
+    border-color: hsl(var(--border));
+  }
+}

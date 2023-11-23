@@ -1,0 +1,10 @@
+.root {
+  .content {
+    background: hsl(var(--background));
+    border-left: 1px solid hsl(var(--secondary));
+  }
+}
+
+.header {
+  background: hsl(var(--background));
+}

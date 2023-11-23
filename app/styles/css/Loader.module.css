@@ -1,0 +1,5 @@
+.root {
+  &[data-variant="nh-ui"] {
+    --loader-color: hsl(var(--primary));
+  }
+}

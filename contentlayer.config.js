@@ -54,6 +54,11 @@ export const Post = defineDocumentType(() => ({
       description: "The title of the post",
       required: true,
     },
+    featuredImage: {
+      type: "string",
+      description: "Featured image of the post",
+      required: true,
+    },
     publishedAt: {
       type: "string",
       required: true,
@@ -75,6 +80,10 @@ export const Post = defineDocumentType(() => ({
     slug: {
       type: "string",
       resolve: (doc) => basename(doc._raw.flattenedPath, ".mdx"),
+    },
+    readingTime: {
+      type: "number",
+      resolve: (post) => calculateReadingTime(post.body.raw),
     },
     headings: {
       type: "json",
@@ -137,3 +146,11 @@ export default makeSource({
     ],
   },
 });
+
+function calculateReadingTime(content) {
+  const wordsPerMinute = 235;
+  const numberOfWords = content.split(/\s/g).length;
+  const minutes = numberOfWords / wordsPerMinute;
+
+  return Math.ceil(minutes);
+}

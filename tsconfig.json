@@ -1,37 +1,29 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
-    }
-  },
   "include": [
-    "next-env.d.ts",
+    "remix.env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".contentlayer/generated",
-    "contentlayer.config.js"
+    ".contentlayer/generated"
   ],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"],
+      "contentlayer/generated": ["./.contentlayer/generated/index.mjs"],
+      "contentlayer/types": ["./.contentlayer/generated/index.d.ts"]
+    },
+    "skipLibCheck": true,
+    // Remix takes care of building everything in `remix build`.
+    "noEmit": true
+  }
 }

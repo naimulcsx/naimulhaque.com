@@ -1,0 +1,7 @@
+.root {
+  &[data-variant="nh-ui"] {
+    .pill {
+      background: hsl(var(--secondary));
+    }
+  }
+}

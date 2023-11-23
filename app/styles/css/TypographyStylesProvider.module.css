@@ -1,0 +1,34 @@
+.root {
+  padding-left: 0;
+  font-size: var(--mantine-font-size-md);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+  }
+  & p {
+    color: hsl(var(--muted-foreground));
+  }
+  & img {
+    margin-top: var(--mantine-spacing-md);
+    margin-bottom: var(--mantine-spacing-lg);
+    border-radius: var(--mantine-radius-sm);
+  }
+  & pre > code {
+    font-size: 14px;
+    @mixin light {
+      background: transparent;
+    }
+    @mixin dark {
+      background: transparent;
+    }
+  }
+  & pre {
+    @mixin dark {
+      background: hsl(var(--secondary));
+    }
+  }
+}
