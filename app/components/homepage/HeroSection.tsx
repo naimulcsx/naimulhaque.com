@@ -115,7 +115,13 @@ function AuthorAbout() {
   return (
     <Stack gap="lg">
       <Group>
-        <Text component="span" lh={1} fz={{ base: 32 }} role="img">
+        <Text
+          style={{ color: "hsl(var(--foreground))" }}
+          component="span"
+          lh={1}
+          fz={{ base: 32 }}
+          role="img"
+        >
           👋
         </Text>
         <Title order={1} fz={{ base: 32, md: 36 }}>

@@ -53,7 +53,9 @@ export function PostPreview({ post }: { post: Post }) {
       >
         <Stack gap="sm" align="flex-start">
           <Box>
-            <Title order={3}>{post.title}</Title>
+            <Title order={3} fw={600}>
+              {post.title}
+            </Title>
             <Group gap="xs">
               <Text size="sm">
                 {dayjs(post.publishedAt).format("MMM DD, YYYY")}

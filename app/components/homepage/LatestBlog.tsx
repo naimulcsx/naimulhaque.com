@@ -12,7 +12,7 @@ export function LatestBlog() {
         <Title order={3} fz={{ base: 24, md: 30 }}>
           Latest from the Blog
         </Title>
-        <Stack gap="xl" mt="xl">
+        <Stack gap={40} mt="xl">
           {allPosts.map((post) => {
             return <PostPreview key={post._id} post={post as Post} />;
           })}
