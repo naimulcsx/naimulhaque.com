@@ -116,7 +116,6 @@ const CONTAINER_SIZES: Record<string, string> = {
 };
 
 export const theme = createTheme({
-  fontFamily: "Onest, sans-serif",
   defaultRadius: "md",
   shadows: {
     xs: "0 1px 2px 0 rgba(0,0,0,.05)",

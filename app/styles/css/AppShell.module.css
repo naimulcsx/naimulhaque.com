@@ -1,6 +1,5 @@
 .header {
   &[data-variant="nh-ui"] {
-    background-color: hsl(var(--background) / 0.5);
     border: 0;
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);

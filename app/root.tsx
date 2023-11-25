@@ -25,22 +25,12 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <Meta />
         <Links />
         <ColorSchemeScript forceColorScheme="dark" />
       </head>
-      <body>
+      <body style={{ position: "relative" }}>
         <MantineProvider
           theme={theme}
           cssVariablesResolver={resolver}
@@ -53,6 +43,20 @@ export default function App() {
           <Scripts />
           <LiveReload />
         </MantineProvider>
+        <div
+          className="absolute left-1/2 top-0 -z-10 hidden h-screen w-full -translate-x-1/2 dark:block bg-radial-gradient-master"
+          style={{
+            width: "100%",
+            height: "100vh",
+            position: "absolute",
+            left: "50%",
+            top: 0,
+            zIndex: -10,
+            transform: "translateX(-50%)",
+            backgroundImage:
+              "radial-gradient(circle at 50% 0%, hsl(var(--secondary)) ,rgba(255,255,255,0) 40%)",
+          }}
+        ></div>
       </body>
     </html>
   );

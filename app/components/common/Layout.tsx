@@ -82,6 +82,7 @@ export function Header() {
         transition: "all 300ms",
         borderBottom: "1px solid",
         borderColor: active ? "hsl(var(--border))" : "transparent",
+        background: active ? "hsl(var(--background) / 0.75)" : "transparent",
       }}
     >
       <Container
