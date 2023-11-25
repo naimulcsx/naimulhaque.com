@@ -11,6 +11,7 @@ import {
   Anchor,
   Image,
 } from "@mantine/core";
+import { MetaFunction } from "@remix-run/node";
 
 const hardwareItems = [
   {
@@ -80,6 +81,10 @@ const softwareItems = [
     description: "For note-taking or planning, it's my preferred app.",
   },
 ];
+
+export const meta: MetaFunction = () => {
+  return [{ title: "Uses - Naimul Haque" }];
+};
 
 export default function UsagePage() {
   return (
