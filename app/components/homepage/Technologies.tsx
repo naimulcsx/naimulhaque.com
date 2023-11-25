@@ -7,30 +7,103 @@ import {
   Stack,
   Text,
   Title,
+  Tooltip,
 } from "@mantine/core";
+
 import {
-  AmazonwebservicesPlainWordmark,
-  BashPlain,
-  DigitaloceanOriginal,
-  DockerOriginal,
-  ElasticsearchOriginal,
-  ExpressOriginal,
-  GitOriginal,
-  GithubactionsOriginal,
-  JestPlain,
-  MongodbOriginal,
-  NestjsPlain,
-  NextjsOriginal,
-  NodejsOriginal,
-  PortainerOriginal,
-  PostgresqlOriginal,
-  PrometheusOriginal,
-  ReactOriginal,
-  RedisOriginal,
-  TailwindcssOriginal,
-  TypescriptOriginal,
-  UbuntuOriginal,
-} from "devicons-react";
+  IconUbuntu,
+  IconAmazonWebServices,
+  IconDigitalOcean,
+  IconDocker,
+  IconGit,
+  IconGithub,
+  IconPrometheus,
+  IconTypeScript,
+  IconReact,
+  IconNext,
+  IconRemix,
+  IconNode,
+  IconTailwind,
+  IconExpress,
+  IconNestJs,
+  IconPostgres,
+  IconMongo,
+} from "~/assets";
+
+const cloudAndDevopsItems = [
+  {
+    label: "Ubuntu",
+    Icon: IconUbuntu,
+  },
+  {
+    label: "Git",
+    Icon: IconGit,
+  },
+  {
+    label: "GitHub",
+    Icon: IconGithub,
+  },
+  {
+    label: "Docker",
+    Icon: IconDocker,
+  },
+  {
+    label: "Prometheus",
+    Icon: IconPrometheus,
+  },
+
+  {
+    label: "DigitalOcean",
+    Icon: IconDigitalOcean,
+  },
+  {
+    label: "Amazon Web Services",
+    Icon: IconAmazonWebServices,
+  },
+];
+
+const devItems = [
+  {
+    label: "TypeScript",
+    Icon: IconTypeScript,
+  },
+  {
+    label: "React",
+    Icon: IconReact,
+  },
+  {
+    label: "Next.js",
+    Icon: IconNext,
+  },
+  {
+    label: "Remix",
+    Icon: IconRemix,
+  },
+  {
+    label: "Tailwind CSS",
+    Icon: IconTailwind,
+  },
+  {
+    label: "Node.js",
+    Icon: IconNode,
+  },
+  {
+    label: "Express.js",
+    Icon: IconExpress,
+  },
+  {
+    label: "NestJS",
+    Icon: IconNestJs,
+  },
+  {
+    label: "PostgreSQL",
+    Icon: IconPostgres,
+  },
+  {
+    label: "MongoDB",
+    Icon: IconMongo,
+  },
+];
 
 export function Technologies() {
   return (
@@ -51,19 +124,16 @@ export function Technologies() {
                   BullMQ, REST, GraphQL, PostgreSQL, MongoDB, Redis,
                   Elasticsearch
                 </Text>
-                <Flex mt="sm" wrap="wrap" gap={6}>
-                  <TypescriptOriginal size={24} />
-                  <ReactOriginal size={24} />
-                  <NextjsOriginal fill="#fff" size={24} />
-                  <TailwindcssOriginal size={24} />
-                  <JestPlain size={24} />
-                  <NodejsOriginal size={24} />
-                  <ExpressOriginal fill="#fff" size={24} />
-                  <NestjsPlain size={24} />
-                  <PostgresqlOriginal size={24} />
-                  <MongodbOriginal size={24} />
-                  <RedisOriginal size={24} />
-                  <ElasticsearchOriginal size={24} />
+                <Flex mt="sm" wrap="wrap" gap="xs">
+                  {devItems.map((item, index) => {
+                    return (
+                      <Tooltip key={index} label={item.label}>
+                        <Box>
+                          <item.Icon size={24} />
+                        </Box>
+                      </Tooltip>
+                    );
+                  })}
                 </Flex>
               </Stack>
             </Paper>
@@ -80,16 +150,16 @@ export function Technologies() {
                   CertBot, AWS (EC2, VPC, S3, RDS, ECS), Prometheus, Grafana,
                   Loki
                 </Text>
-                <Flex mt="sm" wrap="wrap" gap={6}>
-                  <UbuntuOriginal size={24} />
-                  <BashPlain color="#fff" size={24} />
-                  <GitOriginal size={24} />
-                  <GithubactionsOriginal size={24} />
-                  <DockerOriginal size={24} />
-                  <PrometheusOriginal size={24} />
-                  <PortainerOriginal size={24} />
-                  <DigitaloceanOriginal size={24} />
-                  <AmazonwebservicesPlainWordmark size={24} />
+                <Flex mt="sm" wrap="wrap" gap="xs">
+                  {cloudAndDevopsItems.map((item, index) => {
+                    return (
+                      <Tooltip key={index} label={item.label}>
+                        <Box>
+                          <item.Icon size={24} />
+                        </Box>
+                      </Tooltip>
+                    );
+                  })}
                 </Flex>
               </Stack>
             </Paper>

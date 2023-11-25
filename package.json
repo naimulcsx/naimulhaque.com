@@ -21,7 +21,6 @@
     "@tabler/icons-react": "^2.41.0",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
-    "devicons-react": "^1.2.6-beta-0.2.0",
     "framer-motion": "^10.16.5",
     "github-slugger": "^2.0.0",
     "isbot": "^3.6.8",
