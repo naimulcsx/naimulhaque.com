@@ -7,24 +7,35 @@ import {
   Title,
   TypographyStylesProvider,
 } from "@mantine/core";
-import { json } from "@remix-run/node";
+import { type MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { allPosts } from "contentlayer/generated";
+import { Post } from "contentlayer/types";
 import dayjs from "dayjs";
 import { TableOfContents } from "~/components/blog/TableOfContents";
 import MDXRenderer from "~/components/mdx/MDXRenderer";
 import { throwNotFoundException } from "~/utils/http-exceptions";
+
+export const meta = ({ data }: { data: { post: Post } }) => {
+  return [
+    { title: `${data.post.title} - Naimul Haque` },
+    {
+      name: "description",
+      content: data.post.summary,
+    },
+  ];
+};
 
 export function loader({ params }: { params: { slug: string } }) {
   const post = allPosts.find((post) => post.slug === params.slug);
   if (!post) {
     throw throwNotFoundException();
   }
-  return json(post);
+  return json({ post });
 }
 
 function BlogPostPage() {
-  const post = useLoaderData<typeof loader>();
+  const { post } = useLoaderData<typeof loader>();
   return (
     <>
       <Container mt={{ base: 64 }} mb={{ base: 32, md: 64 }}>
