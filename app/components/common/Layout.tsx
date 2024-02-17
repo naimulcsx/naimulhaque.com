@@ -33,14 +33,7 @@ export function Layout({ children }: PropsWithChildren) {
       <AppShell.Main px={-16} mt={-16}>
         {children}
       </AppShell.Main>
-      <Box
-        component="footer"
-        py="xl"
-        style={{
-          textAlign: "center",
-          // borderTop: "1px solid hsl(var(--border))",
-        }}
-      >
+      <Box component="footer" py="xl" ta="center">
         <Container>
           <Text>© 2023 Naimul Haque. All rights reserved.</Text>
         </Container>
@@ -106,7 +99,7 @@ export function Header() {
           }}
         >
           <Logo width={32} height={32} />
-          <Title order={4}>Naimul Haque</Title>
+          <Title order={4}>naimulhaque.com</Title>
         </Group>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" />

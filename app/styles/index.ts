@@ -70,7 +70,7 @@ export const resolver: CSSVariablesResolver = () => ({
     "--card-foreground": "240 10% 3.9%",
     "--popover": "0 0% 100%",
     "--popover-foreground": "240 10% 3.9%",
-    "--primary": "193 100% 50%", // updated
+    "--primary": "193 100% 50%",
     "--primary-foreground": "0 0% 98%",
     "--secondary": "240 4.8% 95.9%",
     "--secondary-foreground": "240 5.9% 10%",
@@ -85,15 +85,15 @@ export const resolver: CSSVariablesResolver = () => ({
     "--ring": "240 5.9% 10%",
   },
   dark: {
-    "--background": "240 10% 3.9%",
+    "--background": "0 0% 9%",
     "--foreground": "0 0% 98%",
     "--card": "240 10% 3.9%",
     "--card-foreground": "0 0% 98%",
     "--popover": "240 10% 3.9%",
     "--popover-foreground": "0 0% 98%",
-    "--primary": "193 100% 50%", // updated
+    "--primary": "193 100% 50%",
     "--primary-foreground": "240 5.9% 10%",
-    "--secondary": "240 3.7% 15.9%",
+    "--secondary": "0 0% 15%",
     "--secondary-foreground": "0 0% 98%",
     "--muted": "240 3.7% 15.9%",
     "--muted-foreground": "240 5% 64.9%",
@@ -116,6 +116,7 @@ const CONTAINER_SIZES: Record<string, string> = {
 };
 
 export const theme = createTheme({
+  fontFamily: "'Inter', sans-serif",
   defaultRadius: "md",
   shadows: {
     xs: "0 1px 2px 0 rgba(0,0,0,.05)",

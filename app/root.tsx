@@ -12,8 +12,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { resolver, theme } from "./styles";
 import { Layout } from "./components/common/Layout";
+import { resolver, theme } from "./styles";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -26,6 +26,8 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <Meta />
         <Links />
         <ColorSchemeScript forceColorScheme="dark" />
@@ -43,20 +45,6 @@ export default function App() {
           <Scripts />
           <LiveReload />
         </MantineProvider>
-        <div
-          className="absolute left-1/2 top-0 -z-10 hidden h-screen w-full -translate-x-1/2 dark:block bg-radial-gradient-master"
-          style={{
-            width: "100%",
-            height: "100vh",
-            position: "absolute",
-            left: "50%",
-            top: 0,
-            zIndex: -10,
-            transform: "translateX(-50%)",
-            backgroundImage:
-              "radial-gradient(circle at 50% 0%, hsl(var(--secondary)) ,rgba(255,255,255,0) 40%)",
-          }}
-        ></div>
       </body>
     </html>
   );

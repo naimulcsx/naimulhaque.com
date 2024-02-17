@@ -30,8 +30,8 @@ export function HeroSection() {
           gap={{ base: 36, md: 48 }}
           align="flex-start"
         >
-          <AuthorCard />
           <AuthorAbout />
+          <AuthorCard />
         </Flex>
       </Container>
     </Box>
@@ -49,9 +49,8 @@ function AuthorCard() {
         textAlign: "center",
         overflow: "hidden",
         flexShrink: 0,
-        flexGrow: 0,
-        border: "1px solid hsl(var(--border))",
       }}
+      bg="hsl(var(--secondary))"
     >
       <Image
         src="/images/cover.png"
@@ -62,6 +61,7 @@ function AuthorCard() {
           top: -20,
           left: 0,
           right: 0,
+          borderBottom: "2px solid hsl(var(--foreground) / 0.2)",
         }}
       />
       <Stack style={{ position: "relative" }}>
@@ -70,42 +70,42 @@ function AuthorCard() {
           src="/images/naimul-haque.jpg"
           style={{
             borderRadius: "50%",
-            width: 120,
+            width: 128,
             margin: "0 auto",
+            border: "4px solid hsl(var(--foreground) / 0.2)",
           }}
         />
-
-        <Flex direction="column">
-          <Title order={3}>Naimul Haque</Title>
+        <Stack gap={4}>
+          <Title order={4}>AKM Naimul Haque</Title>
           <Text size="sm">
             Software Engineer, Competitive Programmer and DevOps Enthusiast
           </Text>
 
           <Stack gap="xs" mt="sm">
             <Button
-              size="xs"
+              size="sm"
               component={Link}
               to="https://github.com/naimulcsx"
               target="_blank"
-              variant="nh-ui-outline"
+              variant="nh-ui-secondary"
               leftSection={<IconBrandGithub size={16} />}
               fullWidth
             >
               Github
             </Button>
             <Button
-              size="xs"
+              size="sm"
               component={Link}
               to="https://www.linkedin.com/in/naimulcsx/"
               target="_blank"
-              variant="nh-ui-outline"
+              variant="nh-ui-secondary"
               leftSection={<IconBrandLinkedin size={16} />}
               fullWidth
             >
               LinkedIn
             </Button>
           </Stack>
-        </Flex>
+        </Stack>
       </Stack>
     </Box>
   );
@@ -128,8 +128,8 @@ function AuthorAbout() {
           Hi, I'm Naimul
         </Title>
       </Group>
-      <Title order={3} fw={400} fz={{ base: 24, md: 28 }}>
-        A passionate Full-Stack{" "}
+      <Title order={3} fw={300} fz={{ base: 24, md: 28 }}>
+        Yet another Full-Stack{" "}
         <span
           style={{
             fontWeight: 700,

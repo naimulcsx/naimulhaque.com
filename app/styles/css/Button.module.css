@@ -11,10 +11,10 @@
 
   &[data-variant="nh-ui-secondary"] {
     font-weight: 500;
-    --button-bg: hsl(var(--secondary));
+    --button-bg: hsl(var(--foreground) / 0.1);
     --button-color: hsl(var(--secondary-foreground));
     &:hover {
-      background-color: hsl(var(--foreground) / 0.1);
+      background-color: hsl(var(--foreground) / 0.15);
     }
   }
 
@@ -28,7 +28,8 @@
     font-weight: 500;
     color: hsl(var(--foreground));
     --button-bg: transparent;
-    --button-bd: calc(0.0625rem * var(--mantine-scale)) solid hsl(var(--border));
+    --button-bd: calc(0.0625rem * var(--mantine-scale)) solid
+      hsl(var(--secondary-foreground) / 0.15);
     &:hover {
       background-color: hsl(var(--secondary));
     }

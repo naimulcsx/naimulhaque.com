@@ -12,8 +12,8 @@
     "contentlayer:dev": "contentlayer dev"
   },
   "dependencies": {
-    "@mantine/core": "^7.2.2",
-    "@mantine/hooks": "^7.2.2",
+    "@mantine/core": "^7.5.3",
+    "@mantine/hooks": "^7.5.3",
     "@remix-run/css-bundle": "^2.3.0",
     "@remix-run/node": "^2.3.0",
     "@remix-run/react": "^2.3.0",
@@ -41,7 +41,7 @@
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
     "postcss": "^8.4.31",
-    "postcss-preset-mantine": "^1.11.0",
+    "postcss-preset-mantine": "^1.13.0",
     "postcss-simple-vars": "^7.0.1",
     "typescript": "^5.1.6"
   },

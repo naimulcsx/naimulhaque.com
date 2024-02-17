@@ -11,7 +11,7 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <g clipPath="url(#clip0_59_9)">
-        <path fill="#000" d="M0 0H280V280H0z"></path>
+        <path fill="hsl(var(--secondary))" d="M0 0H280V280H0z"></path>
         <path
           fill="#fff"
           d="M87.42 110.338l-9.373-23.643H74.64l1.704 24.921V190H47.801V41.326H81.03l37.488 79.662 9.372 23.643h3.408l-1.704-24.921V41.326h28.542V190h-33.228l-37.488-79.662z"
