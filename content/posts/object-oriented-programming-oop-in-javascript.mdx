@@ -42,7 +42,7 @@ Just like we can create variables, we can create objects on the fly. An object c
 
 ### Object Literals
 
-Let’s start with object literals. With the object literals syntax, you can create objects just with a set of curly braces — {}.
+Let's start with object literals. With the object literals syntax, you can create objects just with a set of curly braces — {}.
 
 ```js
 const person = {
@@ -63,7 +63,7 @@ const person = {
 
 ### Using Object Constructor
 
-In JavaScript, the `new Object()` statement is used to create a new instance of the Object constructor. This essentially creates an empty object. It's equivalent to creating an empty object using object literal notation `{}`.
+In JavaScript, the `new Object()` statement is used to create a new instance of the Object constructor. This essentially creates an empty object. It's equivalent to creating an empty object using object literal notation {}.
 
 ```js
 const person = new Object();
@@ -71,6 +71,7 @@ const person = new Object();
 person.firstName = "Naimul";
 person.lastName = "Haque";
 person.age = 26;
+
 person.getFullName = function () {
   return `${this.firstName} ${this.lastName}`;
 };
@@ -107,7 +108,7 @@ person.greet = function () {
 
 ## Issues with our code
 
-Let’s first take a look at the issues that we have with the above 3 approaches we’ve described so far. Think about it, if we want to define more persons, we have to repeat the same codes which is not a good practice.
+Let's first take a look at the issues that we have with the above 3 approaches we’ve described so far. Think about it, if we want to define more persons, we have to repeat the same codes which is not a good practice.
 
 So what can we do here? Simple! we can create a reusable function, that will create and return these `person` objects for us.
 
@@ -133,11 +134,13 @@ const person1 = createPerson("Naimul", "Haque", 26);
 const person2 = createPerson("John", "Doe", 32);
 ```
 
-We can create many users with this function. `createPerson()` function is now reusable but it's extremely inefficient. The reason is simple, the common methods `getFullName()`, `isAdult()` and `greet()` are created on the person object every time we create a new person. These methods are common functionality and don’t need to have same own copy for each object. We need some way to somehow share the common functionality.
+We can create many users with this function. `createPerson()` function is now reusable but it's extremely inefficient. The reason is simple, the common methods `getFullName()`, `isAdult()` and `greet()` are created on the person object every time we create a new person. These methods are common functionality and don't need to have same own copy for each object. We need some way to somehow share the common functionality.
 
-## Prototypes
+We can create many users with this function. `createPerson()` function is now reusable but it's extremely inefficient. The reason is simple, the common methods `getFullName()`, `isAdult()` and `greet()` are created on the person object every time we create a new person. These methods are common functionality and don't need to have same own copy for each object. We need some way to somehow share the common functionality.
 
-Prototypes are JavaScript's way to achieve inheritance. In other words, it's a way to share common properties and methods to object(s). prototypes are a way by which a JavaScript object can inherit features from another object.
+## Understanding prototypes and `__proto__`
+
+`prototypes` are JavaScript's way to achieve inheritance. In other words, it's a way to share common properties and methods to object(s). prototypes are a way by which a JavaScript object can inherit features from another object. In our case, we want to inherit the methods from `commonMethods` objects.
 
 Everything in JavaScript gets a special property called `__proto__`. Have you ever thought how we've access to the array methods like filter, map, forEach etc? Let's take a look into that.
 
@@ -146,11 +149,13 @@ const nums = [1, 2, 3, 4, 5];
 console.log(nums.__proto__);
 ```
 
+`nums.__proto__` is a special object that contains all the array methods. Let’s run this code to verify the statement.
+
 ![alt text](/images/blog/oop-in-javascript-01.png)
 
 You might be thinking, we are supposed to talk about Objects. Why are we talking about arrays? JavaScript wraps every primitive values (numbers, strings etc) in an Object. So, everything in JavaScript is an Object (excluding `undefined` and `null`) and will have it's own `__proto__` depending on the type of Object. For examples, arrays will have array methods in their `__proto__`, numbers will have methods like `toFixed`, `toString` etc in their `__proto__`.
 
-The next question is where does this \_\_proto\_\ comes from? JavaScript provides us Constructors like `Array`, `Number`, `String`, `Object` etc. We can use `new Array()` or `new Number()` or `new String()` or `new Object()` to create objects of these type. Usually we don't use these in our day to day life. Whatever way we use, it is eventually treated as an Object created from these Constructors and these Constructors have a special property prototype. Note that, prototype and `__proto__` are not the same in terms of the purpose they serve.
+The next question is where does this `__proto__` comes from? JavaScript provides us Constructors like `Array`, `Number`, `String`, `Object` etc. We can use `new Array()` or `new Number()` or `new String()` or `new Object()` to create objects of these type. Usually we don't use these in our day to day life. Whatever way we use, it is eventually treated as an Object created from these Constructors and these Constructors have a special property prototype. Note that, prototype and `__proto__` are not the same in terms of the purpose they serve.
 
 The difference is that, prototype exists only in Constructor and `__proto__` is meant for the instances created from a constructor. However, there is a close relation between these two objects.
 
@@ -159,11 +164,11 @@ const nums = [1, 2, 3, 4, 5];
 console.log(nums.__proto__ === Array.prototype); // true
 ```
 
-If you run the above code, you will log true in the console. Basically nums.`__proto__` is a reference of Array.prototype. The most important thing to understand here is that, whenever you create an instance from any Constructor, `__proto__` on the instance object will refer to the prototype of the Constructor.
+If you run the above code, you will log `true` in the console. Basically nums.`__proto__` is a reference of Array.prototype. The most important thing to understand here is that, whenever you create an instance from any Constructor, `__proto__` on the instance object will refer to the prototype of the Constructor.
 
 Now, Let's assume that we want to access `user.isMarried` in the `person` object that we defined previously. The property doesn't exist on the `person` object. So instead of giving up, JavaScript will try to find it in `__proto__`. So anything if JavaScript is unable to find some property or method in the actual object, it will look into the special property called `__proto__`.
 
-So that basically means if we can set `__proto__` of each person object to be the commonMethods object, our job is done. How do we do that?
+So that basically means if we can set `__proto__` of each `person` object to be the `commonMethods` object, our job is done. How do we do that? Remember `Object.create()`? It returns a new object, but the additional thing it does is, it sets the `__proto__` of that object to be the object that we pass into this as argument.
 
 ## Sharing Common functions
 
@@ -194,9 +199,9 @@ const commonMethods = {
 };
 ```
 
-It's obvious that the `person` object doesn't have any connection with the commonMethods object. So, we need to somehow create a connection between them in such a way that whenever the `person` object needs a method, it will find the method in the `commonMethods` object. How do we do that?
+It's obvious that the `person` object doesn't have any connection with the `commonMethods` object. So, we need to somehow create a connection between them in such a way that whenever the `person` object needs a method, it will look into the `commonMethods` objects. How do we do that?
 
-According to our knowledge of prototypes and `__proto__`, we can now answer this question. If we can set `__proto__` of each person object to be the `commonMethods` object, everything should work fine. Remember `Object.create()`? It returns a new object, but the additional thing it does is, it sets the `__proto__` of that object to be the object that we pass into this as argument.
+According to our knowledge of prototypes and `__proto__`, we can now answer this question. If we can set `__proto__` of each person object to be the commonMethods object, everything should work fine. Remember `Object.create()`? It returns a new object, but the additional thing it does is, it sets the `__proto__` of that object to be the object that we pass into this as argument.
 
 ```js
 function createPerson(firstName, lastName, age) {
@@ -227,7 +232,7 @@ const person = createPerson("Naimul", "Haque", 26);
 person.greet(); // Hello, my name is Naimul Haque
 ```
 
-It works perfectly! You might be thinking, this is somewhat similar to how a `class` creates an object in other programming languages. Don't we have the class keyword in JavaScript? Yes, we have the `class` keyword, and we'll get there eventually. The reason I'm showing you all these in details is because, `class` is just a syntactic sugar in JavaScript. It didn't even exist before ES6. Even if you write classes, it's crucial to understand the underlying concepts.
+It works perfectly! You might be thinking, this is somewhat similar to how a `class` creates an object in other programming languages. Don't we have the `class` keyword in JavaScript? Yes, we have the `class` keyword, and we'll get there eventually. The reason I'm showing you all these in details is because, `class` is just a syntactic sugar in JavaScript. It didn't even exist before ES6. Even if you write classes, it's crucial to understand the underlying concepts.
 
 ## Functions are Objects
 
@@ -281,8 +286,6 @@ Now, each time we create a Person instance, the object's `__proto__ `will refer 
 person1.__proto__ === Person.prototype; // true
 ```
 
-Again, if you are finding it difficult, read the prototype section once again, come back and try to understand.
-
 ## The 'new' Keyword
 
 ```js
@@ -306,7 +309,9 @@ We will get all the answers, when we take a look at how the new keyword works in
 - Invokes the constructor function where this refers to the empty object that it created.
 - Implicitly returns the object.
 
-This is how, the instances are getting created from the Person constructor functions. However, the value of the `this` keyword is dynamic and can change upon different contexts. If you want to learn more about the `this` keyword, I've written an Article explaining it in depth - [A closer Look at the 'this' keyword in JavaScript](/blog/this-keyword-in-javascript).
+This is how, the instances are getting created from the Person constructor functions. However, the value of the this keyword is dynamic and can change upon different contexts. If you want to learn more about the this keyword, I’ve written an Article explaining it in depth.
+
+[A closer Look at the 'this' keyword in JavaScript](/blog/this-keyword-in-javascript).
 
 ## ES6 Classes
 
@@ -337,8 +342,8 @@ class Person {
 const person1 = new Person("Naimul", "Haque", 26);
 ```
 
-It looks more like a classical OOP language, easier to read, write and understand. As I mentioned, this is just a Syntactic sugar. Behind the scences, JavaScript does all sorts of work to create `Person.prototype`, `__proto__`, put those methods in the `__proto__` in every instance of the person. In fact, the class we created named Person is a actually a function.
+It looks more like a classical OOP language, easier to read, write and understand. As I mentioned, this is just a Syntactic sugar. Behind the scences, JavaScript does all sorts of work to create `Person.prototype`, `__proto__`, put those methods in the `__proto__` in every instance of the person. In fact, the class we created named `Person` is a actually a function.
 
 ## Conclusion
 
-I hope you got a better understanding of how Object Oriented Programming (OOP) works in JavaScript. Thank you for reading.
+I hope you got a better understanding of how Object Oriented Programming works in JavaScript. Thank you for reading.

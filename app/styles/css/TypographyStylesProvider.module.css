@@ -13,12 +13,16 @@
     color: hsl(var(--muted-foreground));
   }
   & img {
-    margin-top: var(--mantine-spacing-md);
+    margin-top: var(--mantine-spacing-lg) !important;
     margin-bottom: var(--mantine-spacing-lg);
     border-radius: var(--mantine-radius-sm);
   }
+  & code {
+    color: #f6c177 !important;
+  }
   & pre > code {
     font-size: 14px;
+    padding: 0;
     @mixin light {
       background: transparent;
     }
@@ -27,8 +31,9 @@
     }
   }
   & pre {
+    padding: var(--mantine-spacing-md);
     @mixin dark {
-      background: hsl(var(--secondary));
+      background: hsl(var(--secondary) / 0.5);
     }
   }
 }

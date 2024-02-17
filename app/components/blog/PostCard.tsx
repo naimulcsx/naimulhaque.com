@@ -1,7 +1,7 @@
 import { Anchor, Box, Group, Image, Stack, Text, Title } from "@mantine/core";
 import { NavLink, useNavigate } from "@remix-run/react";
 import { type Post } from "contentlayer/types";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 
 export function PostCard({ post }: { post: Post }) {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ export function PostCard({ post }: { post: Post }) {
             {post.title}
           </Title>
           <Group gap="xs">
-            <Text>{dayjs(post.publishedAt).format("MMM DD, YYYY")}</Text>
+            <Text>{format(post.publishedAt, "PPP")}</Text>
             <Text>•</Text>
             <Text>{post.readingTime} min read</Text>
           </Group>

@@ -7,14 +7,14 @@ import {
   Title,
   TypographyStylesProvider,
 } from "@mantine/core";
-import { type MetaFunction, json } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { allPosts } from "contentlayer/generated";
 import { Post } from "contentlayer/types";
-import dayjs from "dayjs";
 import { TableOfContents } from "~/components/blog/TableOfContents";
-import MDXRenderer from "~/components/mdx/MDXRenderer";
 import { throwNotFoundException } from "~/utils/http-exceptions";
+import MDXRenderer from "~/components/mdx/MDXRenderer";
+import { format } from "date-fns";
 
 export const meta = ({ data }: { data: { post: Post } }) => {
   return [
@@ -46,10 +46,7 @@ function BlogPostPage() {
           px={0}
         >
           <Stack>
-            <Text size="sm">
-              {" "}
-              {dayjs(post.publishedAt).format("MMM DD, YYYY")}
-            </Text>
+            <Text size="sm"> {format(post.publishedAt, "PPP")}</Text>
             <Title
               className="gradient-text"
               order={1}
