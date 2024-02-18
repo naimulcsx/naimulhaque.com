@@ -1,5 +1,6 @@
 import {
   Anchor,
+  Badge,
   Box,
   Grid,
   Group,
@@ -53,13 +54,12 @@ export function PostPreview({ post }: { post: Post }) {
       >
         <Stack gap="sm" align="flex-start">
           <Box>
-            <Title order={3} fw={600}>
+            <Title order={3} fw={500}>
               {post.title}
             </Title>
-            <Group gap="xs">
-              <Text size="sm">{format(post.publishedAt, "PP")}</Text>
-              <Text>•</Text>
-              <Text size="sm">{post.readingTime} min read</Text>
+            <Group gap="xs" mt="xs">
+              <Badge>{format(post.publishedAt, "PP")}</Badge>
+              <Badge>{post.readingTime} min read</Badge>
             </Group>
           </Box>
           <Text>{post.summary}</Text>

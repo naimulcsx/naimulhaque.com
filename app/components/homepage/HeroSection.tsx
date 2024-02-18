@@ -132,7 +132,7 @@ function AuthorAbout() {
         Yet another Full-Stack{" "}
         <span
           style={{
-            fontWeight: 700,
+            fontWeight: 600,
             borderBottom: "2px solid hsl(var(--primary))",
           }}
         >

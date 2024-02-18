@@ -1,4 +1,5 @@
 .root {
+  line-height: 1.5;
   &[data-variant="nh-ui"] {
     color: hsl(var(--foreground) / 0.75);
   }

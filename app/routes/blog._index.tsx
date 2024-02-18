@@ -41,11 +41,11 @@ export default function BlogListingPage() {
               }}
             ></Box>
           </Group>
-          <Text size="lg">
+          <Title order={2} fz={18} lh={1.5} fw={300}>
             Tech blog &mdash; my thoughts, stories, and knowledge, all in one
             place. Dive into a variety of topics and explore the world of
             Programming and Web Development.
-          </Text>
+          </Title>
         </Stack>
       </Box>
       <Grid gutter="xl">

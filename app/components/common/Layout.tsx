@@ -159,7 +159,9 @@ export function Header() {
 
         <Group gap="xl" visibleFrom="md">
           {links.map((link) => {
-            const isActive = pathname === link.to;
+            const isActive =
+              pathname === link.to ||
+              (link.to !== "/" && pathname.startsWith(link.to));
             return (
               <Anchor
                 size="sm"

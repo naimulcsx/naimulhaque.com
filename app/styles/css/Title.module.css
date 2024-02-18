@@ -8,4 +8,5 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: unset;
+  font-weight: 600;
 }

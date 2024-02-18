@@ -1,9 +1,10 @@
 import {
+  Badge,
+  Box,
   Container,
   Grid,
   Image,
   Stack,
-  Text,
   Title,
   TypographyStylesProvider,
 } from "@mantine/core";
@@ -45,8 +46,10 @@ function BlogPostPage() {
           style={{ margin: "0 auto", textAlign: "center" }}
           px={0}
         >
-          <Stack>
-            <Text size="sm"> {format(post.publishedAt, "PPP")}</Text>
+          <Stack gap={24}>
+            <Badge size="md" mx="auto">
+              {format(post.publishedAt, "PPP")}
+            </Badge>
             <Title
               className="gradient-text"
               order={1}
@@ -55,17 +58,27 @@ function BlogPostPage() {
             >
               {post.title}
             </Title>
-            <Text>{post.summary}</Text>
+            <Title
+              order={2}
+              fz={18}
+              fw={300}
+              lh={1.4}
+              c="hsl(var(--foreground))"
+            >
+              {post.summary}
+            </Title>
           </Stack>
         </Container>
-        <Image
-          src={`/images/blog/${post.featuredImage}`}
-          alt=""
-          style={{
-            viewTransitionName: "post-image",
-            borderRadius: "var(--mantine-radius-md)",
-          }}
-        />
+        <Box mt="sm">
+          <Image
+            src={`/images/blog/${post.featuredImage}`}
+            alt=""
+            style={{
+              viewTransitionName: "post-image",
+              borderRadius: "var(--mantine-radius-md)",
+            }}
+          />
+        </Box>
       </Container>
       <Container mb="xl">
         <Grid style={{ overflow: "unset" }} gutter="xl">

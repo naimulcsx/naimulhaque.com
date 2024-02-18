@@ -105,14 +105,19 @@ export default function UsagePage() {
             }}
           ></Box>
         </Group>
-        <Text size="lg">
+        <Title order={2} lh={1.6} fz={18} fw={300}>
           A collection of stuff I use for programming, web development in my
           everyday life. Make sure to check out{" "}
-          <Anchor underline="always" href="https://uses.tech" target="_blank">
+          <Anchor
+            size="lg"
+            underline="always"
+            href="https://uses.tech"
+            target="_blank"
+          >
             uses.tech
           </Anchor>{" "}
           for a list of everyone's /uses pages!
-        </Text>
+        </Title>
         <Image
           mt="xl"
           src="/images/uses.jpg"

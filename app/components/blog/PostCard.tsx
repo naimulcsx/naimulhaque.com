@@ -1,4 +1,13 @@
-import { Anchor, Box, Group, Image, Stack, Text, Title } from "@mantine/core";
+import {
+  Anchor,
+  Badge,
+  Box,
+  Group,
+  Image,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 import { NavLink, useNavigate } from "@remix-run/react";
 import { type Post } from "contentlayer/types";
 import { format } from "date-fns";
@@ -48,9 +57,8 @@ export function PostCard({ post }: { post: Post }) {
             {post.title}
           </Title>
           <Group gap="xs">
-            <Text>{format(post.publishedAt, "PPP")}</Text>
-            <Text>•</Text>
-            <Text>{post.readingTime} min read</Text>
+            <Badge>{format(post.publishedAt, "PPP")}</Badge>
+            <Badge>{post.readingTime} min read</Badge>
           </Group>
           <Text>{post.summary}</Text>
         </Stack>
