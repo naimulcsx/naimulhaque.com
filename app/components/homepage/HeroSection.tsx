@@ -75,8 +75,8 @@ function AuthorCard() {
             border: "4px solid hsl(var(--foreground) / 0.2)",
           }}
         />
-        <Stack gap={4}>
-          <Title order={4}>AKM Naimul Haque</Title>
+        <Stack gap={6}>
+          <Title order={3}>Naimul Haque</Title>
           <Text size="sm">
             Software Engineer, Competitive Programmer and DevOps Enthusiast
           </Text>

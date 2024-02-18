@@ -6,7 +6,7 @@ import { Technologies } from "~/components/homepage/Technologies";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Naimul Haque" },
+    { title: "Naimul Haque - Software Engineer" },
     {
       name: "description",
       content:

@@ -36,4 +36,7 @@
       background: hsl(var(--secondary) / 0.5);
     }
   }
+  & div[data-rehype-pretty-code-fragment] {
+    margin-bottom: var(--mantine-spacing-lg);
+  }
 }

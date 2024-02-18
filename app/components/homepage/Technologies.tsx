@@ -120,9 +120,8 @@ export function Technologies() {
                   Full Stack
                 </Title>
                 <Text>
-                  TypeScript, React, Next.js, Node.js (Express / NestJS),
-                  BullMQ, REST, GraphQL, PostgreSQL, MongoDB, Redis,
-                  Elasticsearch
+                  TypeScript, React, Next.js, Node.js, Express.js, NestJS, REST,
+                  GraphQL, PostgreSQL, MongoDB, Redis, BullMQ, Elasticsearch
                 </Text>
                 <Flex mt="sm" wrap="wrap" gap="xs">
                   {devItems.map((item, index) => {
@@ -146,9 +145,9 @@ export function Technologies() {
                   Cloud & DevOps
                 </Title>
                 <Text>
-                  Git, Linux CLI, Docker, DigitalOcean, Caprover, NGINX,
-                  CertBot, AWS (EC2, VPC, S3, RDS, ECS), Prometheus, Grafana,
-                  Loki
+                  AWS (VPC, EC2, S3, RDS, ECS, CodeCommit, CodeBuild,
+                  CodePipeline), UNIX, Bash, Git, Github, Docker, NGINX,
+                  Certbot, Caprover, Prometheus, Grafana, Loki
                 </Text>
                 <Flex mt="sm" wrap="wrap" gap="xs">
                   {cloudAndDevopsItems.map((item, index) => {
