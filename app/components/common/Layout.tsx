@@ -127,6 +127,7 @@ export function Header() {
                     borderBottom: "1px solid",
                     borderColor: "hsl(var(--foreground) / 0.1)",
                   }}
+                  unstable_viewTransition
                 >
                   {link.label}
                 </Anchor>
@@ -177,6 +178,7 @@ export function Header() {
                     ? "hsl(var(--foreground))"
                     : "hsl(var(--foreground) / 0.8)",
                 }}
+                unstable_viewTransition
               >
                 {link.label}
               </Anchor>
@@ -218,6 +220,10 @@ const links = [
   {
     label: "Blog",
     to: "/blog",
+  },
+  {
+    label: "Snippets",
+    to: "/snippets",
   },
   {
     label: "Uses",

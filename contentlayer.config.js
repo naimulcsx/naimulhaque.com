@@ -7,6 +7,11 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import GithubSlugger from "github-slugger";
 import { basename } from "path";
+import fs from "node:fs";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
 
 export const Snippet = defineDocumentType(() => ({
   name: "Snippet",
@@ -32,7 +37,7 @@ export const Snippet = defineDocumentType(() => ({
     },
     draft: {
       type: "boolean",
-      description: "The status of the blog",
+      description: "The status of the snippet",
       default: false,
     },
   },
@@ -40,6 +45,39 @@ export const Snippet = defineDocumentType(() => ({
     slug: {
       type: "string",
       resolve: (doc) => basename(doc._raw.flattenedPath, ".mdx"),
+    },
+    preview: {
+      type: "string",
+      resolve: async (doc) => {
+        const content = fs.readFileSync(
+          `./content/${doc._raw.sourceFilePath}`,
+          "utf-8"
+        );
+
+        let hasStarted = false,
+          initialCodeBlock = "";
+        const lines = content.split("\n");
+
+        for (let i = 0; i < lines.length; ++i) {
+          if (lines[i].startsWith("```") && hasStarted) {
+            initialCodeBlock += "```\n";
+            break;
+          }
+          if (lines[i].startsWith("```") && !hasStarted) {
+            hasStarted = true;
+          }
+          if (hasStarted) initialCodeBlock += lines[i] + "\n";
+        }
+
+        const result = await unified()
+          .use(remarkParse)
+          .use(remarkRehype)
+          .use(rehypeStringify)
+          .use(rehypePrettyCode)
+          .process(initialCodeBlock);
+
+        return result.value;
+      },
     },
   },
 }));

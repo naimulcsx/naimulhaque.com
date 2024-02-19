@@ -91,7 +91,7 @@ export default function UsagePage() {
     <Container size="lg" mt={{ base: 64 }} mb={{ base: 32, md: 64 }}>
       <Stack gap="xs">
         <Group gap="xs">
-          <Title order={1} fz={{ base: 36, md: 40 }}>
+          <Title order={1} fz={{ base: 32, md: 36 }}>
             Uses
           </Title>
           <Box

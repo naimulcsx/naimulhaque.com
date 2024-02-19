@@ -22,9 +22,11 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^3.3.1",
     "dayjs": "^1.11.10",
+    "dompurify": "^3.0.8",
     "framer-motion": "^10.16.5",
     "github-slugger": "^2.0.0",
     "isbot": "^3.6.8",
+    "marked": "^12.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^6.1.1",
@@ -33,7 +35,8 @@
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
-    "shiki": "^0.14.1"
+    "shiki": "^0.14.1",
+    "unified": "^11.0.4"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.3.0",

@@ -28,9 +28,7 @@ function getMDXComponent(
   globals: Record<string, unknown> = {}
 ): React.FC<MDXContentProps> {
   const scope = { React, ReactDOM, _jsx_runtime, ...globals };
-  // eslint-disable-next-line no-new-func
   const fn = new Function(...Object.keys(scope), code);
-
   return fn(...Object.values(scope)).default;
 }
 
