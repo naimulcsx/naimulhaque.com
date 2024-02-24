@@ -138,7 +138,7 @@ We can create many users with this function. `createPerson()` function is now re
 
 We can create many users with this function. `createPerson()` function is now reusable but it's extremely inefficient. The reason is simple, the common methods `getFullName()`, `isAdult()` and `greet()` are created on the person object every time we create a new person. These methods are common functionality and don't need to have same own copy for each object. We need some way to somehow share the common functionality.
 
-## prototypes and `__proto__`
+## Understanding prototypes
 
 `prototypes` are JavaScript's way to achieve inheritance. In other words, it's a way to share common properties and methods to object(s). prototypes are a way by which a JavaScript object can inherit features from another object. In our case, we want to inherit the methods from `commonMethods` objects.
 

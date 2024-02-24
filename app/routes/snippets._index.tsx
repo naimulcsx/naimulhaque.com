@@ -16,11 +16,11 @@ import { format } from "date-fns";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Blog - Naimul Haque" },
+    { title: "Snippets - Naimul Haque" },
     {
       name: "description",
       content:
-        "Delve into the realm of software engineering with insightful articles on Naimul Haque's blog. Unlock the latest trends, expert perspectives, and problem-solving approaches, guiding you through the landscape of programming, software engineering and web development.",
+        "Discover essential code snippets to make your life easier. Unlock solutions, tips, and tricks to streamline your software development process.",
     },
   ];
 };

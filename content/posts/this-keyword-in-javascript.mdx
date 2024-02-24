@@ -6,19 +6,17 @@ summary: "An exploration of the values of JavaScript's 'this' keyword in differe
 featuredImage: "this-keyword-in-javascript.jpg"
 ---
 
-# Untitled
-
 The `this` keyword is a unique identifier in JavaScript. The value of `this` is determined at runtime and can vary depending where you are using it. As a result, the behavior of the `this` keyword seems confusing to many people, especially to those who are new to the language or have limited experience with its nuances.
 
 > In other languages, e.g. C++, Java, C# etc, the this keyword represents the current instance of a class, But JavaScript's this keyword is a bit different in nature. So it's better not to compare with how it works in other languages.
 
 This article aims to explore the value of the `this` keyword in different contexts. Let's dive in and unveil the mysteries of the `this` keyword!
 
-# **`this` in global scope**
+## this in global scope
 
 When we use the `this` keyword in the global scope (i.e. outside any function), it's value refers to the _`global` object_.
 
-## **Global object**
+### Global object
 
 The `global` object is the top-level object in the scope chain and acts as a container for all global variables (defined with the `var` keyword), functions, and objects.
 
@@ -44,7 +42,7 @@ console.log(this === global); // true
 console.log(this === global.setTimeout); // true
 ```
 
-# **`this` inside Functions**
+## this inside Functions
 
 When a function is called, the value of the `this` keyword refers to the `global` object in non-strict mode, or `undefined` in strict mode.
 
@@ -62,13 +60,13 @@ sayHello(); // Hello, my name is Naimul
 
 > The same piece of code when run in strict mode, It will throw an error “Cannot read property ‘name’ of undefined”. It’s because the value of this inside the function becomes undefined instead of referring to the global object.
 
-# **Explicit function binding**
+## Explicit function binding
 
 Sometimes we need to explicitly bind the `this` keyword to a specific object to ensure that the function operates with the correct `this` value, regardless of how it is invoked.
 
 We have three methods in JavaScript to accomplish this: `call`, `apply`, and `bind`, which we may call on any function. When a function is invoked with the `call`, `apply`, or `bind`, the `this` keyword will refer to what we pass in as the first parameter.
 
-## **Function.prototype.call()**
+### Function.prototype.call()
 
 In the following example, we’re explicitly binding the `this` keyword to the `person` object. It takes the following input parameters:
 
@@ -91,7 +89,7 @@ sayHello.call(person, "Hi"); // Hi, my name is Naimul
 
 In this example, the `sayHello` function is called with the `call` method, which binds the `this` to the `person` object, so the output is "Hi, my name is Naimul".
 
-## **Function.prototype.apply()**
+### Function.prototype.apply()
 
 The `apply` method is another method that allows us to call a function and explicitly set the `this` value. However, unlike `call`, `apply` takes arguments as an array or an array-like object. It takes the following input parameters:
 
@@ -110,7 +108,7 @@ function sayHello(greet) {
 sayHello.apply(person, ["Hi"]); // Hi, my name is Naimul
 ```
 
-## **Function.prototype.bind()**
+### Function.prototype.bind()
 
 Unlike `call` and `apply`, `bind` does not execute the function immediately but instead returns a new function where the `this` context is fixed to a specified object.
 
@@ -129,7 +127,7 @@ sayHelloWithPerson();
 
 > Note that the greet parameter is pre-filled with "Hello". Even if we invoke it with a different greet value, sayHelloWithPerson("Hello") , it won’t use the new value.
 
-# **`this` inside methods**
+## this inside methods
 
 When a method is called on an object in JavaScript, the `this` keyword inside that method refers to the object itself. This behavior is known as _method binding_ and it's a fundamental aspect of how objects works in JavaScript. Let's look at the following example
 
@@ -160,9 +158,9 @@ person.greet(); // "Hello, my name is undefined"
 
 Arrow functions behave differently than regular functions. The arrow function `printName` captures the `this` value from the surrounding scope, which, in this case, is the global scope (the outermost scope).
 
-> It’s generally recommended to use regular function expressions or function statements. It’s because you need to access the object’s properties or other methods.
+> It's generally recommended to use regular function expressions or function statements. It’s because you need to access the object’s properties or other methods.
 
-# **Nested function**
+## Nested function
 
 What happens if we have nested functions within a method? Let’s move the `console.log` in a nested function and call the function within the method. Trust me! We'll find out something very interesting.
 
@@ -206,7 +204,7 @@ By switching from regular functions to arrow functions, the `this` value is no l
 
 The topic of arrow functions is broad and can require its own in-depth exploration. In a future article, we can dive deeper into advanced concepts related to arrow functions and best practices for their usage in different scenarios.
 
-# **Constructor functions**
+## Constructor functions
 
 When a function is called as a constructor with the `new` keyword, `this` is bound to the newly created object. For example:
 
@@ -223,7 +221,7 @@ const me = new Person("Naimul", 26);
 console.log(me); // Person { name: 'Naimul', age: 26 }
 ```
 
-# **`this` inside callback functions**
+## this inside callback functions
 
 Callback functions are functions that you pass to another function as an argument, so that they can be executed after some async operation (most of the time, but not always). Let’s try to assume what will be the output of the following function
 

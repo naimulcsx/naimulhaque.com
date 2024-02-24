@@ -20,6 +20,9 @@
   & code {
     color: #f6c177 !important;
   }
+  & blockquote {
+    font-size: 16px;
+  }
   & pre > code {
     font-size: 14px;
     padding: 0;
