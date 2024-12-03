@@ -1,5 +1,0 @@
-.root {
-  &[data-variant="nh-ui"] {
-    background: hsl(var(--secondary) / 0.75);
-  }
-}

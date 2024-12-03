@@ -1,0 +1,37 @@
+---
+title: NestJS Custom Decorator for Validating Objects
+description: >-
+  A custom class-validator Decorator to validate if a particular property is
+  object or not
+language:
+  - typescript
+publishedAt: 2024-12-03
+---
+
+Data Transfer Objects (DTOs) are commonly used for validating request body. Storing metadata as a JSON type column in PostgreSQL is a common and flexible approach, especially when dealing with unstructured or semi-structured data. To validate if the property is an object, we can use the following decorator.
+
+```ts title="is-json-object.ts"
+import { ValidationArguments, registerDecorator } from "class-validator";
+
+function IsJsonObject() {
+  return function (object: object, propertyName: string) {
+    registerDecorator({
+      name: "isJsonObject",
+      target: object.constructor,
+      propertyName,
+      validator: {
+        validate(value: unknown) {
+          return (
+            typeof value === "object" && value !== null && !Array.isArray(value)
+          );
+        },
+        defaultMessage(validationArguments?: ValidationArguments): string {
+          return `${validationArguments.property} must be a valid object`;
+        }
+      }
+    });
+  };
+}
+
+export default IsJsonObject;
+```

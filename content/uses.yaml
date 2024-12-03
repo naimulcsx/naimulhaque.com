@@ -1,0 +1,64 @@
+title: Uses
+description: >-
+  A collection of stuff I use for programming and software engineering in my
+  everyday life. Make sure to check out [uses.tech](https://uses.tech) for a
+  list of everyone's /uses pages!
+items:
+  - name: MacBook Pro (14.2-inch)
+    description: MacBook M2 Pro 2023 - The heart of my workspace.
+    category: Hardware
+    icon: items/0/icon.svg
+  - name: Xiaomi 34" Curved Monitor
+    description: WQHD display and a butter-smooth 144Hz refresh rate.
+    category: Hardware
+    icon: items/1/icon.svg
+  - name: Akko 3084B Plus
+    description: Satisfying typing experience with Cherry Purple switches.
+    category: Hardware
+    icon: items/2/icon.svg
+  - name: Logitech Pebble M350
+    description: The most silent mouse I've ever used.
+    category: Hardware
+    icon: items/3/icon.svg
+  - name: FIFINE K678 Condenser Mic
+    description: A top-tier, budget-friendly USB microphone.
+    category: Hardware
+    icon: items/4/icon.svg
+  - name: GRID Industrious Work Desk
+    description: Offers a spacious and organized surface.
+    category: Desk Setup
+    icon: items/5/icon.svg
+  - name: GRID Pro Tasker Chair
+    description: My ideal companion for focused tasks.
+    category: Desk Setup
+    icon: items/6/icon.svg
+  - name: Rectangle
+    description: Helps me to arrange windows with snap areas.
+    category: Workflow
+  - name: Google Chrome
+    description: My go-to web browser.
+    category: Workflow
+    icon: items/8/icon.svg
+  - name: Cloudflare WARP
+    description: WARP client makes Internet faster and safer.
+    category: Workflow
+    icon: items/9/icon.svg
+  - name: Visual Studio Code
+    description: My go-to code editor. It's the BEST. Change my mind.
+    category: Workflow
+  - name: iTerm 2
+    description: It's simple, I use it with Oh My Zsh.
+    category: Workflow
+    icon: items/11/icon.svg
+  - name: Docker
+    description: I heavily use Docker for local development.
+    category: Workflow
+    icon: items/12/icon.svg
+  - name: Figma
+    description: I use it for all of my design tasks.
+    category: Workflow
+    icon: items/13/icon.svg
+  - name: Notion
+    description: For note-taking or planning, it's my preferred app.
+    category: Workflow
+    icon: items/14/icon.svg

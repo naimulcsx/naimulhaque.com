@@ -1,0 +1,193 @@
+import { collection, config, fields } from "@keystatic/core";
+import { block, inline } from "@keystatic/core/content-components";
+
+import { createElement } from "react";
+
+import { MathFormula } from "@/components/math-formula";
+import { MathInline } from "@/components/math-inline";
+
+export const markdocConfig = fields.markdoc.createMarkdocConfig({});
+
+export default config({
+  storage: {
+    kind: "local"
+  },
+  singletons: {
+    uses: {
+      label: "Uses Page",
+      path: "content/uses",
+      schema: {
+        title: fields.text({
+          label: "Page Title",
+          validation: { length: { min: 1 } }
+        }),
+        description: fields.text({
+          label: "Page Description",
+          validation: { isRequired: true },
+          multiline: true
+        }),
+        items: fields.array(
+          fields.object({
+            name: fields.text({
+              label: "Item Name",
+              validation: { isRequired: true }
+            }),
+            description: fields.text({
+              label: "Item Description",
+              validation: { isRequired: true }
+            }),
+            category: fields.select({
+              label: "Category",
+              options: [
+                { label: "Hardware", value: "Hardware" },
+                { label: "Desk Setup", value: "Desk Setup" },
+                { label: "Workflow", value: "Workflow" }
+              ],
+              defaultValue: "Hardware"
+            }),
+            icon: fields.image({
+              label: "Item Icon",
+              directory: "public/images/uses",
+              validation: { isRequired: false }
+            })
+          }),
+          {
+            label: "Items",
+            itemLabel: (props) => props.fields.name.value
+          }
+        )
+      }
+    }
+  },
+  collections: {
+    posts: collection({
+      label: "Posts",
+      slugField: "title",
+      path: "content/posts/*",
+      entryLayout: "content",
+      format: { contentField: "content" },
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        excerpt: fields.text({ label: "Excerpt" }),
+        publishedDate: fields.date({ label: "Published date" }),
+        featuredImage: fields.image({
+          label: "Featured Image",
+          directory: "public/images/posts"
+        }),
+        tags: fields.array(fields.text({ label: "Tag" }), {
+          label: "Tags",
+          itemLabel: (props) => props.value
+        }),
+        content: fields.mdx({
+          label: "Content",
+          components: {
+            MathFormula: block({
+              label: "MathFormula",
+              schema: {
+                formula: fields.text({ label: "Formula", multiline: true })
+              },
+              ContentView: ({ value }) => {
+                return createElement(MathFormula, {
+                  formula: value.formula
+                });
+              }
+            }),
+            MathInline: inline({
+              label: "MathInline",
+              schema: { formula: fields.text({ label: "Formula" }) },
+              ContentView: ({ value }) => {
+                return createElement(MathInline, { formula: value.formula });
+              }
+            })
+          }
+        })
+      }
+    }),
+    experiences: collection({
+      label: "Experiences",
+      slugField: "company",
+      path: "content/experiences/*",
+      schema: {
+        role: fields.text({
+          label: "Role/Position",
+          validation: { isRequired: true }
+        }),
+        company: fields.slug({
+          name: { label: "Company Name" }
+        }),
+        companyUrl: fields.url({
+          label: "Company URL",
+          validation: { isRequired: true }
+        }),
+        type: fields.select({
+          label: "Employment Type",
+          options: [
+            { label: "Full Time", value: "Full Time" },
+            { label: "Part Time", value: "Part Time" },
+            { label: "Freelance", value: "Freelance" },
+            { label: "Contract", value: "Contract" },
+            { label: "Internship", value: "Internship" }
+          ],
+          defaultValue: "Full Time"
+        }),
+        location: fields.text({
+          label: "Location",
+          validation: { isRequired: true }
+        }),
+        fromDate: fields.date({
+          label: "Start Date",
+          validation: { isRequired: true }
+        }),
+        toDate: fields.date({
+          label: "End Date",
+          validation: { isRequired: false }
+        }),
+        description: fields.text({
+          label: "Description",
+          multiline: true
+        }),
+        logo: fields.image({
+          label: "Logo",
+          directory: "public/images/experiences"
+        })
+      }
+    }),
+    snippets: collection({
+      label: "Snippets",
+      slugField: "title",
+      path: "content/snippets/*",
+      entryLayout: "content",
+      format: { contentField: "content" },
+      schema: {
+        title: fields.slug({
+          name: { label: "Title" }
+        }),
+        description: fields.text({
+          label: "Description",
+          multiline: true,
+          validation: { isRequired: true }
+        }),
+        publishedAt: fields.date({
+          label: "Published At",
+          validation: { isRequired: true }
+        }),
+        language: fields.multiselect({
+          label: "Language",
+          options: [
+            { label: "JavaScript", value: "javascript" },
+            { label: "TypeScript", value: "typescript" },
+            { label: "Python", value: "python" },
+            { label: "HTML", value: "html" },
+            { label: "CSS", value: "css" },
+            { label: "Dockerfile", value: "dockerfile" },
+            { label: "Bash", value: "bash" }
+          ],
+          defaultValue: []
+        }),
+        content: fields.mdx({
+          label: "Code"
+        })
+      }
+    })
+  }
+});

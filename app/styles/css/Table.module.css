@@ -1,5 +1,0 @@
-.table {
-  &[data-variant="nh-ui"] {
-    --table-border-color: hsl(var(--border));
-  }
-}
