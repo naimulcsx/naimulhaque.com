@@ -58,9 +58,9 @@ export function TableOfContents({ headings }: TableOfContentProps) {
       {headings.map((heading, idx) => {
         const isActive = active === idx;
         return (
-          <div key={`#${heading.slug}`} className="py-1">
+          <div key={`#${heading.slug}`}>
             <a
-              className="py-2 text-sm"
+              className="inline-block py-2 text-sm"
               href={`#${heading.slug}`}
               onClick={(e) => {
                 e.preventDefault();

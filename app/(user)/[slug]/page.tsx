@@ -71,7 +71,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           className="mb-12 mt-8 w-full rounded-xl md:mb-16 md:mt-12"
         />
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
-          <div className="prose prose-sm prose-invert max-w-none grow sm:prose prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-400 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-li:text-gray-300">
+          <div className="prose prose-sm prose-invert max-w-none grow sm:prose prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-400 prose-a:text-gray-300 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-li:text-gray-300">
             {content}
           </div>
           <div className="sidebar order-first hidden lg:sticky lg:top-20 lg:order-last lg:block lg:w-64 lg:shrink-0 lg:basis-64 lg:self-start">
