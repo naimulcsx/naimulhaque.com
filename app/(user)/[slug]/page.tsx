@@ -46,7 +46,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <article className="my-8 md:my-20">
-      <div className="container px-4 md:px-0">
+      <div className="container">
         <div className="mx-auto max-w-xl space-y-6 text-center md:space-y-8">
           <span className="inline-block rounded-md bg-gray-600/30 px-3 py-1 text-xs text-gray-200">
             {formattedDate}
