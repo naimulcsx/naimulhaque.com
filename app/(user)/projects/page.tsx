@@ -1,22 +1,33 @@
-import { Metadata } from "next";
-
 import { ProjectCard } from "@/components/project-card";
 import { ProjectsFilter } from "@/components/projects-filter";
 import { reader } from "@/reader";
 
-export const metadata: Metadata = {
-  title: "Projects — Naimul Haque"
-};
+type SearchParams = { tech?: string; year?: string };
+
+export const dynamic = "force-dynamic";
+
+export function generateMetadata({
+  searchParams
+}: {
+  searchParams: SearchParams;
+}) {
+  return {
+    title: "Projects - Naimul Haque"
+  };
+}
 
 export default async function ProjectsPage({
   searchParams
 }: {
-  searchParams: { tech?: string; year?: string };
+  searchParams: SearchParams;
 }) {
+  console.log("Search Params:", searchParams);
   const projects = await reader.collections.projects.all();
+  console.log("projects", projects);
 
   // Sort projects by year
   const sortedProjects = projects.sort((a, b) => b.entry.year - a.entry.year);
+  console.log("sortedProjects", sortedProjects);
 
   // Extract unique tech stacks and years
   const techStacks = Array.from(
@@ -26,6 +37,8 @@ export default async function ProjectsPage({
   const years = Array.from(
     new Set(sortedProjects.map((project) => project.entry.year))
   ).sort((a, b) => b - a);
+  console.log("years", years);
+  console.log("techStacks", techStacks);
 
   // Filter projects based on search params
   const filteredProjects = sortedProjects.filter((project) => {
@@ -35,6 +48,7 @@ export default async function ProjectsPage({
       !searchParams.year || project.entry.year === parseInt(searchParams.year);
     return techMatch && yearMatch;
   });
+  console.log("filteredProjects", filteredProjects);
 
   return (
     <div className="container py-8 sm:py-12 lg:py-16">
