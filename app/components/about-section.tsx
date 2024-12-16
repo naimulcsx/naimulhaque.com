@@ -24,37 +24,35 @@ export function AboutSection() {
               </span>{" "}
               Hi, I'm Naimul
             </motion.h1>
-            <motion.h2 className="mt-4 text-2xl text-gray-200 md:text-3xl">
-              Yet another Full-Stack{" "}
-              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-bold text-transparent before:absolute before:-z-10 before:h-[110%] before:w-full before:-rotate-[0.5] before:content-[''] dark:before:bg-primary-200/10">
-                Software Engineer
+            <motion.h2 className="mt-4 text-2xl font-light tracking-[-1.25px] text-gray-200 md:text-3xl">
+              A Curious Explorer and Aspiring{" "}
+              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text px-1.5 font-bold text-transparent before:absolute before:left-0 before:-z-10 before:h-[110%] before:w-full before:-rotate-[0.5deg] before:content-[''] dark:before:bg-primary-200/10">
+                Polymath
               </span>
             </motion.h2>
             <motion.p className="mt-6 text-sm leading-6 text-gray-400 md:mt-8 md:text-base md:leading-7">
-              I am a software engineer specializing in full-stack software
-              development, particularly using React, Node.js and TypeScript. I
-              am passionate about{" "}
+              I am a software engineer with expertise in full-stack development,
+              specializing in JavaScript / TypeScript ecosystem. In my past, I
+              used to be a competitive programmer, that heled me grow my problem
+              solving skill — the ability I now bring into crafting{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
-                backend engineering
+                efficient systems
               </span>
               ,{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
-                system design
-              </span>
-              , crafting{" "}
+                clean
+              </span>{" "}
+              and{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
-                user interfaces
-              </span>
-              , and writing{" "}
-              <span className="border-b border-gray-200/20 text-gray-200">
-                clean code
+                scalable code
               </span>
               .
             </motion.p>
             <motion.p className="mt-4 text-sm leading-6 text-gray-400 md:text-base md:leading-7">
-              In my free time, I like developing side projects, learning new
-              technologies and writing articles. This is my place for my
-              Thoughts and Reflections. Happy reading! 🥂
+              In my free time, I enjoy exploring new technologies, working on
+              side projects, and diving into complex challenges that inspire
+              growth. This is my place for my Thoughts and Reflections. Happy
+              reading! 🥂
             </motion.p>
 
             <ul className="mt-4 space-y-1.5 text-sm text-gray-400 md:text-base">
