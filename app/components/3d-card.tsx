@@ -17,11 +17,13 @@ const MouseEnterContext = createContext<
 export const CardContainer = ({
   children,
   className,
-  containerClassName
+  containerClassName,
+  style
 }: {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  style?: React.CSSProperties;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
@@ -49,11 +51,12 @@ export const CardContainer = ({
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "py-4 flex items-center justify-center",
+          "flex items-center justify-center py-4",
           containerClassName
         )}
         style={{
-          perspective: "1000px"
+          perspective: "1000px",
+          ...style
         }}
       >
         <div
@@ -62,7 +65,7 @@ export const CardContainer = ({
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
+            "relative flex items-center justify-center transition-all duration-200 ease-linear",
             className
           )}
           style={{
@@ -78,17 +81,20 @@ export const CardContainer = ({
 
 export const CardBody = ({
   children,
-  className
+  className,
+  style
 }: {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }) => {
   return (
     <div
       className={cn(
-        "[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "[transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
         className
       )}
+      style={style}
     >
       {children}
     </div>

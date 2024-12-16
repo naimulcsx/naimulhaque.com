@@ -13,6 +13,35 @@ export default config({
     kind: "local"
   },
   singletons: {
+    config: {
+      label: "Site Config",
+      path: "content/config",
+      schema: {
+        siteTitle: fields.text({
+          label: "Site Title",
+          validation: { length: { min: 1 } }
+        }),
+        siteAbout: fields.mdx({
+          label: "Site About"
+        }),
+        socialProfiles: fields.array(
+          fields.object({
+            type: fields.select({
+              label: "Type",
+              options: [
+                { label: "X", value: "X" },
+                { label: "LinkedIn", value: "Linkedin" },
+                { label: "Github", value: "Github" },
+                { label: "Website", value: "website" }
+              ],
+              defaultValue: "X"
+            }),
+            url: fields.url({ label: "URL" })
+          }),
+          { label: "Social Profiles" }
+        )
+      }
+    },
     uses: {
       label: "Uses Page",
       path: "content/uses",
@@ -186,6 +215,29 @@ export default config({
         }),
         content: fields.mdx({
           label: "Code"
+        })
+      }
+    }),
+    projects: collection({
+      label: "Projects",
+      slugField: "title",
+      path: "content/projects/*",
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        description: fields.text({ label: "Description" }),
+        backgroundColor: fields.text({ label: "Background Color" }),
+        year: fields.integer({
+          label: "Year",
+          validation: { isRequired: true }
+        }),
+        techStack: fields.array(fields.text({ label: "Tech Stack" }), {
+          label: "Tech Stack",
+          itemLabel: (props) => props.value
+        }),
+        liveUrl: fields.url({ label: "Live URL" }),
+        image: fields.image({
+          label: "Image",
+          directory: "public/images/projects"
         })
       }
     })

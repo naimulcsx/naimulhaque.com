@@ -1,0 +1,12 @@
+title: Behandling for Alle
+description: >-
+  Developed the marketing site for Behandling for Alle - a multidisciplinary
+  health clinic located in Bergen, Norway.
+backgroundColor: '#0f3f5d'
+year: 2021
+techStack:
+  - TailwindCSS
+  - Oxygen Builder
+  - WordPress
+liveUrl: https://behandlingforalle.no/
+image: image.jpg

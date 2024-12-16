@@ -1,0 +1,11 @@
+title: Nina B. Fitje
+description: >-
+  Developed the marketing website for Akupunktur Nina B. Fitje - an acupuncture
+  clinic located in Bergen, Norway.
+backgroundColor: '#1e293b'
+year: 2020
+techStack:
+  - TailwindCSS
+  - WordPress
+liveUrl: https://www.ninabfitje.no/
+image: image.jpg

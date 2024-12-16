@@ -11,9 +11,6 @@ import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 
 export function Navbar() {
-  const { scrollY } = useScroll();
-  const height = useTransform(scrollY, [0, 100], [80, 72], { clamp: true });
-
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -30,8 +27,9 @@ export function Navbar() {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/snippets", label: "Snippets" },
     { href: "/blog", label: "Blog" },
+    { href: "/projects", label: "Projects " },
+    { href: "/snippets", label: "Snippets" },
     { href: "/uses", label: "Uses" }
   ];
 
@@ -40,14 +38,14 @@ export function Navbar() {
   return (
     <motion.nav
       style={{
-        height,
+        height: 80,
         transform: isVisible ? "translateY(0)" : "translateY(-10%)",
         opacity: isVisible ? 1 : 0,
         transition: "transform 0.2s ease, opacity 0.2s ease"
       }}
       className="sticky top-0 z-50 border-b border-slate-900 backdrop-blur-md dark:bg-gray-900/90"
     >
-      <div className="container flex h-full items-center justify-between">
+      <div className="container flex h-full max-w-7xl items-center justify-between">
         <Link href="/">
           <div className="flex items-center gap-2">
             <div className="relative right-1 text-primary-400">
@@ -66,7 +64,7 @@ export function Navbar() {
               <Link
                 key={index}
                 href={item.href}
-                className={`border-b-2 px-2 py-1.5 ${
+                className={`flex border-b-2 px-2 py-2.5 ${
                   pathname === item.href
                     ? "border-primary-300 font-medium text-primary-300"
                     : "border-transparent text-gray-400 hover:text-gray-200"

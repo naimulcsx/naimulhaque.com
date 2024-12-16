@@ -1,0 +1,13 @@
+title: Fixbil
+description: >-
+  Developed Fixbil platform (MVP) - A comprehensive automotive service provider
+  operating 11 workshops across Norway.
+backgroundColor: '#334155'
+year: 2022
+techStack:
+  - Next.js
+  - NestJS
+  - PostgreSQL
+  - WordPress
+liveUrl: https://fixbil.no
+image: image.jpg
