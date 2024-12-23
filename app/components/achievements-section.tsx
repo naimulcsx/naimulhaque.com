@@ -8,7 +8,7 @@ export function AchievementsSection() {
           Achievements
         </h3>
 
-        <p className="text-base leading-relaxed text-gray-400">
+        <p className="text-sm leading-relaxed text-gray-400 md:text-base">
           Solved over 1800+ problems with strong knowledge in Data Structure and
           Algorithms, Competed in over 120+ online, regional and national
           contests.
@@ -113,7 +113,7 @@ export function AchievementsSection() {
                 )}
                 <Trophy className="mt-1 h-6 w-12 text-primary-400" />
                 <div>
-                  <div>
+                  <div className="mb-1.5 leading-5">
                     <span className="text-sm font-medium text-gray-200">
                       {achievement.position}
                     </span>

@@ -24,7 +24,7 @@ export async function SidebarAbout() {
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
-      <div className="mt-6 space-y-3 rounded-xl border border-gray-700/50 bg-gradient-to-tr from-gray-800 via-gray-800/50 to-gray-800/20 p-6 backdrop-blur-sm md:mt-0 lg:mt-6">
+      <div className="mt-6 hidden space-y-3 rounded-xl border border-gray-700/50 bg-gradient-to-tr from-gray-800 via-gray-800/50 to-gray-800/20 p-6 backdrop-blur-sm md:mt-0 lg:mt-6 lg:block">
         <h4 className="text-lg font-semibold text-gray-200">
           Table of Contents
         </h4>

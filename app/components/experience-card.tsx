@@ -25,7 +25,11 @@ export function ExperienceCard({
   type
 }: ExperienceCardProps) {
   return (
-    <div className={cn("group relative flex flex-col gap-4 pb-10 sm:flex-row")}>
+    <div
+      className={cn(
+        "group relative flex flex-col gap-4 pb-6 sm:flex-row md:pb-10"
+      )}
+    >
       {/* Timeline line */}
       <div className="absolute left-6 top-12 hidden h-[calc(100%-32px)] w-[2px] bg-gray-700/50 group-last:hidden sm:block" />
 
