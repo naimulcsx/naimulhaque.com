@@ -11,8 +11,10 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/select";
+import { reader } from "@/reader";
 
 interface ProjectsFilterProps {
+  projects: Awaited<ReturnType<typeof reader.collections.projects.all>>;
   techStacks: string[];
   years: number[];
   initialTech?: string;
@@ -20,6 +22,7 @@ interface ProjectsFilterProps {
 }
 
 export function ProjectsFilter({
+  projects,
   techStacks,
   years,
   initialTech,
@@ -43,23 +46,35 @@ export function ProjectsFilter({
     router.push(`?${params.toString()}`);
   };
 
-  // Count occurrences of each tech stack
+  // Count occurrences of each tech stack from all projects
   const techCounts = techStacks.reduce(
     (acc, tech) => {
-      acc[tech] = (acc[tech] || 0) + 1;
+      const count = projects.filter((project) =>
+        project.entry.techStack.includes(tech)
+      ).length;
+      acc[tech] = count;
       return acc;
     },
     {} as Record<string, number>
   );
 
-  // Count occurrences of each year
+  // Count occurrences of each year from all projects
   const yearCounts = years.reduce(
     (acc, year) => {
-      acc[year] = (acc[year] || 0) + 1;
+      const count = projects.filter(
+        (project) => project.entry.year === year
+      ).length;
+      acc[year] = count;
       return acc;
     },
     {} as Record<number, number>
   );
+
+  // Sort tech stacks and years by count
+  const sortedTechStacks = [...techStacks].sort(
+    (a, b) => techCounts[b] - techCounts[a]
+  );
+  const sortedYears = [...years].sort((a, b) => yearCounts[b] - yearCounts[a]);
 
   return (
     <div className="mb-8 flex justify-center gap-4">
@@ -78,7 +93,7 @@ export function ProjectsFilter({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All ({techStacks.length})</SelectItem>
-              {techStacks.map((tech) => (
+              {sortedTechStacks.map((tech) => (
                 <SelectItem key={tech} value={tech}>
                   {tech} ({techCounts[tech]})
                 </SelectItem>
@@ -103,7 +118,7 @@ export function ProjectsFilter({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All ({years.length})</SelectItem>
-              {years.map((year) => (
+              {sortedYears.map((year) => (
                 <SelectItem key={year} value={year.toString()}>
                   {year} ({yearCounts[year]})
                 </SelectItem>

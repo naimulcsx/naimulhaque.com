@@ -1,0 +1,13 @@
+title: Acreage
+description: >-
+  Led Full-Stack development of a platform that helps people to make Smarter,
+  faster Real Estate Decisions.
+backgroundColor: '#0b3474'
+year: 2024
+techStack:
+  - React
+  - NestJS
+  - PostgreSQL
+  - AWS
+liveUrl: https://acreage.earth/
+image: image.jpg

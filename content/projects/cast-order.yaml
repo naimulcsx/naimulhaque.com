@@ -1,0 +1,14 @@
+title: Cast Order
+description: >-
+  Developed a complete restaurant ordering system with user / staff mobile apps
+  with SUNMI thermal invoice printing.
+backgroundColor: '#2b4d42'
+year: 2023
+techStack:
+  - React
+  - Remix
+  - React Native
+  - PostgreSQL
+  - NestJS
+liveUrl: https://castorder.no/
+image: image.jpg

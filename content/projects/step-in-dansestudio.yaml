@@ -1,0 +1,11 @@
+title: Step In Dansestudio
+description: >-
+  Developed the marketing website of Step In Dansestudio which is the largest
+  dance school in Bergen, Norway.
+backgroundColor: '#0d4750'
+year: 2022
+techStack:
+  - TailwindCSS
+  - WordPress
+liveUrl: https://stepindansestudio.no/
+image: image.jpg

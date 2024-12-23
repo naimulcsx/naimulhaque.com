@@ -1,0 +1,12 @@
+title: Delineate
+description: >-
+  Led Full-Stack development (MVP) of a MIT-originating startup that helps QSP
+  researchers to accelerate drug development.
+backgroundColor: '#384e71'
+year: 2024
+techStack:
+  - React
+  - NestJS
+  - MongoDB
+liveUrl: https://delineate.pro
+image: image.jpg

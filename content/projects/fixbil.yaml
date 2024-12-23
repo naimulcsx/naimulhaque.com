@@ -3,7 +3,7 @@ description: >-
   Developed Fixbil platform (MVP) - A comprehensive automotive service provider
   operating 11 workshops across Norway.
 backgroundColor: '#334155'
-year: 2022
+year: 2023
 techStack:
   - Next.js
   - NestJS

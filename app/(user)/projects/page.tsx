@@ -21,13 +21,10 @@ export default async function ProjectsPage({
 }: {
   searchParams: SearchParams;
 }) {
-  console.log("Search Params:", searchParams);
   const projects = await reader.collections.projects.all();
-  console.log("projects", projects);
 
   // Sort projects by year
   const sortedProjects = projects.sort((a, b) => b.entry.year - a.entry.year);
-  console.log("sortedProjects", sortedProjects);
 
   // Extract unique tech stacks and years
   const techStacks = Array.from(
@@ -37,8 +34,6 @@ export default async function ProjectsPage({
   const years = Array.from(
     new Set(sortedProjects.map((project) => project.entry.year))
   ).sort((a, b) => b - a);
-  console.log("years", years);
-  console.log("techStacks", techStacks);
 
   // Filter projects based on search params
   const filteredProjects = sortedProjects.filter((project) => {
@@ -48,7 +43,6 @@ export default async function ProjectsPage({
       !searchParams.year || project.entry.year === parseInt(searchParams.year);
     return techMatch && yearMatch;
   });
-  console.log("filteredProjects", filteredProjects);
 
   return (
     <div className="container py-8 sm:py-12 lg:py-16">
@@ -57,11 +51,12 @@ export default async function ProjectsPage({
           Projects
         </h1>
         <p className="text-sm leading-6 text-gray-300 md:text-base md:leading-7">
-          A subset of the projects that I have worked in the past.
+          A non-exhaustive list of projects that I have worked in the past.
         </p>
       </div>
 
       <ProjectsFilter
+        projects={projects}
         techStacks={techStacks}
         years={years}
         initialTech={searchParams.tech}

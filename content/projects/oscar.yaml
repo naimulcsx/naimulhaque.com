@@ -1,0 +1,14 @@
+title: Oscar
+description: >-
+  Led Full-Stack and Data Scraping team in developing a platform that aggregates
+  data from QSR franchisees, delivering insights with Gen AI.
+backgroundColor: '#1d325d'
+year: 2024
+techStack:
+  - Dagster
+  - React
+  - NestJS
+  - MySQL
+  - Playwright
+liveUrl: https://oscar.ai/
+image: image.jpg
