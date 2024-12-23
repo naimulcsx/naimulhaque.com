@@ -56,7 +56,7 @@ export function KeyTechSection() {
         </h3>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8">
-          <div className="mt-4 space-y-2 rounded-lg border border-gray-800 bg-gradient-to-tr from-gray-800 to-gray-800/30 p-3 md:mt-6 md:p-6">
+          <div className="mt-4 space-y-2 rounded-lg border border-primary-400/20 bg-primary-400/5 p-3 md:mt-6 md:p-6">
             <h4 className="text-base font-semibold text-gray-200 md:text-lg">
               Full Stack
             </h4>
@@ -77,7 +77,7 @@ export function KeyTechSection() {
               })}
             </div>
           </div>
-          <div className="mt-6 space-y-2 rounded-lg border border-gray-800 bg-gradient-to-tr from-gray-800 to-gray-800/30 p-4 md:p-6">
+          <div className="mt-6 space-y-2 rounded-lg border border-primary-400/20 bg-primary-400/5 p-4 md:p-6">
             <h4 className="text-lg font-semibold text-gray-200">
               Cloud & DevOps
             </h4>

@@ -1,5 +1,7 @@
 import { Briefcase, Building2, MapPin } from "lucide-react";
 
+import { cn } from "@/lib/utils";
+
 interface ExperienceCardProps {
   slug: string;
   logo: string | null;
@@ -9,6 +11,7 @@ interface ExperienceCardProps {
   location: string;
   description: string;
   type: string;
+  isCurrent: boolean;
 }
 
 export function ExperienceCard({
@@ -22,27 +25,27 @@ export function ExperienceCard({
   type
 }: ExperienceCardProps) {
   return (
-    <div className="relative flex flex-col sm:flex-row gap-4 pb-10 group">
+    <div className={cn("group relative flex flex-col gap-4 pb-10 sm:flex-row")}>
       {/* Timeline line */}
-      <div className="absolute hidden sm:block left-6 top-12 h-[calc(100%-32px)] w-[2px] bg-gray-700/50 group-last:hidden" />
+      <div className="absolute left-6 top-12 hidden h-[calc(100%-32px)] w-[2px] bg-gray-700/50 group-last:hidden sm:block" />
 
       {/* Company Logo and Mobile Timeline */}
       <div className="flex items-center sm:block">
-        <div className="relative z-10 h-12 w-12 overflow-hidden rounded-md bg-gray-800 shrink-0">
+        <div className="relative z-10 h-12 w-12 shrink-0 overflow-hidden rounded-md bg-gray-800">
           <img
             src={`/images/experiences/${slug}/${logo}`}
             alt={company}
             className="h-full w-full object-contain"
           />
         </div>
-        <div className="h-px w-full sm:hidden ml-4 bg-gray-700/50 group-last:hidden" />
+        <div className="ml-4 h-px w-full bg-gray-700/50 group-last:hidden sm:hidden" />
       </div>
 
       {/* Content */}
       <div className="flex-1 space-y-2">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-          <h3 className="font-semibold text-lg text-gray-200">{role}</h3>
-          <span className="text-xs sm:text-sm text-gray-500">{duration}</span>
+        <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-center">
+          <h3 className="text-lg font-semibold text-gray-200">{role}</h3>
+          <span className="text-xs text-gray-500 sm:text-sm">{duration}</span>
         </div>
 
         <div className="flex flex-row gap-2 md:gap-4">
@@ -60,7 +63,7 @@ export function ExperienceCard({
           </div>
         </div>
 
-        <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
+        <p className="text-sm leading-relaxed text-gray-400">{description}</p>
       </div>
     </div>
   );

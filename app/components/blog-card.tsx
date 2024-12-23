@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { GlareCard } from "./glare-card";
@@ -20,7 +21,9 @@ export default function BlogCard({ post }: BlogCardProps) {
   return (
     <Link href={`${post.slug}`} className="block h-full">
       <GlareCard className="flex h-full flex-col">
-        <img
+        <Image
+          width={470}
+          height={246}
           src={`/images/posts/${post.slug}/${post.coverImage}`}
           alt={post.title}
           className="object-cover"

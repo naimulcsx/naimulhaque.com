@@ -1,0 +1,19 @@
+title: About
+description: >-
+  Discover my work, experiences, achievements and the technologies that drive me
+  in the world of tech.
+gallery:
+  - image: gallery/0/image.png
+    caption: >-
+      Winner of IIUC CSE Fest 2019 Programming Contest and Welcast Web
+      Development Contest
+  - image: gallery/1/image.png
+    caption: >-
+      Teams from IIUC participating at NSTU ICE Fest Regional Programming
+      Contest 2020
+  - image: gallery/2/image.png
+    caption: Taking Prize at NSTU ICE Fest Regional Programming Contest 2020
+  - image: gallery/3/image.jpg
+    caption: Receiving Crest from Tanveer Ahsan, Ex-Chairman, Dept. of CSE, IIUC
+  - image: gallery/4/image.png
+    caption: Runners Up at IIUC Intra University Programming Contest Autumn 2018

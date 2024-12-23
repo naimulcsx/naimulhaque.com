@@ -1,6 +1,7 @@
 role: Senior Software Engineer
 company: Liberate Labs
 companyUrl: https://liberate-labs.com/
+order: 1
 type: Full Time
 location: United States
 fromDate: 2023-12-01
@@ -9,3 +10,4 @@ description: >-
   AWS. Oversaw and mentored development teams, conducted code reviews, and
   established technical standards.
 logo: logo.svg
+isCurrent: true

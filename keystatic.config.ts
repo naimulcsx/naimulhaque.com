@@ -86,6 +86,40 @@ export default config({
           }
         )
       }
+    },
+    about: {
+      label: "About Page",
+      path: "content/about",
+      schema: {
+        title: fields.text({
+          label: "Page Title",
+          validation: { length: { min: 1 } }
+        }),
+        description: fields.text({
+          label: "Page Description",
+          multiline: true
+        }),
+        content: fields.mdx({
+          label: "Content"
+        }),
+        gallery: fields.array(
+          fields.object({
+            image: fields.image({
+              label: "Gallery Image",
+              directory: "public/images/about",
+              validation: { isRequired: true }
+            }),
+            caption: fields.text({
+              label: "Image Caption",
+              validation: { isRequired: false }
+            })
+          }),
+          {
+            label: "Gallery",
+            itemLabel: (props) => props.fields.caption.value || "Image"
+          }
+        )
+      }
     }
   },
   collections: {
@@ -148,6 +182,9 @@ export default config({
           label: "Company URL",
           validation: { isRequired: true }
         }),
+        order: fields.integer({
+          label: "Order"
+        }),
         type: fields.select({
           label: "Employment Type",
           options: [
@@ -178,6 +215,10 @@ export default config({
         logo: fields.image({
           label: "Logo",
           directory: "public/images/experiences"
+        }),
+        isCurrent: fields.checkbox({
+          label: "Current Position",
+          defaultValue: false
         })
       }
     }),

@@ -12,14 +12,7 @@ export default async function UsesPage() {
   const uses = await reader.singletons.uses.read();
 
   if (!uses) {
-    return (
-      <div>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius deserunt
-        consectetur obcaecati illum nobis molestiae provident vitae? Natus
-        culpa, quidem architecto libero doloremque veniam repudiandae vero quod
-        voluptate rem autem!
-      </div>
-    );
+    return <div>Page not found</div>;
   }
 
   return (

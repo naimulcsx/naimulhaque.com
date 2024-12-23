@@ -31,10 +31,10 @@ export function AboutSection() {
               </span>
             </motion.h2>
             <motion.p className="mt-6 text-sm leading-6 text-gray-400 md:mt-8 md:text-base md:leading-7">
-              I am a software engineer with expertise in full-stack development,
-              specializing in JavaScript / TypeScript ecosystem. In my past, I
-              used to be a competitive programmer, that heled me grow my problem
-              solving skill — the ability I now bring into crafting{" "}
+              I am a full-stack software engineer with expertise in JavaScript /
+              TypeScript ecosystem. In my past, I used to be a competitive
+              programmer, that heled me grow my problem solving skill — the
+              ability I now bring into crafting{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
                 efficient systems
               </span>

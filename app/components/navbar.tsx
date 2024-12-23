@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 import { Logo } from "./logo";
@@ -27,9 +27,9 @@ export function Navbar() {
 
   const navItems = [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     { href: "/blog", label: "Blog" },
-    { href: "/projects", label: "Projects " },
-    { href: "/uses", label: "Uses" }
+    { href: "/projects", label: "Projects " }
   ];
 
   const pathname = usePathname();

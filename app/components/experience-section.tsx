@@ -14,7 +14,7 @@ export async function ExperienceSection() {
   };
 
   return (
-    <section>
+    <section id="experiences">
       <div>
         <h3 className="text-xl font-semibold text-gray-100 sm:text-2xl">
           Experiences
@@ -22,6 +22,18 @@ export async function ExperienceSection() {
         <div className="mt-6 space-y-2 sm:mt-10">
           {experiences
             .sort((a, b) => {
+              // First check if both have order values
+              if (
+                typeof a.entry.order === "number" &&
+                typeof b.entry.order === "number"
+              ) {
+                return a.entry.order - b.entry.order;
+              }
+              // Push items with order to the top
+              if (typeof a.entry.order === "number") return -1;
+              if (typeof b.entry.order === "number") return 1;
+
+              // Fall back to date-based sorting
               if (a.entry.fromDate === b.entry.fromDate) {
                 if (!a.entry.toDate) return -1;
                 if (!b.entry.toDate) return 1;
@@ -51,6 +63,7 @@ export async function ExperienceSection() {
                   location={experience.entry.location}
                   description={experience.entry.description}
                   type={experience.entry.type}
+                  isCurrent={experience.entry.isCurrent}
                 />
               );
             })}

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import React from "react";
 
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -66,9 +68,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
           <p className="leading-7 text-gray-400">{post.excerpt}</p>
         </div>
-        <img
+        <Image
+          width={1024}
+          height={512}
+          alt={post.title}
           src={`/images/posts/${slug}/${post.featuredImage}`}
           className="mb-12 mt-8 w-full rounded-xl md:mb-16 md:mt-12"
+          quality={95}
         />
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
           <div className="prose prose-sm prose-invert max-w-none grow sm:prose prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-400 prose-a:text-gray-300 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-li:text-gray-300">
