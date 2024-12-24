@@ -6,7 +6,7 @@ import React from "react";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "Snippets — AKM Naimul Haque",
+  title: "Snippets — Naimul Haque",
   description:
     "A curated collection of useful code snippets and solutions across various programming languages. Practical examples and reusable code from my development experience.",
   openGraph: {

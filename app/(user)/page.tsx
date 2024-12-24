@@ -7,9 +7,9 @@ import { KeyTechSection } from "@/components/key-tech-section";
 import { Sidebar } from "@/components/sidebar";
 
 export const metadata: Metadata = {
-  title: "AKM Naimul Haque — Software Craftsman and AI Enthusiast",
+  title: "Naimul Haque — Software Craftsman and AI Enthusiast",
   description:
-    "AKM Naimul Haque is a software engineer with expertise in JavaScript, TypeScript, React, and AWS. Explore his portfolio, projects, and blog for insights into technology, programming, and personal growth.",
+    "Naimul Haque is a software engineer with expertise in JavaScript, TypeScript, React, and AWS. Explore his portfolio, projects, and blog for insights into technology, programming, and personal growth.",
   openGraph: {
     images: "/og_image.png"
   }

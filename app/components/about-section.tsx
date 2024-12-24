@@ -116,7 +116,7 @@ function AuthorCard() {
             translateZ="50"
             className="text-lg font-semibold tracking-wide dark:text-gray-200"
           >
-            AKM Naimul Haque
+            Naimul Haque
           </CardItem>
           <CardItem translateZ="40">
             <p className="mt-2 text-sm text-gray-400">

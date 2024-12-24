@@ -1,11 +1,10 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 import BlogCard from "@/components/blog-card";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "Blog — AKM Naimul Haque",
+  title: "Blog — Naimul Haque",
   description:
     "Explore articles about software development, maintainable architecture, and scalable applications. Technical insights and best practices from Naimul Haque.",
   openGraph: {

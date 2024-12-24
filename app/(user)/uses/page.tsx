@@ -7,7 +7,7 @@ import { UsesItem } from "@/components/uses-item";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "Uses — AKM Naimul Haque",
+  title: "Uses — Naimul Haque",
   description:
     "Discover the hardware, desk setup, and workflow tools Naimul Haque use daily. A detailed look at my development environment and productivity setup.",
   openGraph: {
