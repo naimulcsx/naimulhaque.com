@@ -9,9 +9,9 @@ import { Sidebar } from "@/components/sidebar";
 export const metadata: Metadata = {
   title: "AKM Naimul Haque — Software Craftsman and AI Enthusiast",
   description:
-    "AKM Naimul Haque is a full-stack software engineer with expertise in JavaScript, TypeScript, React, and AWS. Explore his portfolio, projects, and blog for insights into technology, programming, and personal growth.",
+    "AKM Naimul Haque is a software engineer with expertise in JavaScript, TypeScript, React, and AWS. Explore his portfolio, projects, and blog for insights into technology, programming, and personal growth.",
   openGraph: {
-    images: "/author.jpg"
+    images: "/og_image.png"
   }
 };
 

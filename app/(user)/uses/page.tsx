@@ -7,9 +7,12 @@ import { UsesItem } from "@/components/uses-item";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "Uses — Naimul Haque",
+  title: "Uses — AKM Naimul Haque",
   description:
-    "Discover the hardware, desk setup, and workflow tools Naimul Haque use daily. A detailed look at my development environment and productivity setup."
+    "Discover the hardware, desk setup, and workflow tools Naimul Haque use daily. A detailed look at my development environment and productivity setup.",
+  openGraph: {
+    images: "/og_image.png"
+  }
 };
 
 export default async function UsesPage() {

@@ -9,9 +9,12 @@ import { SidebarAbout } from "@/components/sidebar-about";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "About — Naimul Haque",
+  title: "About — AKM Naimul Haque",
   description:
-    "Learn more about Naimul Haque - his professional journey, experiences, achievements, and personal story. Software engineer and technology enthusiast."
+    "Learn more about Naimul Haque - his professional journey, experiences, achievements, and personal story. Software engineer and technology enthusiast.",
+  openGraph: {
+    images: "/og_image.png"
+  }
 };
 
 export default async function AboutPage() {

@@ -6,9 +6,12 @@ import React from "react";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "Snippets — Naimul Haque",
+  title: "Snippets — AKM Naimul Haque",
   description:
-    "A curated collection of useful code snippets and solutions across various programming languages. Practical examples and reusable code from my development experience."
+    "A curated collection of useful code snippets and solutions across various programming languages. Practical examples and reusable code from my development experience.",
+  openGraph: {
+    images: "/og_image.png"
+  }
 };
 
 export default async function SnippetsPage() {

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 
 import React from "react";
@@ -15,9 +16,15 @@ export const generateMetadata = async ({
   params
 }: {
   params: { slug: string };
-}) => {
+}): Promise<Metadata> => {
   const post = await reader.collections.posts.read(params.slug);
-  return { title: post?.title, description: post?.excerpt };
+  return {
+    title: post?.title,
+    description: post?.excerpt,
+    openGraph: {
+      images: `/images/posts/${params.slug}/${post?.featuredImage}`
+    }
+  };
 };
 
 export default async function Post({ params }: { params: { slug: string } }) {
