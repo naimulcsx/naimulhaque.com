@@ -5,7 +5,9 @@ import BlogCard from "@/components/blog-card";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "Blog — Naimul Haque"
+  title: "Blog — Naimul Haque",
+  description:
+    "Explore articles about software development, maintainable architecture, and scalable applications. Technical insights and best practices from Naimul Haque."
 };
 
 export default async function BlogPage() {

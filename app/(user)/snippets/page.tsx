@@ -1,11 +1,14 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import React from "react";
 
 import { reader } from "@/reader";
 
-export const metadata = {
-  title: "Snippets — Naimul Haque"
+export const metadata: Metadata = {
+  title: "Snippets — Naimul Haque",
+  description:
+    "A curated collection of useful code snippets and solutions across various programming languages. Practical examples and reusable code from my development experience."
 };
 
 export default async function SnippetsPage() {

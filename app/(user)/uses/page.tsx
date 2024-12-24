@@ -1,11 +1,15 @@
+import { Metadata } from "next";
+
 import { Armchair, Monitor, Workflow } from "lucide-react";
 import Markdown from "react-markdown";
 
 import { UsesItem } from "@/components/uses-item";
 import { reader } from "@/reader";
 
-export const metadata = {
-  title: "Uses — Naimul Haque"
+export const metadata: Metadata = {
+  title: "Uses — Naimul Haque",
+  description:
+    "Discover the hardware, desk setup, and workflow tools Naimul Haque use daily. A detailed look at my development environment and productivity setup."
 };
 
 export default async function UsesPage() {

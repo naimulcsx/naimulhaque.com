@@ -9,7 +9,9 @@ import { SidebarAbout } from "@/components/sidebar-about";
 import { reader } from "@/reader";
 
 export const metadata: Metadata = {
-  title: "About — Naimul Haque"
+  title: "About — Naimul Haque",
+  description:
+    "Learn more about Naimul Haque - his professional journey, experiences, achievements, and personal story. Software engineer and technology enthusiast."
 };
 
 export default async function AboutPage() {

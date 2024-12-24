@@ -12,7 +12,9 @@ export function generateMetadata({
   searchParams: SearchParams;
 }) {
   return {
-    title: "Projects - Naimul Haque"
+    title: "Projects - Naimul Haque",
+    description:
+      "Explore my portfolio of software development projects, featuring various tech stacks and years of experience. From web applications to technical solutions."
   };
 }
 

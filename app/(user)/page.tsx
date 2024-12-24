@@ -5,7 +5,9 @@ import { KeyTechSection } from "@/components/key-tech-section";
 import { Sidebar } from "@/components/sidebar";
 
 export const metadata = {
-  title: "Naimul Haque — Software Engineer, Competitive Programmer"
+  title: "Naimul Haque — Full-Stack Software Engineer",
+  description:
+    "Naimul Haque is a full-stack software engineer with expertise in JavaScript, TypeScript, React, and AWS. Explore his portfolio, projects, and blog for insights into technology, programming, and personal growth."
 };
 
 export default async function Homepage() {

@@ -17,7 +17,7 @@ export const generateMetadata = async ({
   params: { slug: string };
 }) => {
   const post = await reader.collections.posts.read(params.slug);
-  return { title: post?.title };
+  return { title: post?.title, description: post?.excerpt };
 };
 
 export default async function Post({ params }: { params: { slug: string } }) {
