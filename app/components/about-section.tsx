@@ -56,13 +56,12 @@ export function AboutSection() {
               .
             </motion.p>
             <motion.p className="mt-4 text-sm leading-6 text-gray-400 md:text-base md:leading-7">
-              In my free time, I enjoy exploring new technologies, developments
-              in AI , working on side projects, and diving into complex
-              challenges that inspire growth. This is my place for my Thoughts
-              and Reflections. Happy reading! 🥂
+              I enjoy exploring new technologies, developments in AI, and diving
+              into challenges that inspire growth. This is my place for my
+              Thoughts and Reflections. Happy reading! 🥂
             </motion.p>
 
-            <ul className="mt-4 space-y-2 text-sm text-gray-400 md:text-base">
+            <ul className="mt-6 space-y-2 text-sm text-gray-400 md:text-base">
               <li>
                 <Link
                   href="https://github.com/naimulcsx"
@@ -107,7 +106,7 @@ function AuthorCard() {
         <div className="relative flex flex-col items-center text-center">
           <CardItem translateZ="20">
             <img
-              src="/author.png"
+              src="/author.jpg"
               className="mx-auto mb-4 w-24 rounded-full border-4 border-gray-200/20 md:w-32"
               alt="Naimul Haque"
             />

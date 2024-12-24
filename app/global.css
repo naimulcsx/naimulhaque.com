@@ -6,6 +6,10 @@ html {
   color-scheme: dark;
 }
 
+p {
+  letter-spacing: -0.25px;
+}
+
 @keyframes wave {
   0% {
     transform: rotate(0deg);
