@@ -1,11 +1,13 @@
+import { Metadata } from "next";
+
 import { AboutSection } from "@/components/about-section";
 import { ArticlesList } from "@/components/articles-list";
 import { ExperienceSection } from "@/components/experience-section";
 import { KeyTechSection } from "@/components/key-tech-section";
 import { Sidebar } from "@/components/sidebar";
 
-export const metadata = {
-  title: "Naimul Haque — Full-Stack Software Engineer",
+export const metadata: Metadata = {
+  title: "AKM Naimul Haque — Software Craftsman and AI Enthusiast",
   description:
     "Naimul Haque is a full-stack software engineer with expertise in JavaScript, TypeScript, React, and AWS. Explore his portfolio, projects, and blog for insights into technology, programming, and personal growth."
 };

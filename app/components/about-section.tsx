@@ -22,19 +22,26 @@ export function AboutSection() {
               <span className="inline-block animate-[wave_2s_ease-in-out_infinite]">
                 👋
               </span>{" "}
-              Hi, I'm Naimul
+              Hello! I am Naimul
             </motion.h1>
-            <motion.h2 className="mt-4 text-2xl font-light tracking-[-1.25px] text-gray-200 md:text-3xl">
-              A Curious Explorer and Aspiring{" "}
-              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text px-1.5 font-bold text-transparent before:absolute before:left-0 before:-z-10 before:h-[110%] before:w-full before:-rotate-[0.5deg] before:content-[''] dark:before:bg-primary-200/10">
-                Polymath
-              </span>
+            <motion.h2 className="mt-4 text-2xl font-light tracking-[-1px] text-gray-200 md:text-3xl">
+              Software{" "}
+              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-semibold text-transparent">
+                Craftsman
+              </span>{" "}
+              and AI{" "}
+              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-semibold text-transparent">
+                Enthusiast
+              </span>{" "}
             </motion.h2>
             <motion.p className="mt-6 text-sm leading-6 text-gray-400 md:mt-8 md:text-base md:leading-7">
-              I am a full-stack software engineer with expertise in JavaScript /
-              TypeScript ecosystem. In my past, I used to be a competitive
-              programmer, that heled me grow my problem solving skill — the
-              ability I now bring into crafting{" "}
+              I am a software engineer with full-stack experience in JavaScript
+              / TypeScript ecosystem. In my past, I used to be a{" "}
+              <span className="border-b border-gray-200/20 text-gray-200">
+                competitive programmer
+              </span>
+              , that heled me grow my problem solving skill — the ability I now
+              bring into crafting{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
                 efficient systems
               </span>
@@ -49,13 +56,13 @@ export function AboutSection() {
               .
             </motion.p>
             <motion.p className="mt-4 text-sm leading-6 text-gray-400 md:text-base md:leading-7">
-              In my free time, I enjoy exploring new technologies, working on
-              side projects, and diving into complex challenges that inspire
-              growth. This is my place for my Thoughts and Reflections. Happy
-              reading! 🥂
+              In my free time, I enjoy exploring new technologies, developments
+              in AI , working on side projects, and diving into complex
+              challenges that inspire growth. This is my place for my Thoughts
+              and Reflections. Happy reading! 🥂
             </motion.p>
 
-            <ul className="mt-4 space-y-1.5 text-sm text-gray-400 md:text-base">
+            <ul className="mt-4 space-y-2 text-sm text-gray-400 md:text-base">
               <li>
                 <Link
                   href="https://github.com/naimulcsx"
@@ -108,13 +115,13 @@ function AuthorCard() {
 
           <CardItem
             translateZ="50"
-            className="text-xl font-bold dark:text-gray-200"
+            className="text-lg font-semibold tracking-wide dark:text-gray-200"
           >
-            Naimul Haque
+            AKM Naimul Haque
           </CardItem>
           <CardItem translateZ="40">
             <p className="mt-2 text-sm text-gray-400">
-              Software Engineer, Competitive Programmer and DevOps Enthusiast
+              Software Engineer, Competitive Programmer and AI Enthusiast
             </p>
           </CardItem>
 
