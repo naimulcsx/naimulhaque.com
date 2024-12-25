@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "motion/react";
@@ -13,7 +14,7 @@ export function AboutSection() {
       <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-gray-900 [mask-image:radial-gradient(transparent,white)]" />
       <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-gradient-to-b from-gray-900 from-5% to-transparent" />
 
-      <Boxes />
+      {/* <Boxes /> */}
 
       <div className="container relative z-20">
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-12">
@@ -105,7 +106,9 @@ function AuthorCard() {
       <CardBody className="max-w-auto mx-auto w-full rounded-2xl border border-black/[0.1] p-4 md:p-6 dark:border-gray-700 dark:bg-gray-800">
         <div className="relative flex flex-col items-center text-center">
           <CardItem translateZ="20">
-            <img
+            <Image
+              width={256}
+              height={256}
               src="/author.jpg"
               className="mx-auto mb-4 w-24 rounded-full border-4 border-gray-200/20 md:w-32"
               alt="Naimul Haque"
