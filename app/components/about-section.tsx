@@ -10,9 +10,9 @@ import { Boxes } from "./background-boxes";
 
 export function AboutSection() {
   return (
-    <section className="relative w-full overflow-hidden py-14 md:py-20">
-      <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-gray-900 [mask-image:radial-gradient(transparent,white)]" />
-      <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-gradient-to-b from-gray-900 from-5% to-transparent" />
+    <section className="relative w-full overflow-hidden bg-[url('/bg_about.png')] bg-cover bg-center bg-no-repeat py-14 md:py-20">
+      {/* <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-gray-900/80 [mask-image:radial-gradient(transparent,white)]" />
+      <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-gradient-to-b from-gray-900 from-5% to-transparent" /> */}
 
       {/* <Boxes /> */}
 
