@@ -36,7 +36,7 @@ export default async function SnippetsPage() {
             className="block py-4 sm:py-6"
           >
             <div className="flex flex-col items-start gap-2 sm:flex-row sm:gap-8">
-              <time className="shrink-0 text-xs text-gray-400 sm:text-sm">
+              <time className="shrink-0 text-xs text-gray-300/90 sm:text-sm">
                 {new Date(snippet.entry.publishedAt).toLocaleDateString(
                   "en-US",
                   {
@@ -61,7 +61,7 @@ export default async function SnippetsPage() {
                     </span>
                   ))}
                 </div>
-                <p className="text-xs text-gray-400 sm:text-sm">
+                <p className="text-xs text-gray-300/90 sm:text-sm">
                   {snippet.entry.description}
                 </p>
               </div>

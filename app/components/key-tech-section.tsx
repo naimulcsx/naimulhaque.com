@@ -58,7 +58,7 @@ export function KeyTechSection() {
         <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-8">
           <div className="mt-4 space-y-2 rounded-lg border border-primary-400/20 bg-primary-400/5 p-3 md:mt-6 md:p-6">
             <h4 className="text-lg font-semibold text-gray-200">Full Stack</h4>
-            <p className="text-sm leading-6 text-gray-400">
+            <p className="text-sm leading-6 text-gray-300/90">
               TypeScript, React, Next.js, Node.js, Express.js, NestJS, REST,
               GraphQL, PostgreSQL, MongoDB, Redis, BullMQ, RabbitMQ,
               Elasticsearch
@@ -79,7 +79,7 @@ export function KeyTechSection() {
             <h4 className="text-lg font-semibold text-gray-200">
               Cloud & DevOps
             </h4>
-            <p className="text-sm leading-6 text-gray-400">
+            <p className="text-sm leading-6 text-gray-300/90">
               AWS (VPC, EC2, S3, RDS, ECS, CodeCommit, CodeBuild, CodePipeline),
               UNIX, Bash, Git, Github, Docker, NGINX, Certbot, Caprover,
               Prometheus, Grafana, Loki

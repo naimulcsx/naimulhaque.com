@@ -67,7 +67,9 @@ export function ExperienceCard({
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-gray-400">{description}</p>
+        <p className="text-sm leading-relaxed text-gray-300/90">
+          {description}
+        </p>
       </div>
     </div>
   );

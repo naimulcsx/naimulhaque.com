@@ -87,7 +87,7 @@ p {
 }
 
 figure[data-rehype-pretty-code-figure] figcaption {
-  @apply rounded-t-md bg-gray-700/60 px-4 py-2 text-sm text-gray-400;
+  @apply rounded-t-md bg-gray-700/60 px-4 py-2 text-sm text-gray-300/90;
 }
 
 figure[data-rehype-pretty-code-figure] figcaption + pre {

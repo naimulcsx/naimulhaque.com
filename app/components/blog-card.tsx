@@ -35,7 +35,9 @@ export default function BlogCard({ post }: BlogCardProps) {
             <span className="mx-2">•</span>
             <span>{post.readingTime}</span>
           </div>
-          <p className="text-sm leading-6 text-gray-400">{post.description}</p>
+          <p className="text-sm leading-6 text-gray-300/90">
+            {post.description}
+          </p>
         </div>
       </GlareCard>
     </Link>

@@ -35,7 +35,7 @@ export function AboutSection() {
                 Enthusiast
               </span>{" "}
             </motion.h2>
-            <motion.p className="mt-6 text-sm leading-6 text-gray-400 md:mt-8 md:text-base md:leading-7">
+            <motion.p className="mt-6 text-sm leading-6 text-gray-300/90 md:mt-8 md:text-base md:leading-7">
               I am a software engineer with full-stack experience in JavaScript
               / TypeScript ecosystem. In my past, I used to be a{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
@@ -56,13 +56,13 @@ export function AboutSection() {
               </span>
               .
             </motion.p>
-            <motion.p className="mt-4 text-sm leading-6 text-gray-400 md:text-base md:leading-7">
+            <motion.p className="mt-4 text-sm leading-6 text-gray-300/90 md:text-base md:leading-7">
               I enjoy exploring new technologies, developments in AI, and diving
               into challenges that inspire growth. This is my place for my
               Thoughts and Reflections. Happy reading! 🥂
             </motion.p>
 
-            <ul className="mt-6 space-y-2 text-sm text-gray-400 md:text-base">
+            <ul className="mt-6 space-y-2 text-sm text-gray-300/90 md:text-base">
               <li>
                 <Link
                   href="https://github.com/naimulcsx"
@@ -122,7 +122,7 @@ function AuthorCard() {
             Naimul Haque
           </CardItem>
           <CardItem translateZ="40">
-            <p className="mt-2 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-gray-300/90">
               Software Engineer, Competitive Programmer and AI Enthusiast
             </p>
           </CardItem>

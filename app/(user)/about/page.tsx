@@ -74,7 +74,7 @@ export default async function AboutPage() {
           <div className="flex-1 space-y-12 overflow-auto">
             <div
               id="about"
-              className="prose prose-invert mx-auto mt-8 prose-headings:mb-8 prose-headings:mt-8 prose-headings:text-gray-100 prose-p:my-4 prose-p:text-gray-400 prose-em:text-gray-300 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-pre:text-sm prose-li:text-gray-300"
+              className="prose prose-invert mx-auto mt-8 prose-headings:mb-8 prose-headings:mt-8 prose-headings:text-gray-100 prose-p:my-4 prose-p:text-gray-300/90 prose-em:text-gray-300 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-pre:text-sm prose-li:text-gray-300"
             >
               {content}
             </div>

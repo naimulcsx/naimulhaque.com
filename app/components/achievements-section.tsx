@@ -8,7 +8,7 @@ export function AchievementsSection() {
           Achievements
         </h3>
 
-        <p className="text-sm leading-relaxed text-gray-400 md:text-base">
+        <p className="text-sm leading-relaxed text-gray-300/90 md:text-base">
           Solved over 1800+ problems with strong knowledge in Data Structure and
           Algorithms, Competed in over 120+ online, regional and national
           contests.

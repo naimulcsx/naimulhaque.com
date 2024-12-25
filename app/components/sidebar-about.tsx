@@ -56,7 +56,7 @@ export async function SidebarAbout() {
           <WrenchIcon className="h-6 w-6 text-primary-400" />
         </div>
         <h4 className="text-lg font-semibold text-gray-200">My Tech Setup</h4>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-300/90">
           Curious about my development setup? Check out the tools, apps, and
           gear I use daily.
         </p>
@@ -76,7 +76,7 @@ export async function SidebarAbout() {
         <h4 className="text-lg font-semibold text-gray-200">
           Browse Code Snippets
         </h4>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-300/90">
           Explore my collection of useful code snippets, tips, and tricks that
           I've gathered over time.
         </p>

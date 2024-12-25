@@ -73,7 +73,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
               ))}
             </ul>
           </div>
-          <p className="leading-7 text-gray-400">{post.excerpt}</p>
+          <p className="leading-7 text-gray-300/90">{post.excerpt}</p>
         </div>
         <Image
           width={1024}
@@ -84,7 +84,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           quality={95}
         />
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
-          <div className="prose prose-sm prose-invert max-w-none grow sm:prose prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-400 prose-a:text-gray-300 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-li:text-gray-300">
+          <div className="prose prose-sm prose-invert max-w-none grow sm:prose prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-300/90 prose-a:text-gray-300 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-li:text-gray-300">
             {content}
           </div>
           <div className="sidebar order-first hidden lg:sticky lg:top-20 lg:order-last lg:block lg:w-64 lg:shrink-0 lg:basis-64 lg:self-start">

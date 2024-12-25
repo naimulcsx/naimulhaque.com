@@ -21,7 +21,7 @@ export const UsesItem = ({ title, description, icon }: UsesItemProps) => {
         )}
         <div>
           <h3 className="font-semibold text-gray-200">{title}</h3>
-          <p className="mt-1 text-sm text-gray-400">{description}</p>
+          <p className="mt-1 text-sm text-gray-300/90">{description}</p>
         </div>
       </div>
     </CardSpotlight>

@@ -45,9 +45,9 @@ export default async function Snippet({
           <h1 className="text-3xl font-bold text-gray-200 md:text-4xl">
             {snippet.title}
           </h1>
-          <p className="leading-7 text-gray-400">{snippet.description}</p>
+          <p className="leading-7 text-gray-300/90">{snippet.description}</p>
         </div>
-        <div className="prose prose-invert mx-auto mt-8 prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-400 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-pre:text-sm prose-li:text-gray-300">
+        <div className="prose prose-invert mx-auto mt-8 prose-headings:mb-4 prose-headings:mt-8 prose-headings:text-gray-200 prose-p:my-4 prose-p:text-gray-300/90 prose-code:text-gray-300 prose-pre:bg-gray-800/70 prose-pre:text-sm prose-li:text-gray-300">
           <hr className="border-dashed border-gray-700" />
           {content}
         </div>

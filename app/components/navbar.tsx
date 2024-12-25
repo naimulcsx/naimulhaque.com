@@ -66,7 +66,7 @@ export function Navbar() {
                 className={`flex border-b-2 px-2 py-2.5 ${
                   pathname === item.href
                     ? "border-primary-300 font-medium text-primary-300"
-                    : "border-transparent text-gray-400 hover:text-gray-200"
+                    : "border-transparent text-gray-300/90 hover:text-gray-200"
                 }`}
               >
                 {item.label}
@@ -77,7 +77,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="https://github.com"
-              className="text-gray-400 hover:text-gray-200"
+              className="text-gray-300/90 hover:text-gray-200"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -89,7 +89,7 @@ export function Navbar() {
             </a>
             <a
               href="https://linkedin.com"
-              className="text-gray-400 hover:text-gray-200"
+              className="text-gray-300/90 hover:text-gray-200"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -101,7 +101,7 @@ export function Navbar() {
         {/* Replace Mobile Menu Button and Navigation with Dialog */}
         <Dialog.Root>
           <Dialog.Trigger asChild>
-            <button className="text-gray-400 transition-colors duration-200 hover:text-gray-200 md:hidden">
+            <button className="text-gray-300/90 transition-colors duration-200 hover:text-gray-200 md:hidden">
               <Menu className="h-6 w-6" />
             </button>
           </Dialog.Trigger>
@@ -110,7 +110,7 @@ export function Navbar() {
             <Dialog.Overlay className="DialogOverlay fixed inset-0 z-50 animate-[fade-in_150ms_ease-out] bg-black/50 backdrop-blur-sm" />
             <Dialog.Content className="DialogContent fixed right-0 top-0 z-50 flex h-full w-[250px] animate-[slide-in_150ms_ease-out] flex-col border-l border-slate-800 bg-gray-900 p-5 focus:outline-none">
               <div className="mb-4 flex justify-end">
-                <Dialog.Close className="text-gray-400 hover:text-gray-200">
+                <Dialog.Close className="text-gray-300/90 hover:text-gray-200">
                   <X className="h-6 w-6" />
                 </Dialog.Close>
               </div>
@@ -123,7 +123,7 @@ export function Navbar() {
                       className={`py-3 text-sm ${
                         pathname === item.href
                           ? "font-medium text-primary-300"
-                          : "text-gray-400 hover:text-gray-200"
+                          : "text-gray-300/90 hover:text-gray-200"
                       }`}
                     >
                       {item.label}
@@ -135,7 +135,7 @@ export function Navbar() {
               <div className="mt-auto flex items-center gap-4 pt-4">
                 <a
                   href="https://github.com"
-                  className="text-gray-400 hover:text-gray-200"
+                  className="text-gray-300/90 hover:text-gray-200"
                 >
                   <svg
                     className="h-5 w-5"
@@ -151,7 +151,7 @@ export function Navbar() {
                 </a>
                 <a
                   href="https://linkedin.com"
-                  className="text-gray-400 hover:text-gray-200"
+                  className="text-gray-300/90 hover:text-gray-200"
                 >
                   <svg
                     className="h-5 w-5"
