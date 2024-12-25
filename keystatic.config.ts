@@ -8,6 +8,8 @@ import { MathInline } from "@/components/math-inline";
 
 export const markdocConfig = fields.markdoc.createMarkdocConfig({});
 
+export const showAdminUI = process.env.NODE_ENV === "development";
+
 export default config({
   storage: {
     kind: "local"

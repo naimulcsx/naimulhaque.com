@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /keystatic/
+
+Sitemap: https://naimulhaque.com/sitemap.xml
