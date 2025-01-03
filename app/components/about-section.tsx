@@ -25,15 +25,11 @@ export function AboutSection() {
               </span>{" "}
               Hello! I am Naimul
             </motion.h1>
-            <motion.h2 className="mt-4 text-2xl font-light tracking-[-1px] text-gray-200 md:text-3xl">
-              Software{" "}
-              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-semibold text-transparent">
-                Craftsman
-              </span>{" "}
-              and AI{" "}
-              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-semibold text-transparent">
-                Enthusiast
-              </span>{" "}
+            <motion.h2 className="mt-4 text-2xl tracking-[-1px] text-gray-200 md:text-3xl">
+              Software Craftsman and{" "}
+              <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-bold text-transparent">
+                AI Enthusiast
+              </span>
             </motion.h2>
             <motion.p className="mt-6 text-sm leading-6 text-gray-300/90 md:mt-8 md:text-base md:leading-7">
               I am a software engineer with full-stack experience in JavaScript
