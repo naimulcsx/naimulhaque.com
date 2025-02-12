@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion } from "motion/react";
 
 import { CardBody, CardContainer, CardItem } from "./3d-card";
-import { Boxes } from "./background-boxes";
 
 export function AboutSection() {
   return (
@@ -25,15 +24,17 @@ export function AboutSection() {
               </span>{" "}
               Hello! I am Naimul
             </motion.h1>
-            <motion.h2 className="mt-4 text-2xl tracking-[-1px] text-gray-200 md:text-3xl">
-              Software Craftsman and{" "}
+            <motion.h2 className="mt-4 text-xl tracking-[-1px] text-gray-200 md:text-2xl">
+              Helping Startups Build & Scale SaaS Products with{" "}
               <span className="relative -z-10 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text font-bold text-transparent">
-                AI Enthusiast
-              </span>
+                TypeScript, AI & Cloud
+              </span>{" "}
+              🚀
             </motion.h2>
             <motion.p className="mt-6 text-sm leading-6 text-gray-300/90 md:mt-8 md:text-base md:leading-7">
-              I am a software engineer with full-stack experience in JavaScript
-              / TypeScript ecosystem. In my past, I used to be a{" "}
+              I am a Software Engineer with over 4 years of experience in
+              building apps with JavaScript / TypeScript. In my past, I used to
+              be a{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
                 competitive programmer
               </span>
@@ -41,14 +42,10 @@ export function AboutSection() {
               bring into crafting{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
                 efficient systems
-              </span>
-              ,{" "}
-              <span className="border-b border-gray-200/20 text-gray-200">
-                clean
               </span>{" "}
               and{" "}
               <span className="border-b border-gray-200/20 text-gray-200">
-                scalable code
+                software products
               </span>
               .
             </motion.p>
@@ -78,8 +75,7 @@ export function AboutSection() {
               </li>
               <li>
                 <Link
-                  href="https://www.linkedin.com/feed/"
-                  target="_blank"
+                  href="/about"
                   className="border-b border-gray-200/20 text-gray-200"
                 >
                   🧐 More about me
@@ -105,7 +101,8 @@ function AuthorCard() {
             <Image
               width={256}
               height={256}
-              src="/author.jpg"
+              quality={90}
+              src="/author.png"
               className="mx-auto mb-4 w-24 rounded-full border-4 border-gray-200/20 md:w-32"
               alt="Naimul Haque"
             />

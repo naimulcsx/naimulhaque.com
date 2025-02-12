@@ -9,4 +9,5 @@ description: >-
   Contributed to 20+ projects, including implementing user interfaces with React
   and REST APIs using NestJS. Developed custom WordPress themes and responsive
   web applications using PHP and Twig.
-logo: logo.svg
+logo: logo.png
+isCurrent: false

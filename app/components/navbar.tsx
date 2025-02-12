@@ -69,9 +69,7 @@ export function Navbar() {
             <div className="relative right-1 text-primary-400">
               <Logo className="h-10 w-10" />
             </div>
-            <p className="text-xl font-semibold text-gray-200">
-              Naimul's Space
-            </p>
+            <p className="text-xl font-semibold text-gray-200">Naimul Haque</p>
           </div>
         </Link>
 

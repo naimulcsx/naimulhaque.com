@@ -10,4 +10,5 @@ description: >-
   Conducted classes for CSE-1121 (Computer Programming I) and CSE-1122 (Computer
   Programming I Lab), which serve as introductory programming courses for
   freshmen.
-logo: logo.jpeg
+logo: logo.png
+isCurrent: false
