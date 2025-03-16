@@ -127,7 +127,7 @@ export function ProjectCard({ project }: { project: any }) {
                   viewport={{ once: false }}
                   className="flex items-center rounded-2xl border border-gray-100 px-4 py-2"
                 >
-                  View Live
+                  Preview
                   <ExternalLinkIcon className="ml-2 inline-block h-4 w-4" />
                 </motion.a>
               </CardItem>

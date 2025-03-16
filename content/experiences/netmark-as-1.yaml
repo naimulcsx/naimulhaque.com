@@ -1,0 +1,16 @@
+role: Software Engineer
+company: NETMARK AS
+companyUrl: https://netmark.no
+order: 5
+type: Full Time
+location: Norway
+fromDate: 2022-01-01
+toDate: 2023-09-30
+description: >+
+  Contributed to multiple full-stack projects using React and NestJS.
+  Contributed to a shared data access library improving React Native app
+  delivery time by 50%, enforced E2E type safety, and automated deployments
+  using CI/CD pipelines.
+
+logo: logo.png
+isCurrent: false

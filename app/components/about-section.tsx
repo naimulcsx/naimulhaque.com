@@ -102,7 +102,7 @@ function AuthorCard() {
               width={256}
               height={256}
               quality={90}
-              src="/author.png"
+              src="/author.jpg"
               className="mx-auto mb-4 w-24 rounded-full border-4 border-gray-200/20 md:w-32"
               alt="Naimul Haque"
             />
