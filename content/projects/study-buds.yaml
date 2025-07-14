@@ -1,0 +1,15 @@
+title: StudyBuds
+description: >-
+  Led Full-Stack development of a learning platform designed to help students
+  practice academic concepts in a rigorous but engaging way.
+backgroundColor: '#5a3e9e'
+year: 2025
+techStack:
+  - React
+  - NestJS
+  - FastAPI
+  - PostgreSQL
+  - Qdrant
+  - AWS
+liveUrl: https://studybuds.org
+image: image.png
